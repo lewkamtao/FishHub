@@ -1,0 +1,56 @@
+@font-face {
+    font-family: HarmonyOS_Sans_SC_Medium;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"), url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff") format("woff");
+}
+
+a,
+button,
+html,
+input,
+option,
+p,
+select,
+table,
+tbody,
+td,
+textarea,
+th,
+thead,
+tr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: HarmonyOS_Sans_SC_Medium, sans-serif
+}
+
+html {
+    background: #f0f2f7
+}
+
+html.dark body {
+    background: #41403e;
+    .icon {
+        filter: invert(100%);
+    }
+    .paper {
+        border: 1px #333 solid;
+    }
+    .article-item {
+        border-bottom: 1px #333 solid;
+    }
+}
+
+.wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.paper {
+    border: 1px #eee solid;
+}
