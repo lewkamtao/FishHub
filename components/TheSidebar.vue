@@ -1,17 +1,19 @@
 <style lang="scss" scoped>
 .paper {
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 .paper:first-child {
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 </style>
 
 <template>
   <div class="sm-12 md-4 col sidebar">
     <plate-user></plate-user>
+    <plate-weather></plate-weather>
+    <plate-fish></plate-fish>
     <plate-today-news></plate-today-news>
-    <plate-about></plate-about>
+    <plate-tags></plate-tags>
     <plate-setting></plate-setting>
   </div>
 </template>

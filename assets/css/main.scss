@@ -5,6 +5,11 @@
     src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"), url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff") format("woff");
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 a,
 button,
 html,
@@ -28,29 +33,109 @@ h6 {
     font-family: HarmonyOS_Sans_SC_Medium, sans-serif
 }
 
+a {
+    background-image: none;
+}
+
 html {
-    background: #f0f2f7
+    background: #e9ecef;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+img {
+    border: none;
 }
 
 html.dark body {
-    background: #41403e;
+    background: #222;
     .icon {
         filter: invert(100%);
     }
     .paper {
         border: 1px #333 solid;
     }
-    .article-item {
+    .article-item-box {
+        .article-item {
+            border-bottom: 1px #333 solid;
+        }
+    }
+    .nav {
         border-bottom: 1px #333 solid;
     }
 }
 
+.paper {
+    box-sizing: border-box;
+}
+
+#he-plugin-standard {
+    width: 100% !important;
+}
+
 .wrapper {
-    max-width: 1280px;
+    max-width: 1080px;
     width: 100%;
     margin: 0 auto;
 }
 
-.paper {
-    border: 1px #eee solid;
+.sidebar {
+    .title {
+        font-weight: bold;
+        color: var(--secondary);
+    }
+}
+
+// message
+#geek-message-box {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    transition: all 0.1s;
+    .alert {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        line-height: 40px;
+        padding: 15px 25px;
+        transition: all 0.2s;
+        opacity: 0;
+        margin-top: 0px;
+        transform: translateY(-5px);
+        white-space: nowrap;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        color: #000;
+        font-size: 14px;
+    }
+    .alert-danger {
+        background-color: #ffeaea;
+        border-color: #a7342d;
+    }
+    .alert-success {
+        background-color: rgb(235, 255, 240);
+        border-color: #86a361;
+    }
+    .alert-warning {
+        background-color: rgb(253, 245, 223);
+        border-color: #ddcd45;
+    }
+    .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    .alert-show {
+        opacity: 1;
+        transform: translateY(0px);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .alert-hidden {
+        opacity: 0;
+        margin-top: -60px;
+    }
 }

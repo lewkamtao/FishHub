@@ -2,17 +2,20 @@
 
 <template>
   <div class="paper">
-    <fieldset class="form-group" style="margin-bottom: 0px">
-      <label class="paper-switch">
+    <h5 class="title margin-none">设置</h5>
+
+    <fieldset class="form-group" style="margin-bottom: 0px; margin-top: 20px">
+      <label class="paper-switch-2">
         <input
-          id="paperSwitch4"
-          name="paperSwitch4"
-          type="checkbox"
+          id="paperSwitch8"
           v-model="isDark"
+          name="paperSwitch8"
+          type="checkbox"
+          checked
         />
         <span class="paper-switch-slider"></span>
       </label>
-      <label for="paperSwitch4" class="paper-switch-label">
+      <label for="paperSwitch8" class="paper-switch-2-label">
         {{ isDark ? "暗黑" : "白天" }}模式
       </label>
     </fieldset>

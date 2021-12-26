@@ -11,6 +11,8 @@
         "nuxt3": "latest"
     },
     "dependencies": {
+        "canvas-confetti": "^1.4.0",
+        "request-promise": "^4.2.6",
         "sass": "^1.45.1"
     }
 }

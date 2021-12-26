@@ -11,15 +11,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 20px;
+    padding: 10px 20px;
   }
 
   .moyu-title {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; font-size: 24px;
 
     .logo {
       margin-right: 5px;
+    }
+    img {
+      transform: rotate(-35deg);
     }
     .badge {
       font-weight: normal;
@@ -36,6 +39,15 @@ header {
     margin: 0px;
     a {
       margin-right: 30px;
+      border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
+    }
+    a:hover {
+      border-bottom-color: #41403e;
+      border-bottom-color: var(--primary);
+      border-bottom-left-radius: 15px 3px;
+      border-bottom-right-radius: 15px 5px;
+      border-bottom-style: solid;
+      border-bottom-width: 5px;
     }
   }
 }
@@ -44,22 +56,24 @@ header {
 <template>
   <header class="paper margin-none padding-small">
     <div class="wrapper">
-      <h4 class="moyu-title margin-none">
-        <img
-          style="width: 50px; margin-right: 10px"
-          class="icon no-responsive no-border"
-          src="@sicons/ionicons5/FastFoodOutline.svg"
-        />
-        <div class="logo">摸鱼办</div>
-        <span class="badge secondary">广东分办</span>
-      </h4>
+      <nuxt-link to="/">
+        <h4 class="moyu-title margin-none">
+          <img
+            style="width: 35px; margin-right: 10px"
+            class="icon no-responsive no-border"
+            src="@sicons/ionicons5/FishOutline.svg"
+          />
+          <div class="logo">摸鱼办</div>
+          <span class="badge secondary">广东分办</span>
+        </h4></nuxt-link
+      >
       <!-- <div class="search-box">
         <label for="paperInputs3">Block Level</label>
         <input class="input-block" type="text" id="paperInputs3" />
       </div> -->
       <menu>
-        <nuxt-link to="">首页</nuxt-link>
-        <nuxt-link to="">关于</nuxt-link>
+        <nuxt-link to="/">首页</nuxt-link>
+        <nuxt-link to="/about">关于</nuxt-link>
       </menu>
     </div>
   </header>
