@@ -9,8 +9,10 @@
       padding: 13px 10px 10px 0px;
       color: var(--primary);
     }
-    a:hover {text-decoration: underline;}
- 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .badge {
       border-radius: 50px;
       margin-left: 10px;
@@ -27,13 +29,13 @@
     <h5 class="title margin-none">摸鱼日报</h5>
     <ul class="padding-none">
       <li
-        v-for="(item, index) in articleList.data.data"
+        v-for="(item, index) in articleList.data"
         :key="'item' + index"
         v-show="index < 10"
         class="article-item"
       >
         <nuxt-link
-          :to="`/detail?id=${item.commentNum}`"
+          :to="`/detail?id=${item._id}`"
           class="margin-none"
           :class="{ isRead: item.isRead }"
           ><span v-text="item.title"></span> </nuxt-link
@@ -47,8 +49,8 @@
 import { ref } from "vue";
 const { $api } = useNuxtApp();
 
-const articleList = await $api.GET("/article", {
-  limit: 10,
-  page: 1,
+const articleList = await $api.GET("/article/list", {
+  pageSize: 10000,
+  pageNum: 1,
 });
 </script>

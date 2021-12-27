@@ -1,15 +1,20 @@
 <style lang="scss" scoped>
 .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .login-btn {
     display: flex;
     align-items: center;
     padding: 5px 10px;
     border-radius: 50px;
-    margin: 0 auto;
+    margin: 0 auto; 
     color: #fff;
     background: #754b9d;
-    border: 1px #eee solid;
+    outline: 4px rgba($color: #0071de, $alpha: 0) solid;
     font-size: 14px;
+    border: none;
+    transition: all 0.12s;
     background: -moz-linear-gradient(top, #973cb2, #754b9d);
     background: -webkit-gradient(
       linear,
@@ -24,6 +29,13 @@
       margin-right: 5px;
     }
   }
+  .login-btn:hover {
+    transform: none;
+    outline: 4px rgba($color: #0071de, $alpha: 0.4) solid;
+  }
+  .login-btn:active {
+    transform: scale(0.97);
+  }
   p {
     color: #999;
     font-size: 14px;
@@ -37,20 +49,20 @@
 
 <template>
   <div class="paper user" id="userPlate">
-    <!-- <button
-      href="https://github.com/rhyneav/papercss"
+    <a
+      href="http://localhost:3098/mall/github/login"
       target="_blank"
-      class="paper-btn login-btn"
+      class="login-btn"
     >
       <img
         class="icon no-responsive no-border"
         src="@sicons/ionicons5/LogoGithub.svg"
       />
       使用 Github 登录
-    </button> -->
-    <div class="row flex-spaces child-borders">
+    </a>
+    <!-- <div class="row flex-spaces child-borders">
       <nuxt-link to="/login" class="paper-btn margin" >注册登录</nuxt-link>
-    </div>
+    </div> -->
 
     <p>
       摸鱼办是一个<span>分享生活</span>和<span>释放压力</span>的地方，大胆表达💛可以让你释放压力。

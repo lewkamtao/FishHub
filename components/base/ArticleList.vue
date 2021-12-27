@@ -108,7 +108,7 @@
 <template>
   <div class="paper padding-none margin-top-none article-list">
     <div
-      v-for="(item, index) in articleList.data.data"
+      v-for="(item, index) in articleList.data"
       :key="'item' + index"
       class="article-item-box"
     >
@@ -120,11 +120,11 @@
             class="icon no-responsive no-border"
             src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
           />
-          {{ util.randomInRange(10, 100) }}</span
+          {{ 231 }}</span
         >
       </div>
       <nuxt-link
-        :to="`/detail?id=${item.commentNum}`"
+        :to="`/detail?id=${item._id}`"
         class="article-item padding margin-none"
         :class="{ isRead: item.isRead }"
       >
@@ -142,16 +142,19 @@
             <div class="tags margin-right-small">
               <span
                 v-show="index <= 2"
-                v-for="(tag, index) in item.expand.sort"
+                v-for="(tag, index) in item.tags"
                 :key="'tag' + index"
                 class="badge tag"
-                v-text="tag.name"
+                v-text="tag"
               ></span>
             </div>
-            <span class="margin-right-small author" v-text="item.expand.author.nickname"></span>
+            <span
+              class="margin-right-small author"
+              v-text="item._id"
+            ></span>
             <span
               class="margin-right-small date"
-              v-text="util.getBeautifyTime(item.update_time)"
+              v-text="item.BeautifyUpdateTime"
             ></span>
           </div>
         </div>
@@ -165,10 +168,9 @@ import { ref } from "vue";
 import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
-const articleList: any = await $api.GET("/article", {
-  limit: 20,
-  page: 1,
-  order:"update_time desc"
+const articleList: any = await $api.GET("/article/list", {
+  pageSize: 20,
+  pageNum: 1,
 });
 
 import confetti from "canvas-confetti";

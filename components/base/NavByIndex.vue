@@ -7,7 +7,7 @@
   padding: 7px;
 
   a {
-    padding: 5px; 
+    padding: 5px;
     margin: 5px;
     font-weight: normal;
     color: var(--muted-light-10);
@@ -28,12 +28,12 @@
   <div class="nav-list">
     <nuxt-link
       :to="''"
-      v-for="(item, index) in tagsList.data.data"
+      v-for="(item, index) in tagsList.data"
       :key="`tags${index}`"
       class="badge"
       :class="{ active: index == 0 }"
     >
-      <span v-text="item.name"></span>
+      <span v-text="item.value"></span>
     </nuxt-link>
   </div>
 </template>
@@ -42,8 +42,8 @@
 import { ref } from "vue";
 const { $api } = useNuxtApp();
 
-const tagsList = await $api.GET("/article-sort", {
-  limit: 1000,
-  page: 1,
+const tagsList = await $api.GET("/articleTag", {
+  pageSize: 10000,
+  pageNum: 1,
 });
 </script>

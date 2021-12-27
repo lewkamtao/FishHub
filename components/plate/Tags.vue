@@ -25,16 +25,16 @@ a {
 </style>
 
 <template>
-  <div class="paper tags"  id="tagsPlate">
+  <div class="paper tags" id="tagsPlate">
     <h5 class="title margin-none">热门话题</h5>
     <div class="tags-box margin-top">
       <nuxt-link
         :to="''"
-        v-for="(item, index) in tagsList.data.data"
+        v-for="(item, index) in tagsList.data"
         :key="`tags${index}`"
         class="badge"
       >
-        <span v-text="item.name"></span>
+        <span v-text="item.value"></span>
       </nuxt-link>
     </div>
   </div>
@@ -43,10 +43,8 @@ a {
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
-
-const tagsList = await $api.GET("/tag", {
-  limit: 100,
+const tagsList = await $api.GET("/articleTag", {
+  pageSize: 10000,
+  pageNum: 1,
 });
-
-
 </script>
