@@ -13,7 +13,6 @@ a {
     color: var(--color);
   }
 }
-
 .tags-box {
   .badge {
     margin-bottom: 10px;
@@ -26,27 +25,28 @@ a {
 </style>
 
 <template>
-  <div class="paper about">
+  <div class="paper tags"  id="tagsPlate">
     <h5 class="title margin-none">热门话题</h5>
     <div class="tags-box margin-top">
       <nuxt-link
         :to="''"
-        v-for="(item, index) in tagsList.data"
+        v-for="(item, index) in tagsList.data.data"
         :key="`tags${index}`"
         class="badge"
       >
-        <span v-text="item.title"></span>
+        <span v-text="item.name"></span>
       </nuxt-link>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
 
-const tagsList = await $api.GET("/tags/list", {
-  limit: 10,
-  page: 2,
+const tagsList = await $api.GET("/tag", {
+  limit: 100,
 });
+
+
 </script>

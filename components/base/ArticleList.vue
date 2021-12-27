@@ -1,4 +1,7 @@
 <style lang="scss" scoped>
+.article-list {
+  border-top: none !important;
+}
 .article-item-box {
   position: relative;
 
@@ -103,9 +106,9 @@
 </style>
 
 <template>
-  <div>
+  <div class="paper padding-none margin-top-none article-list">
     <div
-      v-for="(item, index) in articleList.data"
+      v-for="(item, index) in articleList.data.data"
       :key="'item' + index"
       class="article-item-box"
     >
@@ -139,16 +142,16 @@
             <div class="tags margin-right-small">
               <span
                 v-show="index <= 2"
-                v-for="(tag, index) in item.tags"
+                v-for="(tag, index) in item.expand.sort"
                 :key="'tag' + index"
                 class="badge tag"
-                v-text="tag"
+                v-text="tag.name"
               ></span>
             </div>
-            <span class="margin-right-small author" v-text="item.author"></span>
+            <span class="margin-right-small author" v-text="item.expand.author.nickname"></span>
             <span
               class="margin-right-small date"
-              v-text="util.getBeautifyTime(item.lastReplyDate)"
+              v-text="util.getBeautifyTime(item.update_time)"
             ></span>
           </div>
         </div>
@@ -162,9 +165,10 @@ import { ref } from "vue";
 import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
-const articleList: any = await $api.GET("/article/list", {
-  limit: 10,
-  page: 2,
+const articleList: any = await $api.GET("/article", {
+  limit: 20,
+  page: 1,
+  order:"update_time desc"
 });
 
 import confetti from "canvas-confetti";

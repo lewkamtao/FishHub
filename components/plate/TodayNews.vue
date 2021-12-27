@@ -9,15 +9,8 @@
       padding: 13px 10px 10px 0px;
       color: var(--primary);
     }
-    a:hover {
-      border-bottom-color: #41403e;
-      border-bottom-color: var(--primary);
-      border-bottom-left-radius: 15px 3px;
-      border-bottom-right-radius: 15px 5px;
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      padding-bottom: 0.1rem;
-    }
+    a:hover {text-decoration: underline;}
+ 
     .badge {
       border-radius: 50px;
       margin-left: 10px;
@@ -30,11 +23,11 @@
 </style>
 
 <template>
-  <div class="paper TodayNews">
+  <div class="paper TodayNews" id="TodayNewsPlate">
     <h5 class="title margin-none">摸鱼日报</h5>
     <ul class="padding-none">
       <li
-        v-for="(item, index) in articleList.data"
+        v-for="(item, index) in articleList.data.data"
         :key="'item' + index"
         v-show="index < 10"
         class="article-item"
@@ -52,11 +45,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
-const articleList = await $api.GET("/article/list", {
+const articleList = await $api.GET("/article", {
   limit: 10,
-  page: 2,
+  page: 1,
 });
 </script>

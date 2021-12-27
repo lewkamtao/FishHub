@@ -1,9 +1,5 @@
 <style lang="scss" scoped>
 .user {
-  position: sticky;
-  top: 0px;
-  z-index: 99;
-  background: var(--main-background);
   .login-btn {
     display: flex;
     align-items: center;
@@ -40,8 +36,8 @@
 </style>
 
 <template>
-  <div class="paper user">
-    <button
+  <div class="paper user" id="userPlate">
+    <!-- <button
       href="https://github.com/rhyneav/papercss"
       target="_blank"
       class="paper-btn login-btn"
@@ -51,7 +47,10 @@
         src="@sicons/ionicons5/LogoGithub.svg"
       />
       使用 Github 登录
-    </button>
+    </button> -->
+    <div class="row flex-spaces child-borders">
+      <nuxt-link to="/login" class="paper-btn margin" >注册登录</nuxt-link>
+    </div>
 
     <p>
       摸鱼办是一个<span>分享生活</span>和<span>释放压力</span>的地方，大胆表达💛可以让你释放压力。

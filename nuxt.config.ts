@@ -11,14 +11,8 @@ export default defineNuxtConfig({
       // <meta name="viewport" content="width=device-width, initial-scale=1">
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
-    script: [
-      {
-        src: "https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0",
-      },
-      {
-        src: "./util/widget.js",
-      },
-    ],
+    script: [],
+
     link: [],
     // please note that this is an area that is likely to change
     style: [

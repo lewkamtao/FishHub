@@ -1,9 +1,13 @@
 <style lang="scss" scoped>
 header {
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  height: 70px;
+  z-index: 66;
+  overflow: hidden;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -16,7 +20,8 @@ header {
 
   .moyu-title {
     display: flex;
-    align-items: flex-end; font-size: 24px;
+    align-items: flex-end;
+    font-size: 24px;
 
     .logo {
       margin-right: 5px;
@@ -25,6 +30,7 @@ header {
       transform: rotate(-35deg);
     }
     .badge {
+      margin-bottom: 3px;
       font-weight: normal;
     }
   }
@@ -36,7 +42,8 @@ header {
 
   menu {
     display: flex;
-    margin: 0px;
+    align-items: center;
+    margin:6px 0px 0px 0px;
     a {
       margin-right: 30px;
       border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
@@ -64,7 +71,7 @@ header {
             src="@sicons/ionicons5/FishOutline.svg"
           />
           <div class="logo">摸鱼办</div>
-          <span class="badge secondary">广东分办</span>
+          <!-- <span class="badge secondary">广东分办</span> -->
         </h4></nuxt-link
       >
       <!-- <div class="search-box">
@@ -74,6 +81,9 @@ header {
       <menu>
         <nuxt-link to="/">首页</nuxt-link>
         <nuxt-link to="/about">关于</nuxt-link>
+        <div style="margin-bottom: 5px" class="post-btn badge"> 
+          <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="">
+          创建话题</div>
       </menu>
     </div>
   </header>

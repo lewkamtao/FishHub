@@ -5,6 +5,7 @@ export default defineNuxtPlugin(() => {
     provide: {
       api: {
         GET: (url, params) => GET(url, params),
+        GETP: (url, params) => GETP(url, params),
         PUT: (url, params) => PUT(url, params),
         POST: (url, params) => POST(url, params),
         PATCH: (url, params) => PATCH(url, params),
@@ -26,6 +27,15 @@ const GET = async (url, params) => {
     env().BASE_URL + url + "?" + stringfy(params),
     config
   );
+  return await response.json();
+};
+
+// 网络请求 - GET
+const GETP = async (url, params) => {
+  // 定义 Token
+  const config = { headers: { token: env().TOKEN } };
+  // 合并 headers 数据
+  const response = await fetch(url + "?" + stringfy(params), config);
   return await response.json();
 };
 

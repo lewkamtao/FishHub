@@ -1,12 +1,15 @@
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.setting {
+  margin-bottom: 200px;
+}
+</style>
 
 <template>
-  <div class="paper">
+  <div class="paper setting" id="settingPlate">
     <h5 class="title margin-none">设置</h5>
-
     <fieldset class="form-group" style="margin-bottom: 0px; margin-top: 20px">
       <label class="paper-switch-2">
-        <input
+        <input 
           id="paperSwitch8"
           v-model="isDark"
           name="paperSwitch8"
@@ -23,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 let isDark = ref(false);
 
 watch(

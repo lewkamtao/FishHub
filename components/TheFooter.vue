@@ -1,8 +1,8 @@
 <style lang="scss" scoped>
 footer {
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+  position: relative;
+  z-index: 66;
+  margin-top: 30px;
   .wrapper {
     color: #999;
     padding: 15px;
@@ -70,11 +70,10 @@ footer {
         <nuxt-link to=""> 帮助文档 </nuxt-link>
         <nuxt-link to=""> 开放能力 </nuxt-link>
         <nuxt-link to=""> 我们的愿景 </nuxt-link>
-        <div class="slogan margin-top">
-          即使生活一地鸡毛，也要偶尔抬头仰望星空。
-        </div>
       </div>
-
+      <div class="slogan margin-top">
+        即使生活一地鸡毛，也要偶尔抬头仰望星空。
+      </div>
       <div class="dev-info margin-top">
         Powered by Nuxt3. Copyright © Lew Kamtao
       </div>

@@ -4,6 +4,9 @@ module.exports = {
     browser: true,
     node: true,
   },
+  globals: {
+    defineProps: "readonly",
+  },
   parserOptions: {
     parser: "babel-eslint",
   },
@@ -12,3 +15,4 @@ module.exports = {
   // add your custom rules here
   rules: {},
 };
+ 

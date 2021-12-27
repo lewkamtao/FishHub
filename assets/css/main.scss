@@ -5,6 +5,10 @@
     src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"), url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff") format("woff");
 }
 
+html {
+    overflow-y: scroll;
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -60,6 +64,10 @@ html.dark body {
             border-bottom: 1px #333 solid;
         }
     }
+    .comment-box,
+    .comment-nav {
+        border-bottom: 1px #333 solid;
+    }
     .nav {
         border-bottom: 1px #333 solid;
     }
@@ -67,6 +75,7 @@ html.dark body {
 
 .paper {
     box-sizing: border-box;
+    box-shadow: none;
 }
 
 #he-plugin-standard {
@@ -86,12 +95,33 @@ html.dark body {
     }
 }
 
+
+/* 使用伪类选择器 ::-webkit-scrollbar ,兼容chrome和safari浏览器 */
+
+.hid-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+/*兼容火狐*/
+
+.hid-scrollbar {
+    scrollbar-width: none;
+}
+
+
+/* 兼容IE10+ */
+
+.hid-scrollbar {
+    -ms-overflow-style: none;
+}
+
 // message
 #geek-message-box {
     position: fixed;
     display: flex;
     flex-direction: column;
-    z-index: 999;
+    z-index: 99;
     left: 50%;
     transform: translateX(-50%);
     top: 80px;
@@ -138,4 +168,29 @@ html.dark body {
         opacity: 0;
         margin-top: -60px;
     }
+}
+
+.post-btn {
+    display: flex;
+    align-items: center;
+    background: var(--secondary);
+    padding: 6px 15px;
+    color: var(--white);
+    font-weight: normal;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s;
+    img {
+        width: 20px;
+        margin-right: 5px;
+        filter: invert(100%);
+    }
+}
+
+.post-btn:hover {
+    background: var(--secondary-light-10);
+}
+
+.post-btn:active {
+    background: var(--secondary);
 }

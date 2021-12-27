@@ -1,4 +1,8 @@
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  background: #eee;
+}
+</style>
 
 <template>
   <img :src="src" :style="imgStyle" alt="" srcset="" />
@@ -6,15 +10,13 @@
 
 <script setup lang="ts">
 import { ref, defineProps } from "vue";
-import util from "@/util/index";
-
-// 采用ts专有声明，有默认值
-interface Props {
-  src: string;
-}
-const props = withDefaults(defineProps<Props>(), {
-  src: "",
+const props = defineProps({
+  src: {
+    type: String,
+    default: "",
+  },
 });
+import util from "@/util/index";
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
   225,
