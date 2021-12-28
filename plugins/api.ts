@@ -20,8 +20,9 @@ const env = () => useRuntimeConfig();
 
 // 网络请求 - GET
 const GET = async (url, params) => {
+  const token = useCookie("token");
   // 定义 Token
-  const config = { headers: { token: env().TOKEN } };
+  const config = { headers: { authorization: token.value } };
   // 合并 headers 数据
   const response = await fetch(
     env().BASE_URL + url + "?" + stringfy(params),
@@ -32,21 +33,20 @@ const GET = async (url, params) => {
 
 // 网络请求 - GET
 const GETP = async (url, params) => {
-  // 定义 Token
-  const config = { headers: { token: env().TOKEN } };
   // 合并 headers 数据
-  const response = await fetch(url + "?" + stringfy(params), config);
+  const response = await fetch(url + "?" + stringfy(params), {});
   return await response.json();
 };
 
 // 网络请求 - POST
 const POST = async (url, params) => {
+  const token = useCookie("token");
   // 默认配置
   const opt = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      token: env().TOKEN,
+      authorization: token.value,
     },
     body: JSON.stringify(params),
   };
@@ -58,12 +58,13 @@ const POST = async (url, params) => {
 
 // 网络请求 - PUT
 const PUT = async (url, params) => {
+  const token = useCookie("token");
   // 默认配置
   const opt = {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      token: env().TOKEN,
+      authorization: token.value,
     },
     body: JSON.stringify(params),
   };
@@ -75,12 +76,13 @@ const PUT = async (url, params) => {
 
 // 网络请求 - DELETE
 const DELETE = async (url, params) => {
+  const token = useCookie("token");
   // 默认配置
   const opt = {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      token: env().TOKEN,
+      authorization: token.value,
     },
     body: JSON.stringify(params),
   };
@@ -92,12 +94,13 @@ const DELETE = async (url, params) => {
 
 // 网络请求 - PATCH
 const PATCH = async (url, params) => {
+  const token = useCookie("token");
   // 默认配置
   const opt = {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      token: env().TOKEN,
+      authorization: token.value,
     },
     body: JSON.stringify(params),
   };

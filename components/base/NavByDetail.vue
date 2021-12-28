@@ -25,10 +25,10 @@
   <div class="nav-by-detail">
     <div class="title">{{ opt.title }}</div>
     <div class="author-info">
-      <base-geek-img
+      <base-geek-avatar
         style="width: 25px"
         :src="`https://unsplash.it/100`"
-      ></base-geek-img>
+      ></base-geek-avatar>
 
       <div class="author">{{ opt.author }}</div>
       <div class="updateTime">刚刚</div>

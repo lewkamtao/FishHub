@@ -130,9 +130,9 @@
       >
         <div class="avatar-box">
           <!-- <img :src="item.urls.original" alt="" srcset="" class="avatar" /> -->
-          <base-geek-img
+          <base-geek-avatar
             :src="`https://unsplash.it/100?${index}`"
-          ></base-geek-img>
+          ></base-geek-avatar>
         </div>
         <div class="content">
           <div class="top">

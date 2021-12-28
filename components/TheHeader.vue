@@ -43,7 +43,7 @@ header {
   menu {
     display: flex;
     align-items: center;
-    margin:6px 0px 0px 0px;
+    margin: 6px 0px 0px 0px;
     a {
       margin-right: 30px;
       border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
@@ -81,9 +81,10 @@ header {
       <menu>
         <nuxt-link to="/">首页</nuxt-link>
         <nuxt-link to="/about">关于</nuxt-link>
-        <div style="margin-bottom: 5px" class="post-btn badge"> 
-          <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="">
-          创建话题</div>
+        <div style="margin-bottom: 5px" class="post-btn badge">
+          <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="" />
+          创建话题
+        </div>
       </menu>
     </div>
   </header>

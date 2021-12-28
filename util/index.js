@@ -77,7 +77,7 @@ function initDomStyle() {
   if (domGeekHandle) {
     domGeekHandle.style.cssText = `opacity:1;top:${
       domGeekWrapper.offsetTop + 100
-    }px;left:${domGeekWrapper.offsetLeft}px`;
+    }px;left:${domGeekWrapper.offsetLeft - 10}px`;
   }
   if (domgeekSidebar) {
     domgeekSidebar.style.cssText = `opacity:1;left:${

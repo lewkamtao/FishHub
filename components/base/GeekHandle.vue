@@ -37,6 +37,12 @@
 
 <template>
   <div id="geekHandle" class="handle">
+    <div @click="back()" class="paper-btn">
+      <img
+        class="icon no-responsive no-border"
+        src="@sicons/ionicons5/ChevronBackOutline.svg"
+      />
+    </div>
     <nuxt-link to="/" class="paper-btn">
       <img
         class="icon no-responsive no-border"
@@ -59,4 +65,11 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "#imports";
+const router = useRouter();
+
+const back = () => {
+  router.go(-1);
+};
+</script>

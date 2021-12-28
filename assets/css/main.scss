@@ -12,6 +12,7 @@ html {
 html,
 body {
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 a,
@@ -187,10 +188,10 @@ html.dark body {
     }
 }
 
-.post-btn:hover {
-    background: var(--secondary-light-10);
+.badge:hover {
+    opacity: 0.8;
 }
 
-.post-btn:active {
-    background: var(--secondary);
+.badge:active {
+    opacity: 1;
 }

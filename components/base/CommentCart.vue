@@ -5,8 +5,12 @@
 .comment-box:hover {
   background: var(--primary-shaded-70);
   cursor: pointer;
+  .reply-btn {
+    opacity: 0.8;
+  }
 }
 .comment-box {
+  position: relative;
   padding: 20px;
   display: flex;
   border-bottom: 1px solid var(--muted-light);
@@ -31,6 +35,16 @@
     margin-top: 5px;
     color: #888;
   }
+  .reply-btn {
+    padding: 2px;
+    height: 30px;
+    transition: all 0.25s;
+    white-space: nowrap;
+    opacity: 0;
+  }
+  .reply-btn:active {
+    opacity: 1;
+  }
 }
 </style>
 
@@ -38,55 +52,74 @@
   <div class="comment-wrapper">
     <div class="comment">
       <div class="comment-box comment-parent">
-        <base-geek-img
+        <base-geek-avatar
           style="width: 45px; height: 45px"
-          :src="comment.expand.head_img"
+          :src="comment.user[0].avatar"
         >
-        </base-geek-img>
+        </base-geek-avatar>
         <div class="content">
           <div class="header">
             <a class="author" target="_blank">
-              {{ comment.nickname }}
+              {{ comment.user[0].nickname }}
             </a>
 
             <div class="metadata">
-              <span class="date">
-                {{ util.getBeautifyTime(`2021-12-21 11:06:51`) }}</span
-              >
+              <span class="date"> {{ comment.BeautifyUpdateTime }}</span>
             </div>
           </div>
           <div class="text">
             {{ comment.content }}
           </div>
         </div>
-        <base-comment-form></base-comment-form>
-      </div>
-      <div v-if="comment.son && comment.son.length > 0" class="comment-child">
         <div
-          v-for="(son, index) in comment.son"
-          :key="'son' + index"
-          class="comment-box"
+          @click="reply({ id: comment._id, pid: comment.pid })"
+          class="post-btn badge reply-btn"
         >
-          <base-geek-img
-            style="width: 45px; height: 45px"
-            :src="son.expand.head_img"
-          >
-          </base-geek-img>
-          <div class="content">
-            <div class="header">
-              <a class="author" target="_blank"> {{ son.nickname }}</a>
-
-              <div class="metadata">
-                <span class="date">
-                  {{ util.getBeautifyTime(`2021-12-21 11:06:51`) }}</span
+          回复
+        </div>
+      </div>
+      <base-comment-form
+        v-if="curId == comment._id"
+        :curPid="curPid"
+        :article_id="comment.article_id"
+      ></base-comment-form>
+      <div
+        v-if="comment.children && comment.children.length > 0"
+        class="comment-child"
+      >
+        <div v-for="(child, index) in comment.children" :key="'son' + index">
+          <div class="comment-box">
+            <base-geek-avatar
+              style="width: 45px; height: 45px"
+              :src="child.user[0].avatar"
+            >
+            </base-geek-avatar>
+            <div class="content">
+              <div class="header">
+                <a class="author" target="_blank">
+                  {{ child.user[0].nickname }}</a
                 >
+
+                <div class="metadata">
+                  <span class="date"> {{ child.BeautifyUpdateTime }}</span>
+                </div>
+              </div>
+              <div class="text">
+                {{ child.content }}
               </div>
             </div>
-            <div class="text">
-              {{ son.content }}
+            <div
+              @click="reply({ id: child._id, pid: child.pid })"
+              class="post-btn badge reply-btn"
+            >
+              回复
             </div>
           </div>
-          <base-comment-form></base-comment-form>
+          <base-comment-form
+            v-if="curId == child._id"
+            :curPid="curPid"
+            :article_id="child.article_id"
+          ></base-comment-form>
         </div>
       </div>
     </div>
@@ -96,6 +129,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import util from "@/util/index.js";
+
+const curId = ref("");
+const curPid = ref("");
+
+const reply = ({ id, pid }) => {
+  curId.value = id;
+  curPid.value = pid;
+};
+
 const props = defineProps({
   comment: {
     type: Object,
