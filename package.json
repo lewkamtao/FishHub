@@ -2,8 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "nuxi dev",
-        "build": "nuxi build",
-        "start": "node .output/server/index.mjs"
+        "build": "nuxi build"
     },
     "devDependencies": {
         "@sicons/ionicons5": "^0.11.0",
