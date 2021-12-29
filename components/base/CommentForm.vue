@@ -1,16 +1,21 @@
 <style lang="scss" scoped>
 .comment-form {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
   border-bottom: 1px solid var(--muted-light);
   height: auto;
   padding: 20px;
 }
 .form-box {
-  width: calc(100% - 50px);
+  width: 100%;
 }
 textarea {
   background: #fff;
+}
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
 
@@ -21,22 +26,63 @@ textarea {
       <textarea
         style="width: 100%; height: 100px"
         placeholder="此刻你的想法..."
+        v-model="form.content"
       ></textarea>
+    </div>
+    <div class="form-footer">
+      <button
+        @click="close"
+        class="btn btn-small btn-danger margin-top margin-right"
+      >
+        取消
+      </button>
+      <button @click="postComment" class="btn btn-small margin-top">
+        biu！biu！发射~
+      </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+import util from "~~/util";
+
+const { $api } = useNuxtApp();
+
 const props = defineProps({
-  curPid: {
-    type: String,
-    default: "",
-  },
-  article_id: {
-    type: String,
-    default: "",
+  comment: {
+    type: Object,
+    default: {} as any,
   },
 });
-console.log(props.curPid);
-console.log(props.article_id);
+
+let form: any = ref({
+  article_id: props.comment.article_id,
+  pid: props.comment.pid || props.comment._id,
+  content: "",
+});
+
+const emit = defineEmits(["updateCommentList", "close"]);
+
+const close = () => {
+  emit("close");
+};
+
+const postComment = () => {
+  $api.POST("/comment", form.value).then((res) => {
+    if (res.code == 200) {
+      emit("updateCommentList", res.data);
+      util.addAlert({
+        type: "success",
+        text: res.tips,
+      });
+      emit("close");
+    } else {
+      util.addAlert({
+        type: "error",
+        text: res.tips,
+      });
+    }
+  });
+};
 </script>

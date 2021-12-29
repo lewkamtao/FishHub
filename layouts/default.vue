@@ -14,7 +14,6 @@
     <div class="wrapper row margin-none" id="geekWrapper">
       <div class="sm-12 md-8 col padding-bottom-none">
         <slot />
-
         <the-footer></the-footer>
       </div>
       <the-sidebar></the-sidebar>
@@ -25,7 +24,6 @@
 <script setup>
 // your setup script
 import { watch, onMounted } from "vue";
-import { useRoute } from "#imports";
 import util from "~~/util";
 const route = useRoute();
 watch(

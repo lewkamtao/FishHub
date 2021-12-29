@@ -26,7 +26,7 @@ a {
 
 <template>
   <div class="paper tags" id="tagsPlate">
-    <h5 class="title margin-none">热门话题</h5>
+    <h5 class="title margin-none">热门标签</h5>
     <div class="tags-box margin-top">
       <nuxt-link
         :to="''"
@@ -43,8 +43,5 @@ a {
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
-const tagsList = await $api.GET("/articleTag", {
-  pageSize: 10000,
-  pageNum: 1,
-});
+const tagsList = await $api.GET("/articleTag", {});
 </script>

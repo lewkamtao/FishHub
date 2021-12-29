@@ -141,16 +141,13 @@
           <div class="bottom margin-top-small">
             <div class="tags margin-right-small">
               <span
-                v-show="index <= 2"
-                v-for="(tag, index) in item.tags"
-                :key="'tag' + index"
                 class="badge tag"
-                v-text="tag"
+                v-text="item.type"
               ></span>
             </div>
             <span
               class="margin-right-small author"
-              v-text="item._id"
+              v-text="item.user[0] && item.user[0].nickname"
             ></span>
             <span
               class="margin-right-small date"

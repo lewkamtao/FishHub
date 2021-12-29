@@ -28,7 +28,11 @@ const GET = async (url, params) => {
     env().BASE_URL + url + "?" + stringfy(params),
     config
   );
-  return await response.json();
+  let res = await response.json();
+  if (res.code == 401) {
+    token.value = "";
+  }
+  return res;
 };
 
 // 网络请求 - GET
@@ -52,8 +56,11 @@ const POST = async (url, params) => {
   };
 
   const response = await fetch(env().BASE_URL + url, opt);
-
-  return await response.json();
+  let res = await response.json();
+  if (res.code == 401) {
+    token.value = "";
+  }
+  return res;
 };
 
 // 网络请求 - PUT
@@ -70,8 +77,11 @@ const PUT = async (url, params) => {
   };
 
   const response = await fetch(env().BASE_URL + url, opt);
-
-  return await response.json();
+  let res = await response.json();
+  if (res.code == 401) {
+    token.value = "";
+  }
+  return res;
 };
 
 // 网络请求 - DELETE
@@ -88,8 +98,11 @@ const DELETE = async (url, params) => {
   };
 
   const response = await fetch(env().BASE_URL + url, opt);
-
-  return await response.json();
+  let res = await response.json();
+  if (res.code == 401) {
+    token.value = "";
+  }
+  return res;
 };
 
 // 网络请求 - PATCH
@@ -106,8 +119,11 @@ const PATCH = async (url, params) => {
   };
 
   const response = await fetch(env().BASE_URL + url, opt);
-
-  return await response.json();
+  let res = await response.json();
+  if (res.code == 401) {
+    token.value = "";
+  }
+  return res;
 };
 
 /**

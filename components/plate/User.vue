@@ -1,5 +1,6 @@
 <style lang="scss" scoped>
 .user {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,12 +75,32 @@
       margin: 0px 3px;
     }
   }
+
+  .loginOut-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 </style>
 
 <template>
   <div class="paper user" id="userPlate">
     <div v-if="token" class="user-info">
+      <div popover-left="退出登录" class="loginOut-btn margin-none">
+        <img
+          @click="loginOut"
+          src="@sicons/ionicons5/LogInOutline.svg"
+          alt=""
+          srcset=""
+        />
+      </div>
+
       <base-geek-avatar
         style="width: 100px"
         :src="user.data.avatar"
@@ -126,6 +147,11 @@
 import { ref } from "vue";
 const { $api } = useNuxtApp();
 const token = useCookie("token");
+
+const loginOut = () => {
+  token.value = "";
+  location.reload();
+};
 
 const user: any = await $api.GET("/user", {});
 </script>

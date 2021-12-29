@@ -15,7 +15,7 @@
     <base-nav-by-index v-if="type == 'index'"> </base-nav-by-index>
     <base-nav-by-detail
       v-if="type == 'detail'"
-      :opt="opt"
+      :articleData="articleData"
       class="title"
     ></base-nav-by-detail>
   </div>
@@ -29,7 +29,7 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  opt: {
+  articleData: {
     type: Object,
     default: {},
   },

@@ -42,7 +42,7 @@
 import { ref } from "vue";
 const { $api } = useNuxtApp();
 
-const tagsList = await $api.GET("/articleTag", {
+const tagsList = await $api.GET("/articleType", {
   pageSize: 10000,
   pageNum: 1,
 });

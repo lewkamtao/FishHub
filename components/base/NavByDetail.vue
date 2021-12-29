@@ -23,28 +23,25 @@
 
 <template>
   <div class="nav-by-detail">
-    <div class="title">{{ opt.title }}</div>
+    <div class="title">{{ articleData.title }}</div>
     <div class="author-info">
       <base-geek-avatar
         style="width: 25px"
-        :src="`https://unsplash.it/100`"
+        :src="articleData.user[0].avatar"
       ></base-geek-avatar>
 
-      <div class="author">{{ opt.author }}</div>
-      <div class="updateTime">刚刚</div>
+      <div class="author">{{ articleData.user[0].nickname }}</div>
+      <div class="updateTime">{{ articleData.BeautifyUpdateTime }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, onMounted } from "vue";
-import util from "../../util";
+import { ref } from "vue";
 const props = defineProps({
-  opt: {
+  articleData: {
     type: Object,
     default: {},
   },
 });
-
-
 </script>

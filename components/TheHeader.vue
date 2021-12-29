@@ -81,7 +81,7 @@ header {
       <menu>
         <nuxt-link to="/">首页</nuxt-link>
         <nuxt-link to="/about">关于</nuxt-link>
-        <div style="margin-bottom: 5px" class="post-btn badge">
+        <div style="margin-bottom: 5px" class="post-btn badge" @click="post">
           <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="" />
           创建话题
         </div>
@@ -90,4 +90,14 @@ header {
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router: any = useRouter();
+const token = useCookie("token");
+const post = () => {
+  if (token) {
+    router.push("/post");
+  } else {
+    router.push("/login");
+  }
+};
+</script>

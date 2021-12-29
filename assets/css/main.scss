@@ -57,6 +57,9 @@ html.dark body {
     .icon {
         filter: invert(100%);
     }
+    .sofa {
+        filter: none;
+    }
     .paper {
         border: 1px #333 solid;
     }
@@ -72,6 +75,33 @@ html.dark body {
     .nav {
         border-bottom: 1px #333 solid;
     }
+}
+
+.content-form {
+    border-bottom-left-radius: 5px 255px;
+    border-bottom-right-radius: 225px 5px;
+    border-top-left-radius: 255px 5px;
+    border-top-right-radius: 5px 225px;
+    border: 2px solid #41403e;
+    border-color: var(--primary);
+    display: block;
+    overflow: hidden;
+    ul li {
+        text-indent: 0px;
+    }
+    ul li:before {
+        left: auto;
+    }
+    .v-md-editor__main {
+        flex-direction: column;
+        .v-md-editor__editor-wrapper {
+            border-bottom: 2px #eee solid;
+        }
+    }
+}
+
+.github-markdown-body {
+    padding: 0px !important;
 }
 
 .paper {

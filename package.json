@@ -11,6 +11,7 @@
         "nuxt3": "latest"
     },
     "dependencies": {
+        "@kangc/v-md-editor": "^2.3.13",
         "canvas-confetti": "^1.4.0",
         "sass": "^1.45.1"
     }

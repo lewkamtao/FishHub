@@ -64,24 +64,22 @@
             </a>
 
             <div class="metadata">
-              <span class="date"> {{ comment.BeautifyUpdateTime }}</span>
+              <span class="date">
+                {{ comment.BeautifyUpdateTime || "刚刚" }}</span
+              >
             </div>
           </div>
           <div class="text">
             {{ comment.content }}
           </div>
         </div>
-        <div
-          @click="reply({ id: comment._id, pid: comment.pid })"
-          class="post-btn badge reply-btn"
-        >
-          回复
-        </div>
+        <div @click="reply(comment)" class="post-btn badge reply-btn">回复</div>
       </div>
       <base-comment-form
+        @close="close"
         v-if="curId == comment._id"
-        :curPid="curPid"
-        :article_id="comment.article_id"
+        @updateCommentList="updateCommentList"
+        :comment="curComment"
       ></base-comment-form>
       <div
         v-if="comment.children && comment.children.length > 0"
@@ -101,24 +99,22 @@
                 >
 
                 <div class="metadata">
-                  <span class="date"> {{ child.BeautifyUpdateTime }}</span>
+                  <span class="date"> {{ child.BeautifyUpdateTime || "刚刚" }}</span>
                 </div>
               </div>
               <div class="text">
                 {{ child.content }}
               </div>
             </div>
-            <div
-              @click="reply({ id: child._id, pid: child.pid })"
-              class="post-btn badge reply-btn"
-            >
+            <div @click="reply(child)" class="post-btn badge reply-btn">
               回复
             </div>
           </div>
           <base-comment-form
+            @close="close"
             v-if="curId == child._id"
-            :curPid="curPid"
-            :article_id="child.article_id"
+            @updateCommentList="updateCommentList"
+            :comment="curComment"
           ></base-comment-form>
         </div>
       </div>
@@ -130,18 +126,35 @@
 import { ref } from "vue";
 import util from "@/util/index.js";
 
-const curId = ref("");
-const curPid = ref("");
-
-const reply = ({ id, pid }) => {
-  curId.value = id;
-  curPid.value = pid;
-};
+const curComment: any = ref({});
 
 const props = defineProps({
   comment: {
     type: Object,
     default: {} as any,
   },
+  curId: {
+    type: String,
+    default: "",
+  },
+  article_id: {
+    type: String,
+    default: "",
+  },
 });
+const emit = defineEmits(["updateCommentList", "updateCurId"]);
+
+const updateCommentList = (data) => {
+  emit("updateCommentList", data);
+};
+
+const close = () => {
+  emit("updateCurId", "");
+};
+
+const reply = (comment) => {
+  curComment.value = comment;
+  curComment.value.article_id = props.article_id;
+  emit("updateCurId", comment._id);
+};
 </script>
