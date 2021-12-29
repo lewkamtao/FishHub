@@ -8,7 +8,7 @@ module.exports = {
       args: "start",
       env: {
         NODE_ENV: "production",
-        PORT: 3093, // 修改之后 注意反向代理也要改!
+        PORT: 3092, // 修改之后 注意反向代理也要改!
       },
     },
   ],
