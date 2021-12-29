@@ -4,7 +4,6 @@ import { defineNuxtConfig } from "nuxt3";
 export default defineNuxtConfig({
   publicRuntimeConfig: {
     BASE_URL: process.env.BASE_URL,
-    TOKEN: process.env.TOKEN,
   },
   meta: {
     meta: [

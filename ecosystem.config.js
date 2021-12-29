@@ -4,7 +4,7 @@ module.exports = {
       name: "moyu_ban_geek_hub",
       exec_mode: "cluster",
       instances: "max", // Or a number of instances
-      script: "./node_modules/nuxt/bin/nuxt.js",
+      script: ".output/server/index.mjs",
       args: "start",
       env: {
         NODE_ENV: "production",
