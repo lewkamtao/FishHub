@@ -13,7 +13,12 @@ export default defineNuxtConfig({
     ],
     script: [],
 
-    link: [],
+    link: [
+      {
+        rel: "stylesheet",
+        href: "https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/style/paper.css",
+      },
+    ],
     // please note that this is an area that is likely to change
     style: [
       // <style type="text/css">:root { color: red }</style>
@@ -21,11 +26,5 @@ export default defineNuxtConfig({
     ],
   },
 
-  css: [
-    // Load a Node.js module directly (here it's a Sass file)
-    // CSS file in the project
-    "@/assets/css/paper.css",
-    // SCSS file in the project
-    "@/assets/css/main.scss",
-  ],
+  css: ["@/assets/css/main.scss"],
 });
