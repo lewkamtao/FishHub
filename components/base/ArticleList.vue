@@ -103,6 +103,63 @@
   background: var(--primary-shaded-70);
   cursor: pointer;
 }
+.loading-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .not-more {
+    color: #999;
+    height: 40px;
+    line-height: 40px;
+    margin: 15px;
+  }
+  .more-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    width: 120px;
+    height: 40px;
+    margin: 15px;
+    user-select: none;
+    background: #0071de;
+    transition: all 0.1s;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #fff;
+    .donut {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.4);
+      border-left-color: #ffffff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      opacity: 0;
+      animation: donut-spin 0.8s linear infinite;
+      transition: all 0.15s;
+      transform: translateX(0px);
+    }
+  }
+  .loading {
+    width: 40px;
+    .donut {
+      opacity: 1;
+    }
+  }
+  @keyframes donut-spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+}
 </style>
 
 <template>
@@ -151,18 +208,94 @@
         </div>
       </nuxt-link>
     </div>
+    <div class="loading-more" @click="getMore">
+      <div v-if="isGet" class="more-btn" :class="{ loading: loading }">
+        <span class="donut"></span>
+        {{ loading ? "" : "加载更多" }}
+      </div>
+      <div v-if="!isGet" class="not-more">没有更多了</div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
-const articleList: any = await $api.GET("/article/list", {
-  pageSize: 20,
+const articleTypeId: any = ref("");
+
+const route = useRoute();
+watch(
+  () => route.query.articleTypeId,
+  () => {
+    articleTypeId.value = route.query.articleTypeId || "";
+    PageOptions.value.pageNum = 1;
+    updateArticleList("new");
+  }
+);
+
+const articleList: any = ref({} as any);
+
+const loading = ref(false);
+const isGet = ref(false);
+
+const PageOptions = ref({
   pageNum: 1,
+  pageSize: 5,
 });
+
+// 初始请求
+await $api
+  .GET("/article/list", {
+    pageNum: PageOptions.value.pageNum,
+    pageSize: PageOptions.value.pageSize,
+    type: articleTypeId.value,
+  })
+  .then((res) => {
+    if (res.code == 200) {
+      if (res.data.length == PageOptions.value.pageSize) {
+        isGet.value = true;
+      } else {
+        isGet.value = false;
+      }
+      articleList.value = res;
+    }
+  });
+
+// 追加
+const updateArticleList: any = (type) => {
+  loading.value = true;
+  $api
+    .GET("/article/list", {
+      pageNum: PageOptions.value.pageNum,
+      pageSize: PageOptions.value.pageSize,
+      type: articleTypeId.value,
+    })
+    .then((res) => {
+      loading.value = false;
+      if (res.code == 200) {
+        if (res.data.length == PageOptions.value.pageSize) {
+          isGet.value = true;
+        } else {
+          isGet.value = false;
+        }
+
+        if (type == "new") {
+          articleList.value = res;
+        } else {
+          articleList.value.data = articleList.value.data.concat(res.data);
+        }
+      }
+    });
+};
+
+const getMore = () => {
+  if (isGet.value) {
+    PageOptions.value.pageNum += 1;
+    updateArticleList();
+  }
+};
 
 import confetti from "canvas-confetti";
 

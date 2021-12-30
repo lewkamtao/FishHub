@@ -127,7 +127,7 @@ var commentListData: any = await $api.GET("/comment/list", {
 
 commentList.value = commentListData;
 
-const updateCommentList = (data) => {
+const updateCommentList = () => {
   $api
     .GET("/comment/list", {
       article_id: props.article_id,
@@ -145,7 +145,7 @@ const updateCurId = (curId: any) => {
 };
 
 const reply = () => {
-  const token =useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
     util.addAlert({
       type: "warning",

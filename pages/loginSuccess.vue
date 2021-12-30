@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { useRoute, useRouter } from "#imports";
 import util from "../util/index";
 
 const route: any = useRoute();

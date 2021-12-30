@@ -34,4 +34,6 @@ const props = defineProps({
     default: {},
   },
 });
+
+const emit = defineEmits(["changeIdByindex"]);
 </script>
