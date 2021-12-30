@@ -69,6 +69,24 @@ const close = () => {
 };
 
 const postComment = () => {
+  const token =useCookie("token")
+  if (!token.value) {
+    util.addAlert({
+      type: "warning",
+      text: "未登录，请先登录",
+    });
+    return;
+  }
+
+  if (form.value.content == "") {
+    util.addAlert({
+      type: "warning",
+      text: "内容不可为空",
+    });
+
+    return;
+  }
+
   $api.POST("/comment", form.value).then((res) => {
     if (res.code == 200) {
       emit("updateCommentList", res.data);

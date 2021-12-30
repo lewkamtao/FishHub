@@ -92,12 +92,18 @@ header {
 
 <script setup lang="ts">
 const router: any = useRouter();
-const token = useCookie("token");
+
+import util from "~~/util";
+
 const post = () => {
-  if (token) {
-    router.push("/post");
-  } else {
-    router.push("/login");
+  const token = useCookie("token")
+  if (!token.value) {
+    util.addAlert({
+      type: "warning",
+      text: "未登录，请先登录",
+    });
+    return;
   }
+  router.push("/post");
 };
 </script>

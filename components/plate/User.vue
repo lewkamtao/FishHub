@@ -146,7 +146,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 const { $api } = useNuxtApp();
-const token = useCookie("token");
+const token = useCookie("token", { maxAge: 2419200 });
 
 const loginOut = () => {
   token.value = "";

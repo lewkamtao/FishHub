@@ -37,10 +37,11 @@
   }
   .reply-btn {
     padding: 2px;
-    height: 30px;
+    height: 24px;
     transition: all 0.25s;
     white-space: nowrap;
     opacity: 0;
+    font-size: 13px;
   }
   .reply-btn:active {
     opacity: 1;
@@ -153,6 +154,14 @@ const close = () => {
 };
 
 const reply = (comment) => {
+   const token =useCookie("token")
+  if (!token.value) {
+    util.addAlert({
+      type: "warning",
+      text: "未登录，请先登录",
+    });
+    return;
+  }
   curComment.value = comment;
   curComment.value.article_id = props.article_id;
   emit("updateCurId", comment._id);

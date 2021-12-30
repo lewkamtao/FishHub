@@ -170,19 +170,18 @@ html.dark body {
         transform: translateY(-5px);
         white-space: nowrap;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
-        color: #000;
         font-size: 14px;
     }
     .alert-danger {
-        background-color: #ffeaea;
+        background-color: #fdf7f7;
         border-color: #a7342d;
     }
     .alert-success {
-        background-color: rgb(235, 255, 240);
+        background-color: rgb(248, 255, 250);
         border-color: #86a361;
     }
     .alert-warning {
-        background-color: rgb(253, 245, 223);
+        background-color: rgb(255, 253, 246);
         border-color: #ddcd45;
     }
     .icon {

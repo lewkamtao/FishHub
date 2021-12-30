@@ -40,12 +40,12 @@
   <div class="paper padding-none comment-list">
     <div class="comment-nav">
       <div class="comment-num">{{ commentList.total }} 条回复</div>
-      <div class="post-btn badge" @click="isSofa = false">我要发言</div>
+      <div class="post-btn badge" @click="reply">我要发言</div>
     </div>
 
     <div
       v-if="isSofa && commentList.total == 0"
-      @click="isSofa = false"
+      @click="reply"
       class="sofa-box"
     >
       <svg
@@ -142,6 +142,18 @@ const updateCommentList = (data) => {
 
 const updateCurId = (curId: any) => {
   curIdByCommentList.value = curId;
+};
+
+const reply = () => {
+  const token =useCookie("token")
+  if (!token.value) {
+    util.addAlert({
+      type: "warning",
+      text: "未登录，请先登录",
+    });
+    return;
+  }
+  isSofa.value = false;
 };
 
 const close = () => {

@@ -50,18 +50,19 @@
       />
     </nuxt-link>
 
-    <div class="paper-btn">
+    <!-- <div class="paper-btn">
       <img
         class="icon no-responsive no-border"
         src="@sicons/ionicons5/Search.svg"
       />
-    </div>
-    <a href="#top" class="paper-btn">
+    </div> -->
+
+    <div @click="toTop" class="paper-btn">
       <img
         class="icon no-responsive no-border"
         src="@sicons/ionicons5/ArrowUp.svg"
       />
-    </a>
+    </div>
   </div>
 </template>
 
@@ -71,5 +72,9 @@ const router = useRouter();
 
 const back = () => {
   router.go(-1);
+};
+
+const toTop = () => {
+  window.scrollTo(0, 0);
 };
 </script>

@@ -129,10 +129,7 @@
         :class="{ isRead: item.isRead }"
       >
         <div class="avatar-box">
-          <!-- <img :src="item.urls.original" alt="" srcset="" class="avatar" /> -->
-          <base-geek-avatar
-            :src="`https://unsplash.it/100?${index}`"
-          ></base-geek-avatar>
+          <base-geek-avatar :src="item.user[0].avatar"></base-geek-avatar>
         </div>
         <div class="content">
           <div class="top">
@@ -140,10 +137,7 @@
           </div>
           <div class="bottom margin-top-small">
             <div class="tags margin-right-small">
-              <span
-                class="badge tag"
-                v-text="item.type"
-              ></span>
+              <span class="badge tag" v-text="item.type"></span>
             </div>
             <span
               class="margin-right-small author"

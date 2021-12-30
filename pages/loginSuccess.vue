@@ -20,7 +20,7 @@ import util from "../util/index";
 
 const route: any = useRoute();
 const router: any = useRouter();
-const token = useCookie("token");
+const token = useCookie("token")
 if (route.query.token) {
   token.value = route.query.token;
 }

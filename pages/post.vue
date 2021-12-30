@@ -104,6 +104,15 @@ const markdownMode = ref(false);
 const typeList: any = await $api.GET("/articleType", {});
 
 const postArticle = () => {
+  const token = useCookie("token");
+  if (!token.value) {
+    util.addAlert({
+      type: "warning",
+      text: "未登录，请先登录",
+    });
+    return;
+  }
+
   if (form.value.tags.length > 0) {
     form.value.tags = form.value.tags.split("+");
   }
