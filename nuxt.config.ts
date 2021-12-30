@@ -12,12 +12,7 @@ export default defineNuxtConfig({
     ],
     script: [],
 
-    link: [
-      {
-        rel: "stylesheet",
-        href: "https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/style/paper.css",
-      },
-    ],
+    link: [],
     // please note that this is an area that is likely to change
     style: [
       // <style type="text/css">:root { color: red }</style>
@@ -25,5 +20,5 @@ export default defineNuxtConfig({
     ],
   },
 
-  css: ["@/assets/css/main.scss"],
+  css: ["@/assets/css/paper.css", "@/assets/css/main.scss"],
 });
