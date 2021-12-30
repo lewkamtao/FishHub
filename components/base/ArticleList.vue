@@ -223,13 +223,13 @@ import { ref, watch } from "vue";
 import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
-const articleTypeId: any = ref("");
+const articleType: any = ref("");
 
 const route = useRoute();
 watch(
-  () => route.query.articleTypeId,
+  () => route.query.articleType,
   () => {
-    articleTypeId.value = route.query.articleTypeId || "";
+    articleType.value = route.query.articleType || "";
     PageOptions.value.pageNum = 1;
     updateArticleList("new");
   }
@@ -250,7 +250,7 @@ await $api
   .GET("/article/list", {
     pageNum: PageOptions.value.pageNum,
     pageSize: PageOptions.value.pageSize,
-    type: articleTypeId.value,
+    type: articleType.value,
   })
   .then((res) => {
     if (res.code == 200) {
@@ -270,7 +270,7 @@ const updateArticleList: any = (type) => {
     .GET("/article/list", {
       pageNum: PageOptions.value.pageNum,
       pageSize: PageOptions.value.pageSize,
-      type: articleTypeId.value,
+      type: articleType.value,
     })
     .then((res) => {
       loading.value = false;

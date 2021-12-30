@@ -27,15 +27,15 @@
 
 <template>
   <div class="nav-list">
-    <nuxt-link :to="'/'" class="badge" :class="{ active: articleTypeId == '' }">
+    <nuxt-link :to="'/'" class="badge" :class="{ active: articleType == '' }">
       <span>全部</span>
     </nuxt-link>
     <nuxt-link
-      :to="`?articleTypeId=${item.value}`"
+      :to="`?articleType=${item.value}`"
       v-for="(item, index) in typeList.data"
       :key="`tags${index}`"
       class="badge"
-      :class="{ active: articleTypeId == item.value }"
+      :class="{ active: articleType == item.value }"
     >
       <span v-text="item.value"></span>
     </nuxt-link>
@@ -51,13 +51,13 @@ const typeList = await $api.GET("/articleType", {
   pageNum: 1,
 });
 
-const articleTypeId: any = ref("");
+const articleType: any = ref("");
 
 const route = useRoute();
 watch(
-  () => route.query.articleTypeId,
+  () => route.query.articleType,
   () => {
-    articleTypeId.value = route.query.articleTypeId || "";
+    articleType.value = route.query.articleType || "";
   }
 );
 </script>

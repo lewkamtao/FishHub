@@ -88,6 +88,7 @@
     </div>
     <base-comment-form
       v-if="!isSofa"
+      @close="close"
       @updateCommentList="updateCommentList"
       :comment="{
         article_id: article_id,
