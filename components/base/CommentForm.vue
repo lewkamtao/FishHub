@@ -69,7 +69,7 @@ const close = () => {
 };
 
 const postComment = () => {
-  const token =useCookie("token")
+  const token =useCookie("token", { maxAge: 2419200 })
   if (!token.value) {
     util.addAlert({
       type: "warning",

@@ -96,7 +96,7 @@ const router: any = useRouter();
 import util from "~~/util";
 
 const post = () => {
-  const token = useCookie("token")
+  const token = useCookie("token", { maxAge: 2419200 })
   if (!token.value) {
     util.addAlert({
       type: "warning",
