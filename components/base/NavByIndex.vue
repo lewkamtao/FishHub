@@ -7,8 +7,9 @@
   padding: 7px;
 
   a {
-    padding: 5px;
+    padding: 5px 10px;
     margin: 5px;
+    font-size: 16px;
     font-weight: normal;
     color: var(--muted-light-10);
     background: none;
@@ -34,7 +35,7 @@
       v-for="(item, index) in typeList.data"
       :key="`tags${index}`"
       class="badge"
-      :class="{ active: articleTypeId == item._id }"
+      :class="{ active: articleTypeId == item.value }"
     >
       <span v-text="item.value"></span>
     </nuxt-link>

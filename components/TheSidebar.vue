@@ -13,6 +13,12 @@
   overflow-y: scroll;
   transition: opacity 0.5s;
 }
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
 </style>
 
 <template>

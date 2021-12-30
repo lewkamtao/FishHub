@@ -17,7 +17,10 @@
       border-radius: 50px;
       margin-left: 10px;
       font-size: 12px;
-      opacity: 0.7;
+      height: 20px;
+      line-height: 17px;
+      padding: 0px 5px;
+      box-sizing: border-box;
       font-weight: normal;
     }
   }
@@ -39,7 +42,7 @@
           class="margin-none"
           :class="{ isRead: item.isRead }"
           ><span v-text="item.title"></span> </nuxt-link
-        ><span class="badge danger" v-text="123"></span>
+        ><span class="badge secondary" v-text="item.comments_num || 0"></span>
       </li>
     </ul>
   </div>

@@ -177,7 +177,7 @@
             class="icon no-responsive no-border"
             src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
           />
-          {{ 231 }}</span
+          {{ item.comments_num || 0 }}</span
         >
       </div>
       <nuxt-link

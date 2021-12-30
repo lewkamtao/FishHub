@@ -4,10 +4,33 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
+
+@media (max-width: 992px) {
+  .geek::before {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "移动端尚未适配，请移步PC端。";
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+  }
+  .geek {
+    header,
+    div {
+      opacity: 0;
+    }
+  }
+}
 </style>
 
 <template>
-  <div>
+  <div class="geek">
     <div id="geek-message-box"></div>
     <the-header></the-header>
     <base-geek-handle></base-geek-handle>

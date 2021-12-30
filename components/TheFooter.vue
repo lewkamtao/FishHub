@@ -1,7 +1,6 @@
 <style lang="scss" scoped>
 footer {
   position: relative;
-  z-index: 66;
   margin-top: 30px;
   .wrapper {
     color: #999;
