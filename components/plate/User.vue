@@ -279,7 +279,8 @@ const checkLogin = async ({ ticket }) => {
     const token = useCookie("token", { maxAge: 2419200 });
     token.value = loginRes.data;
     const geekModalSwitch: any = document.getElementById("geek-modal");
-    geekModalSwitch.checked = true;
+    geekModalSwitch.checked = false;
+    user.value = await $api.GET("/user", {});
     util.addAlert({
       type: "success",
       text: "登录成功",
@@ -299,9 +300,13 @@ const checkLogin = async ({ ticket }) => {
 let user = ref({} as any);
 let qrcode = ref({} as any);
 
-onMounted(async () => {
+const getUser = async () => {
   if (token.value) {
     user.value = await $api.GET("/user", {});
   }
+};
+
+onMounted(() => {
+  getUser();
 });
 </script>
