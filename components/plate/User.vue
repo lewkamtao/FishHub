@@ -10,9 +10,12 @@
     width: 100%;
 
     .nickname {
+      display: flex;
+      align-items: center;
       font-weight: bold;
       font-size: 22px;
       margin-top: 10px;
+      margin-right: 10px;
     }
     .description {
       color: #999;
@@ -171,21 +174,26 @@
           srcset=""
         />
       </div>
-
-      <base-geek-avatar
-        style="width: 100px"
-        :src="user.data.avatar"
-      ></base-geek-avatar>
-      <div class="nickname">{{ user.data.nickname }}</div>
+      <nuxt-link to="/user">
+        <base-geek-avatar
+          style="width: 100px"
+          :src="user.data.avatar"
+        ></base-geek-avatar
+      ></nuxt-link>
+      <div class="nickname">
+        <span class="margin-right-small"> {{ user.data.nickname }}</span>
+        <base-geek-gender :gender="user.data.gender"></base-geek-gender>
+      </div>
       <div class="description">{{ user.data.description || "暂无介绍" }}</div>
       <input class="alert-state" id="alert-1" type="checkbox" />
       <div
+        v-if="!user.data.password"
         class="alert alert-secondary dismissible margin-top margin-bottom-none"
       >
         由于微信隐私政策，在2021年12月27日之后，不再为第三方提供头像、昵称信息。现在，你可以点击头像设置个人信息。
         <label class="btn-close" for="alert-1">X</label>
       </div>
-      <div v-if="false" class="group">
+      <div class="group">
         <div class="likes">
           <div class="value">{{ user.data.likes_num || 0 }}</div>
           <div class="key">获赞</div>

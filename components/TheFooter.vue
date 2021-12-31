@@ -65,10 +65,10 @@ footer {
   <footer class="paper margin-none padding">
     <div class="wrapper">
       <div class="menu padding-bottom">
-        <nuxt-link to=""> 关于 </nuxt-link>
-        <nuxt-link to=""> 帮助文档 </nuxt-link>
-        <nuxt-link to=""> 开放能力 </nuxt-link>
-        <nuxt-link to=""> 我们的愿景 </nuxt-link>
+        <nuxt-link to="/about"> 关于 </nuxt-link>
+        <nuxt-link to="/help"> 帮助文档 </nuxt-link>
+        <nuxt-link to="/open"> 开放能力 </nuxt-link>
+        <nuxt-link to="/vision"> 我们的愿景 </nuxt-link>
       </div>
       <div class="slogan margin-top">
         即使生活一地鸡毛，也要偶尔抬头仰望星空。

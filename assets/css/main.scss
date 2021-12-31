@@ -80,11 +80,14 @@ html.dark body {
     }
 }
 
-.content-form {
+textarea {
     border-bottom-left-radius: 5px 255px;
     border-bottom-right-radius: 225px 5px;
     border-top-left-radius: 255px 5px;
     border-top-right-radius: 5px 225px;
+}
+
+.content-form {
     border: 2px solid #41403e;
     border-color: var(--primary);
     display: block;

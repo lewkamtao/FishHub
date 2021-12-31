@@ -74,16 +74,56 @@ function initDomStyle() {
   let domgeekSidebar = document.getElementById("geekSidebar");
   // 设置侧边操作台
   if (domGeekHandle) {
-    domGeekHandle.style.cssText = `opacity:1;top:${
-      domGeekWrapper.offsetTop + 100
-    }px;left:${domGeekWrapper.offsetLeft - 10}px`;
+    domGeekHandle.style.cssText = `opacity:1;top:${domGeekWrapper.offsetTop + 100
+      }px;left:${domGeekWrapper.offsetLeft - 10}px`;
   }
   if (domgeekSidebar) {
-    domgeekSidebar.style.cssText = `opacity:1;left:${
-      domGeekWrapper.offsetLeft + domGeekWrapper.clientWidth * 0.6666666
-    }px; width:${domGeekWrapper.clientWidth * 0.33333333}px`;
+    domgeekSidebar.style.cssText = `opacity:1;left:${domGeekWrapper.offsetLeft + domGeekWrapper.clientWidth * 0.6666666
+      }px; width:${domGeekWrapper.clientWidth * 0.33333333}px`;
     domGeekWrapper.style.cssText = `opacity:1;`;
   }
+}
+/**
+ * 上传一个文件
+ */
+async function PUTObject(filePath, objectData) {
+  // 初始化实例
+  return new Promise((resolve) => {
+
+
+    fetch('https://cos.api.tngeek.com/GetFederationToken').then(async (res) => {
+      res = await res.json()
+      console.log(res)
+      const opt = {
+        method: "PUT",
+        headers: {
+          Authorization: res.data.Credentials.Token,
+          'Content-Type': objectData.type,
+        },
+        body: objectData,
+      };
+
+      fetch(
+        'https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/' + filePath, opt)
+        .then((res) => {
+          resolve(
+            'https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com' +
+            filePath
+          )
+        })
+    })
+  })
+}
+
+/**
+ * 得到文件的扩展名
+ * @param {} filename
+ */
+function getFileExt(filename) {
+  var d = /\.[^\.]+$/.exec(filename)
+  var ext = new String(d)
+  var s = ext.toLowerCase()
+  return s
 }
 
 export default {
@@ -91,4 +131,6 @@ export default {
   randomInRange,
   addAlert,
   initDomStyle,
+  PUTObject,
+  getFileExt
 };

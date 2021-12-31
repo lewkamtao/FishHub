@@ -213,8 +213,9 @@
               class="margin-right-small author"
               v-text="item.user[0] && item.user[0].nickname"
             ></span>
+            <base-geek-gender :gender="item.user[0].gender"></base-geek-gender>
             <span
-              class="margin-right-small date"
+              class="margin-left date"
               v-text="item.BeautifyUpdateTime || `刚刚`"
             ></span>
           </div>

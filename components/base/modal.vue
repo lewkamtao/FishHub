@@ -5,7 +5,6 @@
       <label class="modal-bg" for="geek-modal"></label>
       <div
         class="modal-body"
-        style="min-width: 300px; min-height: 200px"
         id="geek-modal-body"
       >
      

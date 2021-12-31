@@ -60,10 +60,10 @@
         </base-geek-avatar>
         <div class="content">
           <div class="header">
-            <a class="author" target="_blank">
+            <a class="author margin-right-small" target="_blank">
               {{ comment.user[0].nickname }}
             </a>
-
+            <base-geek-gender :gender="comment.user[0].gender"></base-geek-gender>
             <div class="metadata">
               <span class="date">
                 {{ comment.BeautifyUpdateTime || "刚刚" }}</span
@@ -95,12 +95,16 @@
             </base-geek-avatar>
             <div class="content">
               <div class="header">
-                <a class="author" target="_blank">
+                <a class="author margin-right-small" target="_blank">
                   {{ child.user[0].nickname }}</a
                 >
-
+                <base-geek-gender
+                  :gender="child.user[0].gender"
+                ></base-geek-gender>
                 <div class="metadata">
-                  <span class="date"> {{ child.BeautifyUpdateTime || "刚刚" }}</span>
+                  <span class="date">
+                    {{ child.BeautifyUpdateTime || "刚刚" }}</span
+                  >
                 </div>
               </div>
               <div class="text">
@@ -154,10 +158,10 @@ const close = () => {
 };
 
 const reply = (comment) => {
-   const token =useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
     util.addAlert({
-       type: "danger",
+      type: "danger",
       text: "未登录，请先登录",
     });
     return;

@@ -31,6 +31,21 @@
 
 <template>
   <div class="geek">
+    <Html>
+      <Head>
+        <Title>摸鱼办</Title>
+        <Meta
+          name="description"
+          :content="`即使生活一地鸡毛，也要偶尔抬头仰望星空。`"
+        />
+        <Link
+          data-n-head="ssr"
+          rel="icon"
+          type="image/x-icon"
+          href="https://tngeek.com/favicon.ico"
+        />
+      </Head>
+    </Html>
     <div id="geek-message-box"></div>
 
     <the-header></the-header>
