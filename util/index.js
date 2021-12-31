@@ -69,7 +69,6 @@ const addAlert = ({ type, text }) => {
 };
 
 function initDomStyle() {
-
   let domGeekWrapper = document.getElementById("geekWrapper");
   let domGeekHandle = document.getElementById("geekHandle");
   let domgeekSidebar = document.getElementById("geekSidebar");

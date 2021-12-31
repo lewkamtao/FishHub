@@ -1,6 +1,8 @@
 <style lang="scss" scoped>
 img {
   background: #eee;
+  cursor: pointer;
+  border: 1px rgba(0, 0, 0, 0.1) solid !important;
 }
 </style>
 

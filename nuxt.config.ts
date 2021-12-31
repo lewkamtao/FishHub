@@ -10,7 +10,11 @@ export default defineNuxtConfig({
       // <meta name="viewport" content="width=device-width, initial-scale=1">
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
-    script: [],
+    script: [
+      {
+        src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
+      },
+    ],
 
     link: [],
     // please note that this is an area that is likely to change
@@ -20,5 +24,10 @@ export default defineNuxtConfig({
     ],
   },
 
-  css: ["@/assets/css/paper.css", "@/assets/css/main.scss"],
+  css: [
+    "@/assets/css/paper.css",
+    "@/assets/css/main.scss",
+    "@/assets/css/fancybox.css",
+    "@/assets/css/fancybox-theme.css",
+  ],
 });

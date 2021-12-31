@@ -72,7 +72,7 @@ const postComment = () => {
   const token =useCookie("token", { maxAge: 2419200 })
   if (!token.value) {
     util.addAlert({
-      type: "warning",
+       type: "danger",
       text: "未登录，请先登录",
     });
     return;
@@ -80,7 +80,7 @@ const postComment = () => {
 
   if (form.value.content == "") {
     util.addAlert({
-      type: "warning",
+       type: "danger",
       text: "内容不可为空",
     });
 

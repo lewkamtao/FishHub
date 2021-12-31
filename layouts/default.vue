@@ -32,6 +32,7 @@
 <template>
   <div class="geek">
     <div id="geek-message-box"></div>
+
     <the-header></the-header>
     <base-geek-handle></base-geek-handle>
     <div class="wrapper row margin-none" id="geekWrapper">
@@ -42,6 +43,7 @@
       <the-sidebar></the-sidebar>
     </div>
   </div>
+  <base-modal></base-modal>
 </template>
 
 <script setup>

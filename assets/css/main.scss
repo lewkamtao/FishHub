@@ -102,6 +102,12 @@ html.dark body {
 
 .github-markdown-body {
     padding: 0px !important;
+    img {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
 }
 
 .paper {
@@ -198,6 +204,10 @@ html.dark body {
         opacity: 0;
         margin-top: -60px;
     }
+}
+
+.filter {
+    filter: invert(100%);
 }
 
 .post-btn {

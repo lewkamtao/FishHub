@@ -26,7 +26,7 @@ a {
 <template>
   <div class="detail margin-top">
     <base-nav type="detail" :articleData="article.data"> </base-nav>
-    <div class="article paper margin-none">
+    <div class="article paper margin-none" id="article-editor">
       <v-md-preview :text="article.data.content"></v-md-preview>
       <div class="tags-box margin-top" v-if="article.data.tags.length > 0">
         <nuxt-link
@@ -44,8 +44,40 @@ a {
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const route: any = useRoute();
 const { $api } = useNuxtApp();
 const article: any = await $api.GET("/article/" + route.query.id, {});
+
+onMounted(() => {
+  try {
+    setTimeout(async () => {
+      // 处理文章图片fancybox
+      let imgdom = "";
+      let imgs = document
+        .getElementById("article-editor")
+        .getElementsByTagName("img");
+      for (let i = 0; i < imgs.length; i++) {
+        // 如果img标签的父级是a标签，不增加fancybox
+        let node: any = imgs[i].parentNode.localName;
+        if (node === "a") {
+          continue;
+        }
+        let elem = document.createElement("a");
+        elem.setAttribute("data-fancybox", "gallery");
+        imgdom = imgs[i].cloneNode(true);
+        elem["href"] = imgdom.src;
+        elem.appendChild(imgdom);
+        imgs[i].parentNode.replaceChild(elem, imgs[i]);
+      }
+      // 处理文章a标签跳转到新窗口
+      Array.from(
+        document.getElementById("article-editor").getElementsByTagName("a")
+      ).forEach(function (aTag) {
+        aTag.setAttribute("target", "_blank");
+        aTag.setAttribute("rel", "external nofollow noopener noreferrer");
+      });
+    }, 100);
+  } catch {}
+});
 </script>

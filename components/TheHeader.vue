@@ -6,7 +6,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  z-index: 66;
+  z-index: 11;
   overflow: hidden;
   border-left: none;
   border-right: none;
@@ -99,7 +99,7 @@ const post = () => {
   const token = useCookie("token", { maxAge: 2419200 })
   if (!token.value) {
     util.addAlert({
-      type: "warning",
+       type: "danger",
       text: "未登录，请先登录",
     });
     return;
