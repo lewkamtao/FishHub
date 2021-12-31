@@ -244,6 +244,9 @@ import util from "~~/util";
 
 const loading = ref(false);
 
+let user = ref({} as any);
+let qrcode = ref({} as any);
+
 const loginOut = () => {
   token.value = "";
   location.reload();
@@ -276,15 +279,16 @@ const wxLogin = async () => {
 const checkLogin = async ({ ticket }) => {
   let loginRes: any = await $api.GET("/wx/checkLogin", { ticket: ticket });
   if (loginRes.code == 200) {
-    const token = useCookie("token", { maxAge: 2419200 });
     token.value = loginRes.data;
     const geekModalSwitch: any = document.getElementById("geek-modal");
     geekModalSwitch.checked = false;
-    user.value = await $api.GET("/user", {});
     util.addAlert({
       type: "success",
       text: "登录成功",
     });
+    setTimeout(async () => {
+      user.value = await $api.GET("/user", {});
+    }, 250);
   } else if (loginRes.code == 404) {
     setTimeout(() => {
       checkLogin({ ticket });
@@ -296,9 +300,6 @@ const checkLogin = async ({ ticket }) => {
     });
   }
 };
-
-let user = ref({} as any);
-let qrcode = ref({} as any);
 
 const getUser = async () => {
   if (token.value) {
