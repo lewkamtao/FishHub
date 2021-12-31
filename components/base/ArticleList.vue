@@ -90,12 +90,12 @@
         width: 40px;
         text-align: left;
       }
-    }
-    .icon:hover {
-      border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
-    }
-    .icon:active {
-      font-size: 5px;
+      .icon:hover {
+        border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
+      }
+      .icon:active {
+        font-size: 5px;
+      }
     }
   }
 }
