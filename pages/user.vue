@@ -163,7 +163,7 @@ const updateAvatar = async (e) => {
 
     setTimeout(() => {
       location.reload();
-    }, 2000);
+    }, 1000);
   } else {
     geekModalSwitch.checked = false;
     util.addAlert({

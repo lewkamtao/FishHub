@@ -26,7 +26,7 @@
     <div class="title">{{ articleData.title }}</div>
     <div class="author-info">
       <base-geek-avatar
-        style="width: 25px"
+        style="width: 25px;height:25px"
         :src="articleData.user[0].avatar"
       ></base-geek-avatar>
 
