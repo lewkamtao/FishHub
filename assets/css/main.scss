@@ -57,6 +57,9 @@ html.dark body {
     .icon {
         filter: invert(100%);
     }
+    .push .like {
+        filter: invert(0%);
+    }
     .sofa {
         filter: none;
     }

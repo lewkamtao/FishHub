@@ -42,7 +42,7 @@
           class="margin-none"
           :class="{ isRead: item.isRead }"
           ><span v-text="item.title"></span> </nuxt-link
-        ><span class="badge secondary" v-text="item.comments_num || 0"></span>
+        ><span class="badge secondary" v-text="item.comment_num || 0"></span>
       </li>
     </ul>
   </div>

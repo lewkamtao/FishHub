@@ -65,28 +65,36 @@
       }
     }
     .push {
-      cursor: pointer;
-      width: 33px;
-      padding: 20px;
+      display: flex;
+      align-items: center;
+      width: 90px;
+      padding: 30px 10px 30px 20px;
       box-sizing: content-box;
 
-      span {
+      .icon {
+        cursor: pointer;
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
-        height: 33px;
-        width: 33px;
-        font-size: 30px;
+        height: 30px;
+        min-width: 30px;
+        max-width: 30px;
+        font-size: 28px;
         transition: font-size 0.15s;
         background: #eee;
         border-radius: 50%;
-        outline: 4px rgba($color: #000000, $alpha: 0) solid;
+        border: 4px rgba($color: #000000, $alpha: 0) solid;
+      }
+      .num {
+        margin-left: 8px;
+        width: 40px;
+        text-align: left;
       }
     }
-    .push:hover span {
-      outline: 4px rgba($color: #0071de, $alpha: 0.4) solid;
+    .icon:hover {
+      border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
     }
-    .push:active span {
+    .icon:active {
       font-size: 5px;
     }
   }
@@ -170,14 +178,19 @@
       class="article-item-box"
     >
       <div class="handle-box">
-        <div @click.stop="push" class="push"><span>🎉</span></div>
+        <div class="push">
+          <span @click.stop="push($event, item._id, index)" class="icon like"
+            >🎉</span
+          >
+          <span class="num"> {{ item.like || 0 }}</span>
+        </div>
         <span class="badge comment-num secondary">
           <img
             style="height: 18px; width: auto; margin-right: 5px"
             class="icon no-responsive no-border"
             src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
           />
-          {{ item.comments_num || 0 }}</span
+          {{ item.comment_num || 0 }}</span
         >
       </div>
       <nuxt-link
@@ -202,7 +215,7 @@
             ></span>
             <span
               class="margin-right-small date"
-              v-text="item.BeautifyUpdateTime"
+              v-text="item.BeautifyUpdateTime || `刚刚`"
             ></span>
           </div>
         </div>
@@ -242,7 +255,7 @@ const isGet = ref(false);
 
 const PageOptions = ref({
   pageNum: 1,
-  pageSize: 5,
+  pageSize: 10,
 });
 
 // 初始请求
@@ -299,7 +312,7 @@ const getMore = () => {
 
 import confetti from "canvas-confetti";
 
-const push = (e) => {
+const push = (e, article_id, index) => {
   let w: any = document.documentElement.clientWidth;
   let h: any = document.documentElement.clientHeight;
   confetti({
@@ -318,6 +331,11 @@ const push = (e) => {
     ],
     shapes: ["circle", "square"],
     origin: { y: e.y / h, x: e.x / w },
+  });
+  articleList.value.data[index].like += 1;
+  $api.POST("/user/operation", {
+    article_id: article_id,
+    type: "like",
   });
 };
 </script>
