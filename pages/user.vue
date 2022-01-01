@@ -106,8 +106,10 @@ const { $api } = useNuxtApp();
 import util from "~~/util";
 
 let form = ref({} as any);
-
-const user: any = await $api.GET("/user?" + new Date().getTime(), {});
+ 
+const user: any = await $api.GET(`/user`, {
+  t: new Date().getTime(),
+});
 form.value = {
   nickname: user.data.nickname,
   username: user.data.nickname,
