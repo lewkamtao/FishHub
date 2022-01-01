@@ -106,10 +106,8 @@ const { $api } = useNuxtApp();
 import util from "~~/util";
 
 let form = ref({} as any);
- 
-const user: any = await $api.GET(`/user`, {
-  t: new Date().getTime(),
-});
+
+const user: any = await $api.GET("/user", {});
 form.value = {
   nickname: user.data.nickname,
   username: user.data.nickname,
@@ -150,7 +148,7 @@ onMounted(() => {
     "geekAvatarEditUserInfo"
   );
   geekAvatarEditUserInfo.innerHTML = JSON.stringify({
-    user_id: user.data._id,
+    _id: user.data._id,
     avatar: user.data.avatar,
   });
 });

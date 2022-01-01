@@ -310,9 +310,7 @@ const checkLogin = async ({ ticket }) => {
     });
   }
 };
-user.value = await $api.GET(`/user`, {
-  t: new Date().getTime(),
-});
+user.value = await $api.GET("/user", {});
 
 onMounted(() => {});
 </script>
