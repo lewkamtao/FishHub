@@ -107,7 +107,7 @@ import util from "~~/util";
 
 let form = ref({} as any);
 
-const user: any = await $api.GET("/user", {});
+const user: any = await $api.GET("/user?" + new Date().getTime(), {});
 form.value = {
   nickname: user.data.nickname,
   username: user.data.nickname,
