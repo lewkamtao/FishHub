@@ -21,13 +21,16 @@ header {
   .moyu-title {
     display: flex;
     align-items: flex-end;
-    font-size: 24px;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-family: XiaolaiMonoSC;
 
     .logo {
       margin-right: 5px;
     }
     img {
       transform: rotate(-35deg);
+      margin-bottom: 3px;
     }
     .badge {
       margin-bottom: 3px;
@@ -46,6 +49,7 @@ header {
     margin: 6px 0px 0px 0px;
     a {
       margin-right: 30px;
+      margin-top: 2px;
       border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
     }
     a:hover {
@@ -96,10 +100,10 @@ const router: any = useRouter();
 import util from "~~/util";
 
 const post = () => {
-  const token = useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
     util.addAlert({
-       type: "danger",
+      type: "danger",
       text: "未登录，请先登录",
     });
     return;

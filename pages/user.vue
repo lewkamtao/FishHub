@@ -13,20 +13,13 @@ textarea {
 <template>
   <div class="paper">
     <div class="user-info">
-      <label for="upAvatar">
+      <div @click="changeAvatar" popover-bottom="更换头像">
         <base-geek-avatar
           class="avatar"
           style="width: 100px; margin: 50px auto"
           :src="user.data.avatar"
-        ></base-geek-avatar
-      ></label>
-      <input
-        v-show="false"
-        id="upAvatar"
-        type="file"
-        @change="updateAvatar"
-        accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
-      />
+        ></base-geek-avatar>
+      </div>
       <div class="form-group">
         <label for="paperInputs1">昵称</label>
         <input
@@ -108,7 +101,7 @@ textarea {
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
 import util from "~~/util";
 
@@ -142,34 +135,21 @@ const updateUser = async () => {
   }
 };
 
-const updateAvatar = async (e) => {
-  const geekModalSwitch: any = document.getElementById("geek-modal");
-  const geekModalBody: any = document.getElementById("geek-modal-body");
-  geekModalBody.innerHTML = `<div style="display:flex; height:100px;width:180px;align-items: center;justify-content: center;">上传中，请耐心等待。</div>`;
-  geekModalSwitch.checked = true;
-
-  const resFileUrl = await util.PUTObject(
-    `/user/${user.data._id}/avatar${util.getFileExt(e.target.files[0].name)}`,
-    e.target.files[0]
+const changeAvatar = async (e) => {
+  const geekAvatarEditModal: any = document.getElementById(
+    "geekAvatarEditModal"
   );
-  form.value.avatar = resFileUrl;
-  const res: any = await $api.PUT("/user", form.value);
-  if (res.code == 200) {
-    geekModalSwitch.checked = false;
-    util.addAlert({
-      type: "success",
-      text: "更新成功",
-    });
 
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
-  } else {
-    geekModalSwitch.checked = false;
-    util.addAlert({
-      type: "danger",
-      text: res.tips,
-    });
-  }
+  geekAvatarEditModal.checked = true;
 };
+
+onMounted(() => {
+  const geekAvatarEditUserInfo: any = document.getElementById(
+    "geekAvatarEditUserInfo"
+  );
+  geekAvatarEditUserInfo.innerHTML = JSON.stringify({
+    user_id: user.data._id,
+    avatar: user.data.avatar,
+  });
+});
 </script>

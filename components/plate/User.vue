@@ -166,7 +166,7 @@
 <template>
   <div class="paper user" id="userPlate">
     <div v-if="token && user.data" class="user-info">
-      <div popover-left="退出登录" class="loginOut-btn margin-none">
+      <div popover-bottom="退出登录" class="loginOut-btn margin-none">
         <img
           @click="loginOut"
           src="@sicons/ionicons5/LogInOutline.svg"

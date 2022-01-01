@@ -14,7 +14,7 @@ VueMarkdownEditor.use(vuepressTheme, {
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueMarkdownEditor, {
     property: {
-      id: "GA_MEASUREMENT_ID",
+      id: "MD",
     },
   });
 });

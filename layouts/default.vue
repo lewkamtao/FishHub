@@ -58,6 +58,7 @@
       <the-sidebar></the-sidebar>
     </div>
   </div>
+  <base-geek-avatar-edit v-if="route.path == '/user'"></base-geek-avatar-edit>
   <base-modal></base-modal>
 </template>
 

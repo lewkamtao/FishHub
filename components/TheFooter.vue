@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
 footer {
   position: relative;
+  
   margin-top: 30px;
   .wrapper {
     color: #999;
@@ -10,6 +11,7 @@ footer {
 
       a {
         position: relative;
+        
         color: var(--primary);
         margin-right: 30px;
       }
@@ -46,6 +48,7 @@ footer {
     margin-top: 5px;
     a {
       color: #999;
+      
       font-size: 14px;
       margin-right: 10px;
     }

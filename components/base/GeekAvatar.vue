@@ -9,7 +9,7 @@ img {
   box-sizing: border-box;
   overflow: hidden;
   transition: all 0.25s;
-} 
+}
 img:hover {
   border: 1px rgba(0, 0, 0, 0.4) solid !important;
 }
