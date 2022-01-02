@@ -74,6 +74,25 @@ textarea {
           <span>保密</span>
         </label>
       </fieldset>
+
+      <div class="form-group">
+        <label for="company">公司</label>
+        <input
+          v-model="form.company"
+          type="text"
+          placeholder="输入公司名"
+          id="company"
+        />
+      </div>
+      <div class="form-group">
+        <label for="location">地址</label>
+        <input
+          v-model="form.location"
+          type="text"
+          placeholder="输入地址"
+          id="location"
+        />
+      </div>
       <div class="form-group">
         <label for="email">邮箱</label>
         <input
@@ -90,24 +109,6 @@ textarea {
           type="text"
           placeholder="输入主页链接"
           id="blog"
-        />
-      </div>
-      <div class="form-group">
-        <label for="location">地址</label>
-        <input
-          v-model="form.location"
-          type="text"
-          placeholder="输入地址"
-          id="location"
-        />
-      </div>
-      <div class="form-group">
-        <label for="company">公司</label>
-        <input
-          v-model="form.company"
-          type="text"
-          placeholder="输入公司名"
-          id="company"
         />
       </div>
       <div class="row flex-right">
@@ -134,6 +135,8 @@ form.value = {
   gender: user.data.gender,
   avatar: user.data.avatar,
   email: user.data.email,
+  blog: user.data.blog,
+  location: user.data.location,
   company: user.data.company,
   description: user.data.description,
 };

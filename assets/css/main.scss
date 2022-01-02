@@ -72,6 +72,11 @@ html.dark body {
             filter: invert(0%);
         }
     }
+    .info-box {
+        img {
+            filter: invert(100%);
+        }
+    }
     .push .like {
         filter: invert(0%);
     }
