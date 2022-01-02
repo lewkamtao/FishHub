@@ -142,8 +142,8 @@ function getBase64(img) {
     return dataURL;
   }
   var image = new Image();
-  image.crossOrigin = 'anonymous';
-  image.src = img;
+  image.crossOrigin = '*';
+  image.src = img + '?v=' + Math.random();
   return new Promise((resolve, reject) => {
     image.onload = function () {
       resolve(getBase64Image(image));//将base64传给done上传处理
