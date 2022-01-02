@@ -142,7 +142,7 @@ function getBase64(img) {
     return dataURL;
   }
   var image = new Image();
-  image.crossOrigin = '';
+  image.crossOrigin = 'anonymous';
   image.src = img;
   return new Promise((resolve, reject) => {
     image.onload = function () {
