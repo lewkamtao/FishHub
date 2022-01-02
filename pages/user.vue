@@ -13,12 +13,14 @@ textarea {
 <template>
   <div class="paper">
     <div class="user-info">
-      <div @click="changeAvatar" popover-bottom="更换头像">
-        <base-geek-avatar
-          class="avatar"
-          style="width: 100px; margin: 50px auto"
-          :src="user.data.avatar"
-        ></base-geek-avatar>
+      <div popover-bottom="更换头像">
+        <label for="upAvatar">
+          <base-geek-avatar
+            class="avatar"
+            style="width: 100px; margin: 50px auto"
+            :src="user.data.avatar"
+          ></base-geek-avatar
+        ></label>
       </div>
       <div class="form-group">
         <label for="paperInputs1">昵称</label>
@@ -135,19 +137,10 @@ const updateUser = async () => {
   }
 };
 
-const changeAvatar = async (e) => {
-  const geekAvatarEditModal: any = document.getElementById(
-    "geekAvatarEditModal"
-  );
-  geekAvatarEditModal.checked = true;
-};
 onMounted(async () => {
-  const geekAvatarEditUserInfo: any = document.getElementById(
-    "geekAvatarEditUserInfo"
+  const geekAvatarEditUserId: any = document.getElementById(
+    "geekAvatarEditUserId"
   );
-  geekAvatarEditUserInfo.innerHTML = JSON.stringify({
-    _id: user.data._id,
-    avatar: user.data.avatar + "?timestamp=" + new Date().getTime(),
-  });
+  geekAvatarEditUserId.innerHTML = user.data._id;
 });
 </script>

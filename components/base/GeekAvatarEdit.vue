@@ -10,7 +10,7 @@
 
 <template>
   <div class="geek-modal">
-    <span v-show="false" id="geekAvatarEditUserInfo"></span>
+    <span v-show="false" id="geekAvatarEditUserId"></span>
     <input
       v-show="false"
       id="upAvatar"
@@ -56,7 +56,7 @@ const { $api } = useNuxtApp();
 const cropper = ref({} as any);
 
 const src = ref<any>("");
-const user = ref<any>({});
+const user_id = ref<any>({});
 
 const init = () => {
   const GeekAvatarEdit: any = document.getElementById("GeekAvatarEdit");
@@ -78,6 +78,12 @@ const updateAvatar = async (e) => {
   oFReader.readAsDataURL(file);
   oFReader.onloadend = function (oFRevent) {
     cropper.value.replace(oFRevent.target.result, false); // 默认false，适应高度，不失真
+    const geekAvatarEditModal: any = document.getElementById(
+      "geekAvatarEditModal"
+    );
+    if (!geekAvatarEditModal.checked) {
+      geekAvatarEditModal.checked = true; // 打开加载窗口
+    }
   };
 };
 
@@ -93,7 +99,7 @@ const saveFn = () => {
     geekAvatarEditModal.checked = false;
 
     const resFileUrl = await util.PUTObject(
-      `/user/${user.value._id}/avatar/${new Date().getTime()}.jpeg`,
+      `/user/${user_id.value}/avatar/${new Date().getTime()}.jpeg`,
       blob
     );
     const res: any = await $api.PUT("/user/updateAratar", {
@@ -129,24 +135,11 @@ const route = useRoute();
 
 onMounted(() => {
   // 设置用户头像 和 id
-  const geekAvatarEditUserInfo: any = document.getElementById(
-    "geekAvatarEditUserInfo"
+  const geekAvatarEditUserId: any = document.getElementById(
+    "geekAvatarEditUserId"
   );
+
+  user_id.value = geekAvatarEditUserId.innerHTML;
   init();
-  //   初始化
-  checkUserInfo();
-  function checkUserInfo() {
-    setTimeout(() => {
-      if (route.path != "/user") {
-        return;
-      }
-      if (geekAvatarEditUserInfo.innerHTML) {
-        user.value = JSON.parse(geekAvatarEditUserInfo.innerHTML);
-        cropper.value.replace(user.value.avatar, false); // 默认false，适应高度，不失真
-      } else {
-        checkUserInfo();
-      }
-    }, 100);
-  }
 });
 </script>
