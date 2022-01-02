@@ -195,7 +195,7 @@
       </div>
       <div class="group">
         <div class="likes">
-          <div class="value">{{ user.data.likes_num || 0 }}</div>
+          <div class="value">{{ user.data.like_num || 0 }}</div>
           <div class="key">获赞</div>
         </div>
         <div class="comments">
@@ -203,7 +203,7 @@
           <div class="key">评论</div>
         </div>
         <div class="article">
-          <div class="value">{{ user.data.articles_num || 0 }}</div>
+          <div class="value">{{ user.data.article_num || 0 }}</div>
           <div class="key">话题</div>
         </div>
       </div>
