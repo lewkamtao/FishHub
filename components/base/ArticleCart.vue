@@ -177,7 +177,9 @@
         <span @click.stop="push($event, article._id)" class="icon like"
           >🎉</span
         >
-        <span class="num"> {{ article.like || 0 }}</span>
+        <span class="num">
+          {{ util.numFormat(article.like) }}
+        </span>
       </div>
       <nuxt-link
         :to="`/detail?id=${article._id}`"
@@ -188,8 +190,8 @@
           class="icon no-responsive no-border"
           src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
         />
-        {{ article.comment_num || 0 }}</nuxt-link
-      >
+        {{ util.numFormat(article.comment_num) }}
+      </nuxt-link>
     </div>
     <nuxt-link
       :to="`/detail?id=${article._id}`"
@@ -223,6 +225,7 @@
 </template>
 <script setup lang="ts">
 const { $api } = useNuxtApp();
+import util from "@/util/index.js";
 
 const props = defineProps({
   article: {

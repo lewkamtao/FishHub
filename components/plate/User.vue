@@ -28,11 +28,12 @@
       div {
         text-align: left;
         .value {
-          font-size: 24px;
+          font-size: 20px;
         }
         .key {
-          font-size: 16px;
+          font-size: 14px;
           color: #999;
+          font-weight: 200;
         }
       }
     }
@@ -195,15 +196,15 @@
       </div>
       <div class="group">
         <div class="likes">
-          <div class="value">{{ user.data.like_num || 0 }}</div>
+          <div class="value">{{ util.numFormat(user.data.like_num) }}</div>
           <div class="key">获赞</div>
         </div>
         <div class="comments">
-          <div class="value">{{ user.data.comment_num || 0 }}</div>
+          <div class="value">{{ util.numFormat(user.data.comment_num) }}</div>
           <div class="key">评论</div>
         </div>
         <div class="article">
-          <div class="value">{{ user.data.article_num || 0 }}</div>
+          <div class="value">{{ util.numFormat(user.data.article_num) }}</div>
           <div class="key">话题</div>
         </div>
       </div>

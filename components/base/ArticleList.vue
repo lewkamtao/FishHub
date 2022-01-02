@@ -24,7 +24,6 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import util from "@/util/index.js";
 const { $api } = useNuxtApp();
 
 const articleType: any = ref("");

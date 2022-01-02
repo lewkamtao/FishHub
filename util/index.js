@@ -126,6 +126,23 @@ function getFileExt(filename) {
   return s
 }
 
+/**
+ * 1000+简写为K，10000+简写为W
+ * @param {} filename
+ */
+
+
+function numFormat(num) {
+  if (!num) {
+    return 0
+  }
+  if (num >= 10000) {
+    num = Math.round(num / 1000) / 10 + 'w';
+  } else if (num >= 1000) {
+    num = Math.round(num / 100) / 10 + 'k';
+  }
+  return num;
+}
 
 
 export default {
@@ -135,4 +152,5 @@ export default {
   initDomStyle,
   PUTObject,
   getFileExt,
+  numFormat
 };
