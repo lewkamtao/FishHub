@@ -60,7 +60,6 @@ const user = ref<any>({});
 
 const init = () => {
   const GeekAvatarEdit: any = document.getElementById("GeekAvatarEdit");
-
   cropper.value = new Cropper(GeekAvatarEdit, {
     viewMode: 1,
     dragMode: "none",
@@ -133,6 +132,7 @@ onMounted(() => {
   const geekAvatarEditUserInfo: any = document.getElementById(
     "geekAvatarEditUserInfo"
   );
+  init();
   //   初始化
   checkUserInfo();
   function checkUserInfo() {
@@ -141,13 +141,12 @@ onMounted(() => {
         return;
       }
       if (geekAvatarEditUserInfo.innerHTML) {
-        init();
         user.value = JSON.parse(geekAvatarEditUserInfo.innerHTML);
         cropper.value.replace(user.value.avatar, false); // 默认false，适应高度，不失真
       } else {
         checkUserInfo();
       }
-    }, 500);
+    }, 100);
   }
 });
 </script>
