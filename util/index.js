@@ -143,7 +143,7 @@ function getBase64(img) {
   }
   var image = new Image();
   image.crossOrigin = '*';
-  image.src = img + '?v=' + Math.random();
+  image.src = img;
   return new Promise((resolve, reject) => {
     image.onload = function () {
       resolve(getBase64Image(image));//将base64传给done上传处理

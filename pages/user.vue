@@ -139,17 +139,15 @@ const changeAvatar = async (e) => {
   const geekAvatarEditModal: any = document.getElementById(
     "geekAvatarEditModal"
   );
-
   geekAvatarEditModal.checked = true;
 };
-
-onMounted(() => {
+onMounted(async () => {
   const geekAvatarEditUserInfo: any = document.getElementById(
     "geekAvatarEditUserInfo"
   );
   geekAvatarEditUserInfo.innerHTML = JSON.stringify({
     _id: user.data._id,
-    avatar: user.data.avatar,
+    avatar: await util.getBase64(user.data.avatar),
   });
 });
 </script>

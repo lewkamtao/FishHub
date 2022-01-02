@@ -126,20 +126,24 @@ const closeFn = () => {
   );
   geekAvatarEditModal.checked = false;
 };
+const route = useRoute();
 
 onMounted(() => {
   // 设置用户头像 和 id
   const geekAvatarEditUserInfo: any = document.getElementById(
     "geekAvatarEditUserInfo"
   );
-  init();
   //   初始化
   checkUserInfo();
   function checkUserInfo() {
-    setTimeout(async () => {
+    setTimeout(() => {
+      if (route.path != "/user") {
+        return;
+      }
       if (geekAvatarEditUserInfo.innerHTML) {
+        init();
         user.value = JSON.parse(geekAvatarEditUserInfo.innerHTML);
-        cropper.value.replace(await util.getBase64(user.value.avatar), false); // 默认false，适应高度，不失真
+        cropper.value.replace(user.value.avatar, false); // 默认false，适应高度，不失真
       } else {
         checkUserInfo();
       }
