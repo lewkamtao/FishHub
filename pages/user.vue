@@ -147,7 +147,7 @@ onMounted(async () => {
   );
   geekAvatarEditUserInfo.innerHTML = JSON.stringify({
     _id: user.data._id,
-    avatar: user.data.avatar,
+    avatar: user.data.avatar + "?timestamp=" + new Date().getTime(),
   });
 });
 </script>
