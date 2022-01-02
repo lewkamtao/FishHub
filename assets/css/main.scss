@@ -129,6 +129,16 @@ textarea {
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
     }
+    ul li {
+        text-indent: 0px;
+    }
+    ul li::before {
+        content: "";
+        left: 0px;
+    }
+    hr::after {
+        content: "";
+    }
 }
 
 .geek-avatar-edit {

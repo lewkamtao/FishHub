@@ -23,7 +23,7 @@ textarea {
   <div class="comment-form">
     <div class="form-box">
       <label for="large-input">发表评论</label>
-      <textarea
+      <textarea class="margin-top-small"
         style="width: 100%; height: 100px"
         placeholder="此刻你的想法..."
         v-model="form.content"

@@ -13,6 +13,7 @@ a {
   }
 }
 .tags-box {
+  border-top: 1px solid var(--muted-light);
   .badge {
     margin-bottom: 10px;
     font-weight: normal;
@@ -28,7 +29,7 @@ a {
     <base-nav type="detail" :articleData="article.data"> </base-nav>
     <div class="article paper margin-none" id="article-editor">
       <v-md-preview :text="article.data.content"></v-md-preview>
-      <div class="tags-box margin-top" v-if="article.data.tags.length > 0">
+      <div class="tags-box margin-top padding-top" v-if="article.data.tags.length > 0">
         <nuxt-link
           :to="'/'"
           v-for="(item, index) in article.data.tags"
@@ -39,6 +40,7 @@ a {
         </nuxt-link>
       </div>
     </div>
+
     <base-comment-list :article_id="article.data._id"></base-comment-list>
   </div>
 </template>

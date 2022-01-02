@@ -60,6 +60,7 @@
       border-radius: 50px;
       padding: 5px 10px;
       font-weight: normal;
+      color: #fff;
       img {
         filter: invert(100%);
       }
@@ -178,13 +179,16 @@
         >
         <span class="num"> {{ article.like || 0 }}</span>
       </div>
-      <span class="badge comment-num secondary">
+      <nuxt-link
+        :to="`/detail?id=${article._id}`"
+        class="badge comment-num secondary"
+      >
         <img
           style="height: 18px; width: auto; margin-right: 5px"
           class="icon no-responsive no-border"
           src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
         />
-        {{ article.comment_num || 0 }}</span
+        {{ article.comment_num || 0 }}</nuxt-link
       >
     </div>
     <nuxt-link

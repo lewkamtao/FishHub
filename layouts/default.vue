@@ -42,7 +42,7 @@
           data-n-head="ssr"
           rel="icon"
           type="image/x-icon"
-          href="https://tngeek.com/favicon.ico"
+          href="https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/icon/fish.ico"
         />
       </Head>
     </Html>

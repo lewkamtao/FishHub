@@ -14,7 +14,7 @@ textarea {
   <div class="paper">
     <div class="user-info">
       <label for="upAvatar"
-        ><div popover-bottom="点击上传头像">
+        ><div popover-bottom="点击更换头像">
           <base-geek-avatar
             class="avatar"
             style="width: 100px; margin: 50px auto"

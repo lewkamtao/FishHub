@@ -5,13 +5,13 @@ img {
   object-fit: cover;
   background: #eee;
   cursor: pointer;
-  border: 1px rgba(0, 0, 0, 0.1) solid !important;
+  border: 1px rgba(0, 0, 0, 0.2) solid !important;
   box-sizing: border-box;
   overflow: hidden;
   transition: all 0.25s;
 }
 img:hover {
-  border: 1px rgba(0, 0, 0, 0.4) solid !important;
+  border: 1px rgba(0, 0, 0, 0.6) solid !important;
 }
 </style>
 
