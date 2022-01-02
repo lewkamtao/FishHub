@@ -126,11 +126,37 @@ function getFileExt(filename) {
   return s
 }
 
+
+/**
+ * 远程链接转Base64
+ * @param {} filename
+ */
+function getBase64(img) {
+  function getBase64Image(img, width, height) {
+    var canvas = document.createElement("canvas");
+    canvas.width = width ? width : img.width;
+    canvas.height = height ? height : img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    var dataURL = canvas.toDataURL();
+    return dataURL;
+  }
+  var image = new Image();
+  image.crossOrigin = '';
+  image.src = img;
+  return new Promise((resolve, reject) => {
+    image.onload = function () {
+      resolve(getBase64Image(image));//将base64传给done上传处理
+    }
+  });
+};
+
 export default {
   getBeautifyTime,
   randomInRange,
   addAlert,
   initDomStyle,
   PUTObject,
-  getFileExt
+  getFileExt,
+  getBase64
 };

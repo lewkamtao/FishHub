@@ -42,32 +42,32 @@ textarea {
       <fieldset class="form-group">
         <legend>性别</legend>
 
-        <label for="paperRadios1" class="paper-radio">
+        <label for="gender_boy" class="paper-radio">
           <input
             v-model="form.gender"
             type="radio"
             name="paperRadios"
-            id="paperRadios1"
+            id="gender_boy"
             value="1"
           />
           <span>男</span>
         </label>
-        <label for="paperRadios2" class="paper-radio">
+        <label for="gender_girl" class="paper-radio">
           <input
             v-model="form.gender"
             type="radio"
             name="paperRadios"
-            id="paperRadios2"
+            id="gender_girl"
             value="2"
           />
           <span>女</span>
         </label>
-        <label for="paperRadios1" class="paper-radio">
+        <label for="gender_null" class="paper-radio">
           <input
             v-model="form.gender"
             type="radio"
             name="paperRadios"
-            id="paperRadios1"
+            id="gender_null"
             value="0"
           />
           <span>保密</span>
