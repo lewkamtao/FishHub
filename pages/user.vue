@@ -84,11 +84,29 @@ textarea {
         />
       </div>
       <div class="form-group">
+        <label for="blog">主页</label>
+        <input
+          v-model="form.blog"
+          type="text"
+          placeholder="输入主页链接"
+          id="blog"
+        />
+      </div>
+      <div class="form-group">
+        <label for="location">地址</label>
+        <input
+          v-model="form.location"
+          type="text"
+          placeholder="输入地址"
+          id="location"
+        />
+      </div>
+      <div class="form-group">
         <label for="company">公司</label>
         <input
           v-model="form.company"
           type="text"
-          placeholder="公司名"
+          placeholder="输入公司名"
           id="company"
         />
       </div>
