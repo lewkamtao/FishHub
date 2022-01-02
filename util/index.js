@@ -143,14 +143,14 @@ function getBase64(img) {
   }
   var image = new Image();
   image.crossOrigin = '*';
-  image.src = img;
+  image.src = img + '?v=' + Math.random();
   return new Promise((resolve, reject) => {
     image.onload = function () {
       resolve(getBase64Image(image));//将base64传给done上传处理
     }
   });
 };
-
+ 
 export default {
   getBeautifyTime,
   randomInRange,
