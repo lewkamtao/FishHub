@@ -67,6 +67,12 @@ html.dark body {
             filter: invert(100%);
         }
     }
+    .alert {
+        background: #333 !important;
+        .icon {
+            filter: invert(0%);
+        }
+    }
     .geek-gender {
         .icon {
             filter: invert(0%);
@@ -86,8 +92,8 @@ html.dark body {
     .paper {
         border: 1px #333 solid;
     }
-    .article-item-box {
-        .article-item {
+    .article-card-box {
+        .article-card {
             border-bottom: 1px #333 solid;
         }
     }
