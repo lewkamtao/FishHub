@@ -7,7 +7,7 @@
 </style>
 
 <template>
-  <div class="padding-none margin-top-none article-list">
+  <div class="paper padding-none margin-top-none article-list">
     <base-article-cart
       v-for="(item, index) in articleList.data"
       :key="'item' + index"

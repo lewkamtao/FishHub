@@ -8,7 +8,6 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--muted-light);
     .author {
       margin-left: 5px;
       font-size: 14px;
@@ -25,9 +24,9 @@
 <template>
   <div class="nav-by-detail">
     <div class="title">{{ articleData.title }}</div>
-    <div class="author-info padding-bottom">
+    <div class="author-info">
       <base-geek-avatar
-        style="width: 25px; height: 25px"
+        style="width: 25px;height:25px"
         :src="articleData.user[0].avatar"
       ></base-geek-avatar>
 

@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   white-space: nowrap;
   padding: 7px;
-  border-bottom: 1px solid var(--muted-light);
 
   a {
     padding: 5px 10px;
