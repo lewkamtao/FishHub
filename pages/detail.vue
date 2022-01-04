@@ -1,7 +1,11 @@
 <style lang="scss" scoped>
+
 .article {
   border-top: none !important;
+
   padding: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 a {
   margin: 0px 5px;
@@ -25,22 +29,26 @@ a {
 </style>
 
 <template>
-  <div class="detail margin-top">
-    <base-nav type="detail" :articleData="article.data"> </base-nav>
-    <div class="article paper margin-none" id="article-editor">
-      <v-md-preview :text="article.data.content"></v-md-preview>
-      <div class="tags-box margin-top padding-top" v-if="article.data.tags.length > 0">
-        <nuxt-link
-          :to="'/'"
-          v-for="(item, index) in article.data.tags"
-          :key="`tags${index}`"
-          class="badge"
+  <div class="margin-top">
+    <div class="paper padding-none detail">
+      <base-nav type="detail" :articleData="article.data"> </base-nav>
+      <div class="article margin-none" id="article-editor">
+        <v-md-preview :text="article.data.content"></v-md-preview>
+        <div
+          class="tags-box margin-top padding-top"
+          v-if="article.data.tags.length > 0"
         >
-          <span v-text="item.key"></span>
-        </nuxt-link>
+          <nuxt-link
+            :to="'/'"
+            v-for="(item, index) in article.data.tags"
+            :key="`tags${index}`"
+            class="badge"
+          >
+            <span v-text="item.key"></span>
+          </nuxt-link>
+        </div>
       </div>
     </div>
-
     <base-comment-list :article_id="article.data._id"></base-comment-list>
   </div>
 </template>

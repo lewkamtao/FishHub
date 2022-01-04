@@ -1,7 +1,4 @@
 <style lang="scss" scoped>
-.article-list {
-  border-top: none !important;
-}
 .article-card-box {
   position: relative;
 

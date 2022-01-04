@@ -1,11 +1,13 @@
 <style lang="scss" scoped>
 .article-list {
   border-top: none !important;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 </style>
 
 <template>
-  <div class="paper padding-none margin-top-none article-list">
+  <div class="padding-none margin-top-none article-list">
     <base-article-cart
       v-for="(item, index) in articleList.data"
       :key="'item' + index"

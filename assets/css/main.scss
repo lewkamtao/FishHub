@@ -164,6 +164,12 @@ textarea {
 .paper {
     box-sizing: border-box;
     box-shadow: none;
+    border-bottom-left-radius: 6px 215px;
+    border-bottom-right-radius: 215px 6px;
+    border-top-left-radius: 215px 6px;
+    border-top-right-radius: 6px 215px;
+    border-color: rgb(199, 197, 197);
+    border-width: 2px;
 }
 
 #he-plugin-standard {
