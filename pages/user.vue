@@ -31,13 +31,13 @@ textarea {
         />
       </div>
       <div class="form-group">
-        <label for="no-resize">介绍</label>
+        <label for="gender_description">介绍</label>
         <textarea
           v-model="form.description"
           style="height: 100px"
           class="no-resize"
-          id="no-resize"
-          placeholder="No resize"
+          id="gender_description"
+          placeholder="简单介绍一下自己"
         ></textarea>
       </div>
       <fieldset class="form-group">
