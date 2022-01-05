@@ -26,7 +26,7 @@ textarea {
         <input
           v-model="form.nickname"
           type="text"
-          placeholder="Nice input"
+          placeholder="输入昵称"
           id="paperInputs1"
         />
       </div>
