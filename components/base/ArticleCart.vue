@@ -1,24 +1,28 @@
 <style lang="scss" scoped>
 .article-card-box {
   position: relative;
-
+  display: flex;
+  align-items: center;
+  .avatar-box {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: var(--muted-light);
+    }
+  }
   .article-card {
     display: flex;
+    width: calc(100% - 60px);
+    margin-left: 15px;
     border-bottom: 1px solid var(--muted-light);
     color: var(--primary);
-    .avatar-box {
-      width: 60px;
-      height: 60px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background: var(--muted-light);
-      }
-    }
+
     .content {
       width: calc(100% - 70px);
-      margin-left: 15px;
       .top {
         .title {
           font-size: 18px;
@@ -105,10 +109,7 @@
     opacity: 0.6;
   }
 }
-.article-card:hover {
-  background: var(--primary-shaded-70);
-  cursor: pointer;
-}
+
 .loading-more {
   width: 100%;
   display: flex;
@@ -166,6 +167,9 @@
     }
   }
 }
+.article-card-box:hover {
+  background: var(--primary-shaded-70);
+}
 </style>
 <template>
   <div class="article-card-box">
@@ -190,14 +194,18 @@
         {{ util.numFormat(article.comment_num) }}
       </nuxt-link>
     </div>
+    <div class="avatar-box">
+      <base-geek-avatar
+        style="width: 60px; height: 60px"
+        :isShowInfo="true"
+        :user="article.user[0]"
+      ></base-geek-avatar>
+    </div>
     <nuxt-link
       :to="`/detail?id=${article._id}`"
-      class="article-card padding margin-none"
+      class="article-card padding margin-none padding-left-none"
       :class="{ isRead: article.isRead }"
     >
-      <div class="avatar-box">
-        <base-geek-avatar :src="article.user[0].avatar"></base-geek-avatar>
-      </div>
       <div class="content">
         <div class="top">
           <div class="title" v-text="article.title"></div>

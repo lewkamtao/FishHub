@@ -168,10 +168,12 @@
   .item {
     font-size: 14px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     opacity: 0.4;
+    margin-bottom: 5px;
     img {
       width: 14px;
+      margin-top: 2px;
       margin-right: 10px;
     }
   }
@@ -191,8 +193,8 @@
       </div>
       <nuxt-link to="/user">
         <base-geek-avatar
-          style="width: 100px"
-          :src="user.data.avatar"
+          style="width: 100px; height: 100px"
+          :user="user.data"
         ></base-geek-avatar
       ></nuxt-link>
       <div class="nickname">

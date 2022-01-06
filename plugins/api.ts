@@ -20,7 +20,7 @@ const env = () => useRuntimeConfig();
 
 // 网络请求 - GET
 const GET = async (url, params) => {
-  const token = useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   // 定义 Token
   const config = { headers: { authorization: token.value } };
   // 合并 headers 数据
@@ -44,7 +44,7 @@ const GETP = async (url, params) => {
 
 // 网络请求 - POST
 const POST = async (url, params) => {
-  const token =useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   // 默认配置
   const opt = {
     method: "POST",
@@ -65,7 +65,7 @@ const POST = async (url, params) => {
 
 // 网络请求 - PUT
 const PUT = async (url, params) => {
-  const token = useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   // 默认配置
   const opt = {
     method: "PUT",
@@ -86,7 +86,7 @@ const PUT = async (url, params) => {
 
 // 网络请求 - DELETE
 const DELETE = async (url, params) => {
-  const token = useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   // 默认配置
   const opt = {
     method: "DELETE",
@@ -107,7 +107,7 @@ const DELETE = async (url, params) => {
 
 // 网络请求 - PATCH
 const PATCH = async (url, params) => {
-  const token = useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   // 默认配置
   const opt = {
     method: "PATCH",

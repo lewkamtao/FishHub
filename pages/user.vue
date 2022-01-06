@@ -18,7 +18,7 @@ textarea {
           <base-geek-avatar
             class="avatar"
             style="width: 100px; margin: 50px auto"
-            :src="user.data.avatar"
+            :user="user.data"
           ></base-geek-avatar></div
       ></label>
       <div class="form-group">

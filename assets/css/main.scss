@@ -40,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: HarmonyOS_Sans_SC_Medium, sans-serif
+    font-family: sans-serif
 }
 
 a {
@@ -208,6 +208,8 @@ textarea {
 #geek-message-box {
     position: fixed;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     z-index: 99;
     left: 50%;
@@ -215,7 +217,9 @@ textarea {
     top: 80px;
     transition: all 0.1s;
     .alert {
+        width: auto;
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
         height: 40px;

@@ -27,7 +27,7 @@
     <div class="author-info">
       <base-geek-avatar
         style="width: 25px;height:25px"
-        :src="articleData.user[0].avatar"
+        :user="articleData.user[0]"
       ></base-geek-avatar>
 
       <div class="author">{{ articleData.user[0].nickname }}</div>

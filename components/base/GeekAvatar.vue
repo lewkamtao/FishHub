@@ -1,33 +1,99 @@
 <style lang="scss" scoped>
-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  background: #eee;
-  cursor: pointer;
-  border: 1px rgba(0, 0, 0, 0.2) solid !important;
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: all 0.25s;
+.avatar {
+  position: relative;
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    background: #eee;
+    cursor: pointer;
+    border: 1px rgba(0, 0, 0, 0.2) solid !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .avatar-img:hover {
+    border: 1px rgba(0, 0, 0, 0.6) solid !important;
+  }
 }
-img:hover {
-  border: 1px rgba(0, 0, 0, 0.6) solid !important;
+.user-info {
+  position: absolute;
+  width: 240px;
+  height: auto;
+  z-index: 99;
+  display: none;
+  left: 0px;
+  top: 20px;
+}
+.avatar:hover {
+  .user-info {
+    display: block;
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
 
 <template>
-  <img :src="src" :style="imgStyle" alt="" srcset="" />
+  <div @mouseenter="setShow" @mouseleave="clearShow" class="avatar">
+    <transition name="fade">
+      <div v-if="isShow" class="user-info">
+        <base-geek-user-info :user="user"></base-geek-user-info>
+      </div>
+    </transition>
+
+    <img
+      :src="user.avatar"
+      :style="imgStyle"
+      alt=""
+      srcset=""
+      class="avatar-img"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, defineProps } from "vue";
 const props = defineProps({
-  src: {
-    type: String,
-    default: "",
+  user: {
+    type: Object,
+    default: {
+      avatar:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABaCAYAAAA/xl1SAAAA/klEQVR4nO3SQREAIADDsIEo/EtDRj+JhF7PtjeIXOEpGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQB6Wz7qpMA6icD3IEAAAAASUVORK5CYII=",
+    },
+  },
+  isShowInfo: {
+    type: Boolean,
+    default: false,
   },
 });
 import util from "@/util/index";
+
+const isShow = ref(false);
+const timer = ref(null);
+
+const setShow = () => {
+  if (props.isShowInfo) {
+    clearTimeout(timer);
+    timer.value = setTimeout(() => {
+      isShow.value = true;
+    }, 500);
+  }
+};
+const clearShow = () => {
+  if (props.isShowInfo) {
+    isShow.value = false;
+    clearTimeout(timer);
+  }
+};
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
   225,

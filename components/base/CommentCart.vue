@@ -1,11 +1,13 @@
 <style lang="scss" scoped>
 .comment-child {
   padding-left: 75px;
+  .comment-box {
+    background: rgba(0, 0, 0, 0.03);
+  }
 }
 .comment-box:hover {
-  background: var(--primary-shaded-70);
-  cursor: pointer;
   .reply-btn {
+    cursor: pointer;
     opacity: 0.8;
   }
 }
@@ -13,7 +15,7 @@
   position: relative;
   padding: 20px;
   display: flex;
-  border-bottom: 1px solid var(--muted-light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   .content {
     width: calc(100% - 80px);
     margin-left: 10px;
@@ -55,7 +57,7 @@
       <div class="comment-box comment-parent">
         <base-geek-avatar
           style="width: 45px; height: 45px"
-          :src="comment.user[0].avatar"
+          :user="comment.user[0]"
         >
         </base-geek-avatar>
         <div class="content">
@@ -63,7 +65,9 @@
             <a class="author margin-right-small" target="_blank">
               {{ comment.user[0].nickname }}
             </a>
-            <base-geek-gender :gender="comment.user[0].gender"></base-geek-gender>
+            <base-geek-gender
+              :gender="comment.user[0].gender"
+            ></base-geek-gender>
             <div class="metadata">
               <span class="date">
                 {{ comment.BeautifyUpdateTime || "刚刚" }}</span
@@ -90,7 +94,7 @@
           <div class="comment-box">
             <base-geek-avatar
               style="width: 45px; height: 45px"
-              :src="child.user[0].avatar"
+              :user="child.user[0]"
             >
             </base-geek-avatar>
             <div class="content">
