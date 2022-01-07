@@ -1,13 +1,9 @@
 <style lang="scss" scoped>
-.article-list {
-  border-top: none !important;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
+
 </style>
 
 <template>
-  <div class="paper padding-none margin-top-none article-list">
+  <div class="padding-none margin-top-none article-list">
     <base-article-cart
       v-for="(item, index) in articleList.data"
       :key="'item' + index"
@@ -32,6 +28,13 @@ const articleType: any = ref("");
 
 const route = useRoute();
 
+const props = defineProps({
+  user_id: {
+    type: String,
+    default: "",
+  },
+});
+
 watch(
   () => route.query.articleType,
   () => {
@@ -54,6 +57,7 @@ await $api
   .GET("/article/list", {
     pageNum: PageOptions.value.pageNum,
     pageSize: PageOptions.value.pageSize,
+    user_id: props.user_id,
     type: articleType.value,
   })
   .then((res) => {
@@ -69,6 +73,7 @@ const updateArticleList: any = (type) => {
     .GET("/article/list", {
       pageNum: PageOptions.value.pageNum,
       pageSize: PageOptions.value.pageSize,
+      user_id: props.user_id || null,
       type: articleType.value,
     })
     .then((res) => {

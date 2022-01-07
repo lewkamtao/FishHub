@@ -59,7 +59,7 @@
   }
 }
 label {
-  width: calc(100% / 4);
+  width: calc(100% / 2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -85,6 +85,9 @@ label {
       }
     }
   }
+}
+.tabs .content {
+  padding-top: 0px;
 }
 </style>
 
@@ -117,21 +120,13 @@ label {
       <label for="tab1">文章</label>
 
       <input id="tab2" type="radio" name="tabs" />
-      <label for="tab2">动态</label>
+      <label for="tab2">关于</label>
 
-      <input id="tab3" type="radio" name="tabs" />
-      <label for="tab3">关于</label>
-
-      <input id="tab4" type="radio" name="tabs" />
-      <label for="tab4">友情链接</label>
-
-      <div class="content" id="content1">
-        <div class="content-box"><p>文章开发中...</p></div>
+      <div class="content padding-top-none" id="content1">
+        <base-article-list :user_id="user._id"></base-article-list>
       </div>
+
       <div class="content" id="content2">
-        <div class="content-box"><p>动态开发中...</p></div>
-      </div>
-      <div class="content" id="content3">
         <div class="content-box">
           <div class="about">
             <div class="title">个人信息</div>
@@ -162,9 +157,6 @@ label {
           </div>
         </div>
       </div>
-      <div class="content" id="content4">
-        <div class="content-box"><p>友情链接开发中...</p></div>
-      </div>
     </div>
   </div>
 </template>
@@ -175,5 +167,6 @@ const { $api } = useNuxtApp();
 import util from "~~/util";
 const route: any = useRoute();
 const userRes: any = await $api.GET("/user/" + route.query.id, {});
+
 const user = userRes.data;
 </script>

@@ -22,7 +22,7 @@
     border-bottom: 1px solid var(--muted-light);
     color: var(--primary);
 
-    .content {
+    .article-body {
       width: calc(100% - 70px);
       .top {
         .title {
@@ -215,7 +215,7 @@
       class="article-card padding margin-none padding-left-none"
       :class="{ isRead: article.isRead }"
     >
-      <div class="content">
+      <div class="article-body">
         <nuxt-link :to="`/detail?id=${article._id}`" class="top">
           <div class="title" v-text="article.title"></div>
         </nuxt-link>
