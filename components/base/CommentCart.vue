@@ -58,6 +58,7 @@
         <base-geek-avatar
           style="width: 45px; height: 45px"
           :user="comment.user[0]"
+          :isShowInfo="true"
         >
         </base-geek-avatar>
         <div class="content">
@@ -95,6 +96,7 @@
             <base-geek-avatar
               style="width: 45px; height: 45px"
               :user="child.user[0]"
+              :isShowInfo="true"
             >
             </base-geek-avatar>
             <div class="content">

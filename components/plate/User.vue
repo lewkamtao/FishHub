@@ -199,7 +199,9 @@
       ></nuxt-link>
       <div class="nickname">
         <span class="margin-right-small"> {{ user.data.nickname }}</span>
-        <base-geek-gender :gender="user.data.gender"></base-geek-gender>
+        <div>
+          <base-geek-gender :gender="user.data.gender"></base-geek-gender>
+        </div>
       </div>
       <div class="description">{{ user.data.description || "暂无介绍" }}</div>
       <div class="info-box">
@@ -225,7 +227,7 @@
 
       <input class="alert-state" id="alert-1" type="checkbox" />
       <div
-        v-if="!user.data.password"
+        v-if="user.data.nickname.indexOf('新用户') >= 0"
         class="alert alert-secondary dismissible margin-top margin-bottom-none"
       >
         由于微信隐私政策，在2021年12月27日之后，不再为第三方提供头像、昵称信息。现在，你可以点击头像设置个人信息。

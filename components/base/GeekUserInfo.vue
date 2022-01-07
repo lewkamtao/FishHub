@@ -70,11 +70,17 @@
   <div class="user-info paper">
     <div class="top">
       <div class="left">
-        <img :src="user.avatar" :style="imgStyle" alt="" srcset="" />
+        <nuxt-link :to="`/userHome?id=${user._id}`">
+          <img :src="user.avatar" :style="imgStyle" alt="" srcset=""
+        /></nuxt-link>
       </div>
       <div class="right">
         <div class="nickname">
-          <span class="margin-right-small"> {{ user.nickname }}</span>
+          <nuxt-link :to="`/userHome?id=${props.user._id}`">
+            <span class="margin-right-small">
+              {{ user.nickname }}</span
+            ></nuxt-link
+          >
           <base-geek-gender :gender="user.gender"></base-geek-gender>
         </div>
         <div class="description">{{ user.description || "暂无介绍" }}</div>

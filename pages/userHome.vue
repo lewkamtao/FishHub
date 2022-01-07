@@ -1,0 +1,179 @@
+<style lang="scss" scoped>
+.user-home {
+  .header {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    .bg {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0.35;
+      background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/userHomeBg.svg);
+      background-size: cover;
+      background-position: center;
+      filter: invert(70%);
+    }
+
+    .user-info {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      padding: 5px;
+      max-width: calc(50% - 40px);
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.65);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      border: 2px #eee solid;
+
+      .left {
+        margin-right: 10px;
+      }
+      .right {
+        width: calc(100% - 60px);
+        .nickname {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          white-space: nowrap;
+          font-size: 18px;
+          margin-right: 10px;
+          span {
+            color: #000;
+          }
+        }
+        .description {
+          margin-top: 5px;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+}
+label {
+  width: calc(100% / 4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-box {
+  min-height: 300px;
+  padding: 20px;
+  .title {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .about {
+    .info-box {
+      .item {
+        font-size: 14px;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 5px;
+        img {
+          width: 14px;
+          margin-top: 2px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+</style>
+
+<template>
+  <div class="paper user-home padding-none">
+    <div class="header">
+      <div class="bg"></div>
+      <div class="user-info">
+        <div class="left">
+          <base-geek-avatar
+            style="width: 60px; height: 60px"
+            :user="user"
+          ></base-geek-avatar>
+        </div>
+        <div class="right">
+          <div class="nickname">
+            <nuxt-link :to="`/userHome?id=${user._id}`">
+              <span class="margin-right-small">
+                {{ user.nickname }}</span
+              ></nuxt-link
+            >
+            <base-geek-gender :gender="user.gender"></base-geek-gender>
+          </div>
+          <div class="description">{{ user.description || "暂无介绍" }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row flex-spaces tabs">
+      <input id="tab1" type="radio" name="tabs" checked />
+      <label for="tab1">文章</label>
+
+      <input id="tab2" type="radio" name="tabs" />
+      <label for="tab2">动态</label>
+
+      <input id="tab3" type="radio" name="tabs" />
+      <label for="tab3">关于</label>
+
+      <input id="tab4" type="radio" name="tabs" />
+      <label for="tab4">友情链接</label>
+
+      <div class="content" id="content1">
+        <div class="content-box"><p>文章开发中...</p></div>
+      </div>
+      <div class="content" id="content2">
+        <div class="content-box"><p>动态开发中...</p></div>
+      </div>
+      <div class="content" id="content3">
+        <div class="content-box">
+          <div class="about">
+            <div class="title">个人信息</div>
+            <div class="info-box">
+              <div class="item">
+                <img
+                  src="@sicons/ionicons5/BusinessOutline.svg"
+                  alt=""
+                  srcset=""
+                />{{ user.company || "-" }}
+              </div>
+              <div class="item">
+                <img
+                  src="@sicons/ionicons5/LocationOutline.svg"
+                  alt=""
+                  srcset=""
+                />{{ user.location || "-" }}
+              </div>
+              <div class="item">
+                <img src="@sicons/ionicons5/MailOutline.svg" alt="" srcset="" />
+                {{ user.email || "-" }}
+              </div>
+              <div class="item">
+                <img src="@sicons/ionicons5/HomeOutline.svg" alt="" srcset="" />
+                {{ user.blog || "-" }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content" id="content4">
+        <div class="content-box"><p>友情链接开发中...</p></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+const { $api } = useNuxtApp();
+import util from "~~/util";
+const route: any = useRoute();
+const userRes: any = await $api.GET("/user/" + route.query.id, {});
+const user = userRes.data;
+</script>

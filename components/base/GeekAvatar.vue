@@ -24,7 +24,7 @@
   z-index: 99;
   display: none;
   left: 0px;
-  top: 20px;
+  top: 60%;
 }
 .avatar:hover {
   .user-info {
@@ -51,6 +51,7 @@
     </transition>
 
     <img
+      @click="toDetail"
       :src="user.avatar"
       :style="imgStyle"
       alt=""
@@ -76,6 +77,7 @@ const props = defineProps({
   },
 });
 import util from "@/util/index";
+const router: any = useRouter();
 
 const isShow = ref(false);
 const timer = ref(null);
@@ -87,12 +89,16 @@ const setShow = () => {
       isShow.value = true;
     }, 500);
   }
-};
+}; 
 const clearShow = () => {
   if (props.isShowInfo) {
     isShow.value = false;
     clearTimeout(timer);
   }
+}; 
+
+const toDetail = () => {
+  router.push(`/userHome?id=${props.user._id}`);
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
