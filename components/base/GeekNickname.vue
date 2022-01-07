@@ -7,11 +7,12 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: #444;
+
     transition: all 0.25s;
+    color: var(--primary-dark-10);
   }
   .nickname-text:hover {
-    color: #000;
+    color: var(--primary);
   }
   .name {
     margin-right: 5px;

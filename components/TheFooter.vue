@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
 footer {
   position: relative;
-  
+
   margin-top: 30px;
   .wrapper {
     color: #999;
@@ -11,7 +11,7 @@ footer {
 
       a {
         position: relative;
-        
+
         color: var(--primary);
         margin-right: 30px;
       }
@@ -23,7 +23,7 @@ footer {
         content: "";
         width: 3px;
         height: 3px;
-        background: rgba($color: #000, $alpha: 0.15);
+        background: var(--muted-light);
         font-weight: bold;
       }
       a:last-child::after {
@@ -48,7 +48,7 @@ footer {
     margin-top: 5px;
     a {
       color: #999;
-      
+
       font-size: 14px;
       margin-right: 10px;
     }

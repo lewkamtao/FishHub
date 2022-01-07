@@ -59,6 +59,16 @@ img {
 
 html.dark body {
     background: #222;
+    a:link {
+        color: #fff;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #eee;
+    }
+    .gender {
+        filter: invert(100%);
+    }
     .icon {
         filter: invert(100%);
     }
