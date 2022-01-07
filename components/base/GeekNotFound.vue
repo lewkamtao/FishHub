@@ -31,7 +31,7 @@ body {
 .rightshoe404,
 .legs404,
 .laptop404 {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15979/404-character-new.png)
+  background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/404-character-new.png)
     0 0 no-repeat;
   width: 200px;
   height: 200px;

@@ -20,6 +20,7 @@ header {
 
   .moyu-title {
     display: flex;
+    color: #000;
     align-items: flex-end;
     font-size: 30px;
     margin-bottom: 5px;
@@ -49,6 +50,7 @@ header {
     margin: 6px 0px 0px 0px;
     a {
       margin-right: 30px;
+      color: #000;
       margin-top: 2px;
       border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
     }
@@ -87,7 +89,7 @@ header {
         <nuxt-link to="/about">关于</nuxt-link>
         <div style="margin-bottom: 5px" class="post-btn badge" @click="post">
           <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="" />
-          创建话题
+          创建文章
         </div>
       </menu>
     </div>

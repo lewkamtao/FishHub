@@ -106,6 +106,15 @@ html.dark body {
     }
 }
 
+a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #999;
+}
+
 textarea {
     border-bottom-left-radius: 5px 255px;
     border-bottom-right-radius: 225px 5px;

@@ -63,12 +63,10 @@
         </base-geek-avatar>
         <div class="content">
           <div class="header">
-            <a class="author margin-right-small" target="_blank">
-              {{ comment.user.nickname }}
-            </a>
-            <base-geek-gender
-              :gender="comment.user.gender"
-            ></base-geek-gender>
+            <base-geek-nickname
+              :isShowInfo="true"
+              :user="comment.user"
+            ></base-geek-nickname>
             <div class="metadata">
               <span class="date">
                 {{ comment.BeautifyUpdateTime || "刚刚" }}</span
@@ -101,12 +99,10 @@
             </base-geek-avatar>
             <div class="content">
               <div class="header">
-                <a class="author margin-right-small" target="_blank">
-                  {{ child.user.nickname }}</a
-                >
-                <base-geek-gender
-                  :gender="child.user.gender"
-                ></base-geek-gender>
+                <base-geek-nickname
+                  :isShowInfo="true"
+                  :user="child.user"
+                ></base-geek-nickname>
                 <div class="metadata">
                   <span class="date">
                     {{ child.BeautifyUpdateTime || "刚刚" }}</span

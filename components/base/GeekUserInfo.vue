@@ -67,7 +67,7 @@
 </style>
 
 <template>
-  <div class="user-info paper">
+  <div @click.stop class="user-info paper">
     <div class="top">
       <div class="left">
         <nuxt-link :to="`/userHome?id=${user._id}`">

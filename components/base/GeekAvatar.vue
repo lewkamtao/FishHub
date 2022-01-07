@@ -24,7 +24,8 @@
   z-index: 99;
   display: none;
   left: 0px;
-  top: 60%;
+  top: 100%;
+  margin-top: 0px;
 }
 .avatar:hover {
   .user-info {
@@ -51,7 +52,7 @@
     </transition>
 
     <img
-      @click="toDetail"
+      @click.stop="toDetail"
       :src="user.avatar"
       :style="imgStyle"
       alt=""
@@ -89,16 +90,20 @@ const setShow = () => {
       isShow.value = true;
     }, 500);
   }
-}; 
+};
 const clearShow = () => {
   if (props.isShowInfo) {
     isShow.value = false;
     clearTimeout(timer);
   }
-}; 
+};
 
 const toDetail = () => {
-  router.push(`/userHome?id=${props.user._id}`);
+  if (props.isShowInfo) {
+    router.push(`/userHome?id=${props.user._id}`);
+  } else {
+    router.push(`/user`);
+  }
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

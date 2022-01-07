@@ -191,17 +191,12 @@
           srcset=""
         />
       </div>
-      <nuxt-link to="/user">
-        <base-geek-avatar
-          style="width: 100px; height: 100px"
-          :user="user.data"
-        ></base-geek-avatar
-      ></nuxt-link>
+      <base-geek-avatar
+        style="width: 100px; height: 100px"
+        :user="user.data"
+      ></base-geek-avatar>
       <div class="nickname">
-        <span class="margin-right-small"> {{ user.data.nickname }}</span>
-        <div>
-          <base-geek-gender :gender="user.data.gender"></base-geek-gender>
-        </div>
+        <base-geek-nickname :user="user.data"></base-geek-nickname>
       </div>
       <div class="description">{{ user.data.description || "暂无介绍" }}</div>
       <div class="info-box">
@@ -244,7 +239,7 @@
         </div>
         <div class="article">
           <div class="value">{{ util.numFormat(user.data.article_num) }}</div>
-          <div class="key">话题</div>
+          <div class="key">文章</div>
         </div>
       </div>
     </div>

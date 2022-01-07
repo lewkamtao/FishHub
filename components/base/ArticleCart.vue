@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
   .avatar-box {
     width: 60px;
     height: 60px;
@@ -26,6 +27,9 @@
       .top {
         .title {
           font-size: 18px;
+        }
+        .title:hover {
+          text-decoration: underline;
         }
       }
       .bottom {
@@ -78,14 +82,16 @@
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
-        height: 30px;
-        min-width: 30px;
-        max-width: 30px;
-        font-size: 28px;
-        transition: font-size 0.15s;
+        height: 35px;
+        min-width: 35px;
+        max-width: 35px;
         background: #eee;
         border-radius: 50%;
         border: 4px rgba($color: #000000, $alpha: 0) solid;
+        img {
+          width: 35px;
+          transition: width 0.15s;
+        }
       }
       .num {
         margin-left: 8px;
@@ -95,8 +101,8 @@
       .icon:hover {
         border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
       }
-      .icon:active {
-        font-size: 5px;
+      .icon:active img {
+        width: 5px;
       }
     }
   }
@@ -172,12 +178,16 @@
 }
 </style>
 <template>
-  <div class="article-card-box">
+  <div class="article-card-box" @click="toDetail(article._id)">
     <div class="handle-box">
       <div class="push">
-        <span @click.stop="push($event, article._id)" class="icon like"
-          >🎉</span
-        >
+        <span @click.stop="push($event, article._id)" class="icon like">
+          <img
+            src="https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/qz.png"
+            alt=""
+            srcset=""
+          />
+        </span>
         <span class="num">
           {{ util.numFormat(article.like) }}
         </span>
@@ -201,31 +211,29 @@
         :user="article.user"
       ></base-geek-avatar>
     </div>
-    <nuxt-link
-      :to="`/detail?id=${article._id}`"
+    <div
       class="article-card padding margin-none padding-left-none"
       :class="{ isRead: article.isRead }"
     >
       <div class="content">
-        <div class="top">
+        <nuxt-link :to="`/detail?id=${article._id}`" class="top">
           <div class="title" v-text="article.title"></div>
-        </div>
+        </nuxt-link>
         <div class="bottom margin-top-small">
           <div class="tags margin-right-small">
             <span class="badge tag" v-text="article.type"></span>
           </div>
-          <span
-            class="margin-right-small author"
-            v-text="article.user && article.user.nickname"
-          ></span>
-          <base-geek-gender :gender="article.user.gender"></base-geek-gender>
+          <base-geek-nickname
+            :isShowInfo="true"
+            :user="article.user"
+          ></base-geek-nickname>
           <span
             class="margin-left date"
             v-text="article.BeautifyUpdateTime || `刚刚`"
           ></span>
         </div>
       </div>
-    </nuxt-link>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -240,6 +248,11 @@ const props = defineProps({
 });
 
 import confetti from "canvas-confetti";
+const router: any = useRouter();
+
+const toDetail = (id) => {
+  router.push(`/detail?id=${id}`);
+};
 
 const push = (e, article_id) => {
   let w: any = document.documentElement.clientWidth;

@@ -8,10 +8,7 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
-    .author {
-      margin-left: 5px;
-      font-size: 14px;
-    }
+
     .updateTime {
       color: #999;
       margin-left: 20px;
@@ -25,12 +22,14 @@
   <div class="nav-by-detail">
     <div class="title">{{ articleData.title }}</div>
     <div class="author-info">
-      <base-geek-avatar
-        style="width: 25px;height:25px"
+      <base-geek-avatar :isShowInfo="true"
+        style="width: 25px; height: 25px; margin-right: 10px"
         :user="articleData.user"
       ></base-geek-avatar>
-
-      <div class="author">{{ articleData.user.nickname }}</div>
+      <base-geek-nickname
+        :isShowInfo="true"
+        :user="articleData.user"
+      ></base-geek-nickname>
       <div class="updateTime">{{ articleData.BeautifyUpdateTime }}</div>
     </div>
   </div>
