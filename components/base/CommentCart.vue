@@ -57,17 +57,17 @@
       <div class="comment-box comment-parent">
         <base-geek-avatar
           style="width: 45px; height: 45px"
-          :user="comment.user[0]"
+          :user="comment.user"
           :isShowInfo="true"
         >
         </base-geek-avatar>
         <div class="content">
           <div class="header">
             <a class="author margin-right-small" target="_blank">
-              {{ comment.user[0].nickname }}
+              {{ comment.user.nickname }}
             </a>
             <base-geek-gender
-              :gender="comment.user[0].gender"
+              :gender="comment.user.gender"
             ></base-geek-gender>
             <div class="metadata">
               <span class="date">
@@ -95,17 +95,17 @@
           <div class="comment-box">
             <base-geek-avatar
               style="width: 45px; height: 45px"
-              :user="child.user[0]"
+              :user="child.user"
               :isShowInfo="true"
             >
             </base-geek-avatar>
             <div class="content">
               <div class="header">
                 <a class="author margin-right-small" target="_blank">
-                  {{ child.user[0].nickname }}</a
+                  {{ child.user.nickname }}</a
                 >
                 <base-geek-gender
-                  :gender="child.user[0].gender"
+                  :gender="child.user.gender"
                 ></base-geek-gender>
                 <div class="metadata">
                   <span class="date">

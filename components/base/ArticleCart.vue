@@ -198,7 +198,7 @@
       <base-geek-avatar
         style="width: 60px; height: 60px"
         :isShowInfo="true"
-        :user="article.user[0]"
+        :user="article.user"
       ></base-geek-avatar>
     </div>
     <nuxt-link
@@ -216,9 +216,9 @@
           </div>
           <span
             class="margin-right-small author"
-            v-text="article.user[0] && article.user[0].nickname"
+            v-text="article.user && article.user.nickname"
           ></span>
-          <base-geek-gender :gender="article.user[0].gender"></base-geek-gender>
+          <base-geek-gender :gender="article.user.gender"></base-geek-gender>
           <span
             class="margin-left date"
             v-text="article.BeautifyUpdateTime || `刚刚`"

@@ -27,10 +27,10 @@
     <div class="author-info">
       <base-geek-avatar
         style="width: 25px;height:25px"
-        :user="articleData.user[0]"
+        :user="articleData.user"
       ></base-geek-avatar>
 
-      <div class="author">{{ articleData.user[0].nickname }}</div>
+      <div class="author">{{ articleData.user.nickname }}</div>
       <div class="updateTime">{{ articleData.BeautifyUpdateTime }}</div>
     </div>
   </div>
