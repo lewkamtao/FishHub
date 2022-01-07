@@ -106,10 +106,7 @@ const typeList: any = await $api.GET("/articleType", {});
 const postArticle = () => {
   const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
-    util.addAlert({
-       type: "danger",
-      text: "未登录，请先登录",
-    });
+    util.wxLogin($api);
     return;
   }
 
@@ -120,14 +117,14 @@ const postArticle = () => {
   switch (true) {
     case form.value.title == "": {
       util.addAlert({
-         type: "danger",
+        type: "danger",
         text: "请设置标题",
       });
       return;
     }
     case form.value.type == "": {
       util.addAlert({
-         type: "danger",
+        type: "danger",
         text: "请选择分类",
       });
       return;
@@ -135,7 +132,7 @@ const postArticle = () => {
 
     case form.value.type == "": {
       util.addAlert({
-         type: "danger",
+        type: "danger",
         text: "请输入内容",
       });
       return;

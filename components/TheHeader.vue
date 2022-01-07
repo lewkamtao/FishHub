@@ -50,7 +50,7 @@ header {
     margin: 6px 0px 0px 0px;
     a {
       margin-right: 30px;
-         color: var(--primary);
+      color: var(--primary);
       margin-top: 2px;
       border-bottom: 5px rgba($color: #000000, $alpha: 0) solid;
     }
@@ -98,16 +98,14 @@ header {
 
 <script setup lang="ts">
 const router: any = useRouter();
+const { $api } = useNuxtApp();
 
 import util from "~~/util";
 
 const post = () => {
   const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
-    util.addAlert({
-      type: "danger",
-      text: "未登录，请先登录",
-    });
+    util.wxLogin($api);
     return;
   }
   router.push("/post");

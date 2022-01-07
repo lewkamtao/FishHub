@@ -23,7 +23,8 @@ textarea {
   <div class="comment-form">
     <div class="form-box">
       <label for="large-input">发表评论</label>
-      <textarea class="margin-top-small"
+      <textarea
+        class="margin-top-small"
         style="width: 100%; height: 100px"
         placeholder="此刻你的想法..."
         v-model="form.content"
@@ -69,18 +70,15 @@ const close = () => {
 };
 
 const postComment = () => {
-  const token =useCookie("token", { maxAge: 2419200 })
+  const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
-    util.addAlert({
-       type: "danger",
-      text: "未登录，请先登录",
-    });
+    util.wxLogin($api);
     return;
   }
 
   if (form.value.content == "") {
     util.addAlert({
-       type: "danger",
+      type: "danger",
       text: "内容不可为空",
     });
 

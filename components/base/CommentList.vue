@@ -148,10 +148,7 @@ const updateCurId = (curId: any) => {
 const reply = () => {
   const token = useCookie("token", { maxAge: 2419200 });
   if (!token.value) {
-    util.addAlert({
-       type: "danger",
-      text: "未登录，请先登录",
-    });
+   util.wxLogin($api);
     return;
   }
   isSofa.value = false;
