@@ -89,6 +89,13 @@ label {
 .tabs .content {
   padding-top: 0px;
 }
+.edit-user {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  padding: 7px 15px;
+}
 </style>
 
 <template>
@@ -114,6 +121,12 @@ label {
           <div class="description">{{ user.description || "暂无介绍" }}</div>
         </div>
       </div>
+      <nuxt-link
+        v-if="!route.query.id"
+        to="/userEdit"
+        class="badge secondary edit-user"
+        >编辑个人信息</nuxt-link
+      >
     </div>
     <div class="row flex-spaces tabs">
       <input id="tab1" type="radio" name="tabs" checked />
@@ -166,7 +179,15 @@ import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
 import util from "~~/util";
 const route: any = useRoute();
-const userRes: any = await $api.GET("/user/" + route.query.id, {});
-
-const user = userRes.data;
+const router: any = useRouter();
+const user = ref({} as any);
+const user_id = useCookie("user_id", { maxAge: 2419200 });
+if (user_id.value == route.query.id) {
+  router.push("/userHome");
+}
+if (route.query.id) {
+  user.value = (await $api.GET("/user/" + route.query.id, {})).data;
+} else { 
+  user.value = (await $api.GET("/user", {})).data;
+}
 </script>

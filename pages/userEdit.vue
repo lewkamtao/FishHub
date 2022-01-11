@@ -22,7 +22,7 @@ textarea {
           ></base-geek-avatar></div
       ></label>
       <div class="form-group">
-        <label for="paperInputs1">昵称</label>
+        <label for="paperInputs1">昵称</label> 
         <input
           v-model="form.nickname"
           type="text"

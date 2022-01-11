@@ -10,7 +10,7 @@ a {
   span {
     font-weight: normal;
 
-    color: var(--color);
+    color: #fff;
   }
 }
 .tags-box {
@@ -32,7 +32,7 @@ a {
         :to="''"
         v-for="(item, index) in tagsList.data"
         :key="`tags${index}`"
-        class="badge"
+        class="badge secondary"
       >
         <span v-text="item.value"></span>
       </nuxt-link>

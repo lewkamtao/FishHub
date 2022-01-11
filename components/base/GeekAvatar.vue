@@ -99,11 +99,7 @@ const clearShow = () => {
 };
 
 const toDetail = () => {
-  if (props.isShowInfo) {
-    router.push(`/userHome?id=${props.user._id}`);
-  } else {
-    router.push(`/user`);
-  }
+  router.push(`/userHome?id=${props.user._id}`);
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

@@ -85,9 +85,9 @@
         height: 35px;
         min-width: 35px;
         max-width: 35px;
-        background: #eee;
+        background: var(--warning-light);
         border-radius: 50%;
-        border: 4px rgba($color: #000000, $alpha: 0) solid;
+        border: 4px rgba($color: #000000, $alpha: 0.08) solid;
         img {
           width: 35px;
           transition: width 0.15s;

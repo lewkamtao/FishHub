@@ -25,10 +25,11 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
-      div {
+      a {
         text-align: left;
         .value {
           font-size: 20px;
+          color: var(--primary);
         }
         .key {
           font-size: 14px;
@@ -229,18 +230,18 @@
         <label class="btn-close" for="alert-1">X</label>
       </div>
       <div class="group">
-        <div class="likes">
+        <nuxt-link to="/userHome" class="likes">
           <div class="value">{{ util.numFormat(user.data.like_num) }}</div>
           <div class="key">获赞</div>
-        </div>
-        <div class="comments">
+        </nuxt-link>
+        <nuxt-link to="/userHome" class="comments">
           <div class="value">{{ util.numFormat(user.data.comment_num) }}</div>
           <div class="key">评论</div>
-        </div>
-        <div class="article">
+        </nuxt-link>
+        <nuxt-link to="/userHome" class="article">
           <div class="value">{{ util.numFormat(user.data.article_num) }}</div>
           <div class="key">文章</div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
     <div class="login-box">
@@ -283,6 +284,8 @@
 import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
 const token = useCookie("token", { maxAge: 2419200 });
+const user_id = useCookie("user_id", { maxAge: 2419200 });
+
 import util from "~~/util";
 
 const loading = ref(false);
@@ -311,6 +314,6 @@ const showLoading = () => {
 };
 
 user.value = await $api.GET("/user", {});
-
+user_id.value = user.value.data._id;
 onMounted(() => {});
 </script>

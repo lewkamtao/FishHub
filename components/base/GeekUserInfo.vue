@@ -107,8 +107,15 @@
       </div>
     </div>
     <div class="handle-box">
-      <div @click="gz" class="badge secondary">关 注</div>
-      <div @click="sx" class="badge danger">私 信</div>
+      <!-- <div @click="gz" class="badge secondary">关 注</div>
+      <div @click="sx" class="badge danger">私 信</div> -->
+      <nuxt-link
+        class="badge secondary"
+        style="width: 100%; color: #fff"
+        :to="`/userHome?id=${user._id}`"
+      >
+        进入主页</nuxt-link
+      >
     </div>
   </div>
 </template>

@@ -17,6 +17,7 @@ a {
   .badge {
     margin-bottom: 10px;
     font-weight: normal;
+    color: #fff;
   }
   .badge:first-child {
     margin-left: 0px;
@@ -29,12 +30,15 @@ a {
     <base-nav type="detail" :articleData="article.data"> </base-nav>
     <div class="article paper margin-none" id="article-editor">
       <v-md-preview :text="article.data.content"></v-md-preview>
-      <div class="tags-box margin-top padding-top" v-if="article.data.tags.length > 0">
+      <div
+        class="tags-box margin-top padding-top"
+        v-if="article.data.tags.length > 0"
+      >
         <nuxt-link
           :to="'/'"
           v-for="(item, index) in article.data.tags"
           :key="`tags${index}`"
-          class="badge"
+          class="badge danger"
         >
           <span v-text="item.key"></span>
         </nuxt-link>
@@ -55,8 +59,8 @@ onMounted(() => {
   try {
     setTimeout(async () => {
       // 处理文章图片fancybox
-      let imgdom = "";
-      let imgs = document
+      let imgdom: any = "";
+      let imgs: any = document
         .getElementById("article-editor")
         .getElementsByTagName("img");
       for (let i = 0; i < imgs.length; i++) {
