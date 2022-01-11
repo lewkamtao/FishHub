@@ -16,13 +16,14 @@ textarea {
       <label for="upAvatar"
         ><div popover-bottom="点击上传头像">
           <base-geek-avatar
+            :isEdit="true"
             class="avatar"
             style="width: 100px; margin: 50px auto"
             :user="user.data"
           ></base-geek-avatar></div
       ></label>
       <div class="form-group">
-        <label for="paperInputs1">昵称</label> 
+        <label for="paperInputs1">昵称</label>
         <input
           v-model="form.nickname"
           type="text"

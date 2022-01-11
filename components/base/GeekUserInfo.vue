@@ -70,17 +70,15 @@
   <div @click.stop class="user-info paper">
     <div class="top">
       <div class="left">
-        <nuxt-link :to="`/userHome?id=${user._id}`">
-          <img :src="user.avatar" :style="imgStyle" alt="" srcset=""
-        /></nuxt-link>
+        <div @click="toDetail">
+          <img :src="user.avatar" :style="imgStyle" alt="" srcset="" />
+        </div>
       </div>
       <div class="right">
         <div class="nickname">
-          <nuxt-link :to="`/userHome?id=${props.user._id}`">
-            <span class="margin-right-small">
-              {{ user.nickname }}</span
-            ></nuxt-link
-          >
+          <div @click="toDetail">
+            <span class="margin-right-small"> {{ user.nickname }}</span>
+          </div>
           <base-geek-gender :gender="user.gender"></base-geek-gender>
         </div>
         <div class="description">{{ user.description || "暂无介绍" }}</div>
@@ -110,6 +108,7 @@
       <!-- <div @click="gz" class="badge secondary">关 注</div>
       <div @click="sx" class="badge danger">私 信</div> -->
       <nuxt-link
+        v-if="route.path != '/userHome'"
         class="badge secondary"
         style="width: 100%; color: #fff"
         :to="`/userHome?id=${user._id}`"
@@ -132,6 +131,10 @@ const props = defineProps({
   },
 });
 import util from "@/util/index";
+const route: any = useRoute();
+const router: any = useRouter();
+
+const user_id = useCookie("user_id", { maxAge: 2419200 });
 
 const gz = () => {
   util.addAlert({
@@ -145,6 +148,14 @@ const sx = () => {
     type: "danger",
     text: "对方拒绝私信",
   });
+};
+
+const toDetail = () => {
+  if (user_id.value == props.user._id) {
+    router.push(`/userHome`);
+  } else {
+    router.push(`/userHome?id=${props.user._id}`);
+  }
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

@@ -72,6 +72,10 @@ const props = defineProps({
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABaCAYAAAA/xl1SAAAA/klEQVR4nO3SQREAIADDsIEo/EtDRj+JhF7PtjeIXOEpGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQBSRmQlAFJGZCUAUkZkJQB6Wz7qpMA6icD3IEAAAAASUVORK5CYII=",
     },
   },
+  isEdit: {
+    type: Boolean,
+    default: false,
+  },
   isShowInfo: {
     type: Boolean,
     default: false,
@@ -79,6 +83,8 @@ const props = defineProps({
 });
 import util from "@/util/index";
 const router: any = useRouter();
+const route: any = useRoute();
+const user_id = useCookie("user_id", { maxAge: 2419200 });
 
 const isShow = ref(false);
 const timer = ref(null);
@@ -98,8 +104,15 @@ const clearShow = () => {
   }
 };
 
-const toDetail = () => {
-  router.push(`/userHome?id=${props.user._id}`);
+const toDetail = () => { 
+  if (props.isEdit) {
+    return;
+  }
+  if (user_id.value == props.user._id) {
+    router.push(`/userHome`);
+  } else {
+    router.push(`/userHome?id=${props.user._id}`);
+  }
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
