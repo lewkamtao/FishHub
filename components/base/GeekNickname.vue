@@ -60,7 +60,7 @@
 
       <div class="gender">
         <svg
-          v-if="user.gender == 1"
+          v-if="user.gender == 2"
           t="1640968460255"
           class="icon"
           style="
@@ -83,7 +83,7 @@
           ></path>
         </svg>
         <svg
-          v-if="user.gender == 2"
+          v-if="user.gender == 1"
           t="1640968137864"
           class="icon"
           style="
