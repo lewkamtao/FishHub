@@ -34,6 +34,7 @@ a {
   }
   .content {
     white-space: pre-line;
+    line-height: 34px; margin-top: 30px;
   }
 }
 </style>
