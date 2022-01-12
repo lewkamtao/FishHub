@@ -36,6 +36,7 @@
   .text {
     margin-top: 5px;
     color: #888;
+    white-space: pre-line;
   }
   .reply-btn {
     padding: 2px;

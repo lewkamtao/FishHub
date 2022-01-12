@@ -23,13 +23,14 @@ a {
     margin-left: 0px;
   }
 }
-
-.pic-list {
-  width: 100%;
-  height: auto;
-
-  img {
+.picList-box {
+  .pic-list {
     width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+    }
   }
   .content {
     white-space: pre-line;
@@ -44,7 +45,7 @@ a {
       <div v-if="article.data.layout == 'markdown'">
         <v-md-preview :text="article.data.content"></v-md-preview>
       </div>
-      <div v-if="article.data.layout == 'picList'">
+      <div v-if="article.data.layout == 'picList'" class="picList-box">
         <div class="pic-list">
           <img
             v-for="(item, index) in article.data.picList"
