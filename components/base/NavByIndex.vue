@@ -26,6 +26,8 @@
 @media (max-width: 992px) {
   .nav-list {
     padding: 5px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
     a {
       padding: 2px 6px;
       margin: 3px;
