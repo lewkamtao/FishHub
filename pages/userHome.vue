@@ -25,9 +25,9 @@
       bottom: 20px;
       left: 20px;
       display: flex;
-      padding: 5px;
+      padding: 10px;
       max-width: calc(50% - 40px);
-      border-radius: 50px;
+      border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.65);
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
@@ -52,6 +52,7 @@
         .description {
           margin-top: 5px;
           font-size: 14px;
+          white-space: pre-line;
           color: rgba(0, 0, 0, 0.6);
         }
       }
@@ -187,7 +188,7 @@ if (user_id.value == route.query.id) {
 }
 if (route.query.id) {
   user.value = (await $api.GET("/user/" + route.query.id, {})).data;
-} else { 
+} else {
   user.value = (await $api.GET("/user", {})).data;
 }
 </script>
