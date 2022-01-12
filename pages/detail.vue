@@ -23,13 +23,35 @@ a {
     margin-left: 0px;
   }
 }
+
+.pic-list {
+  width: 100%;
+  height: auto;
+  img {
+    width: 100%;
+  }
+}
 </style>
 
 <template>
   <div class="detail margin-top">
     <base-nav type="detail" :articleData="article.data"> </base-nav>
     <div class="article paper margin-none" id="article-editor">
-      <v-md-preview :text="article.data.content"></v-md-preview>
+      <div v-if="article.data.layout == 'markdown'">
+        <v-md-preview :text="article.data.content"></v-md-preview>
+      </div>
+      <div v-if="article.data.layout == 'picList'">
+        <div class="pic-list">
+          <img
+            v-for="(item, index) in article.data.picList"
+            :key="`pic${index}`"
+            :src="item.url"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="content">{{ article.data.content }}</div>
+      </div>
       <div
         class="tags-box margin-top padding-top"
         v-if="article.data.tags.length > 0"

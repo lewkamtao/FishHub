@@ -44,25 +44,25 @@ textarea {
       <fieldset class="form-group">
         <legend>性别</legend>
 
-        <label for="gender_boy" class="paper-radio">
-          <input
-            v-model="form.gender"
-            type="radio"
-            name="paperRadios"
-            id="gender_boy"
-            value="1"
-          />
-          <span>男</span>
-        </label>
         <label for="gender_girl" class="paper-radio">
           <input
             v-model="form.gender"
             type="radio"
             name="paperRadios"
             id="gender_girl"
-            value="2"
+            value="1"
           />
           <span>女</span>
+        </label>
+        <label for="gender_boy" class="paper-radio">
+          <input
+            v-model="form.gender"
+            type="radio"
+            name="paperRadios"
+            id="gender_boy"
+            value="2"
+          />
+          <span>男</span>
         </label>
         <label for="gender_null" class="paper-radio">
           <input

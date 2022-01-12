@@ -8,7 +8,7 @@
 <template>
   <div class="geek-gender">
     <svg
-      v-if="gender == 1"
+      v-if="gender == 2"
       t="1640968460255"
       class="icon"
       style="
@@ -31,7 +31,7 @@
       ></path>
     </svg>
     <svg
-      v-if="gender == 2"
+      v-if="gender == 1"
       t="1640968137864"
       class="icon"
       style="

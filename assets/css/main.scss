@@ -151,6 +151,15 @@ textarea {
     }
 }
 
+.pic-list {
+    img {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+}
+
 .github-markdown-body {
     padding: 0px !important;
     img {
