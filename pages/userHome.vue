@@ -3,7 +3,7 @@
   .header {
     position: relative;
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     overflow: hidden;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
@@ -96,6 +96,24 @@ label {
   bottom: 20px;
   color: #fff;
   padding: 7px 15px;
+}
+@media (max-width: 992px) {
+  .user-home {
+    .header {
+      width: 100%;
+      min-height: 180px;
+      padding: 10px;
+
+      .user-info {
+        position: static;
+        display: flex;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
 }
 </style>
 

@@ -176,6 +176,78 @@
 .article-card-box:hover {
   background: var(--primary-shaded-70);
 }
+
+@media (max-width: 992px) {
+  .article-card-box {
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .avatar-box {
+      width: 45px;
+      height: 45px;
+      margin-left: 10px;
+      margin-top: 17px;
+    }
+    .article-card {
+      width: calc(100% - 45px);
+      padding-bottom: 50px;
+      margin-left: 10px;
+      .article-body {
+        width: 100%;
+        .top {
+          .title {
+            font-size: 14px;
+          }
+        }
+        .bottom {
+          font-size: 12px;
+          .tags {
+            .tag {
+              font-size: 12px;
+              padding: 2px;
+            }
+          }
+        }
+      }
+    }
+    .handle-box {
+      position: absolute;
+      bottom: -12px;
+      top: auto;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      .comment-num {
+        padding: 3px 6px;
+      }
+      .push {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        padding: 3px;
+        margin-right: 40px;
+        box-sizing: content-box;
+
+        .icon {
+          height: 22px;
+          min-width: 22px;
+          max-width: 22px;
+        }
+        .num {
+          font-size: 12px;
+        }
+        .icon:hover {
+          border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
+        }
+        .icon:active img {
+          width: 5px;
+        }
+      }
+    }
+  }
+}
 </style>
 <template>
   <div class="article-card-box" @click="toDetail(article._id)">
@@ -206,7 +278,6 @@
     </div>
     <div class="avatar-box">
       <base-geek-avatar
-        style="width: 60px; height: 60px"
         :isShowInfo="true"
         :user="article.user"
       ></base-geek-avatar>

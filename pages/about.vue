@@ -1,4 +1,7 @@
 <style lang="scss" scoped>
+.about {
+  padding: 30px;
+}
 h2,
 h3,
 p {
@@ -10,10 +13,15 @@ p {
   font-size: 20px;
   line-height: 40px;
 }
+@media (max-width: 992px) {
+  .about {
+    padding: 10px;
+  }
+}
 </style>
 
 <template>
-  <div class="paper padding-large" style="margin-top: 1rem">
+  <div class="paper about" style="margin-top: 1rem">
     <div class="about padding">
       <h2>摸鱼办</h2>
       <p>这个世界最擅长的事情，就是给你不断的制造焦虑。</p>

@@ -62,6 +62,19 @@ footer {
     font-size: 14px;
   }
 }
+@media (max-width: 992px) {
+  footer {
+    margin-top: 15px;
+    .wrapper {
+      padding: 0px;
+      .beian {
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
 </style>
 
 <template>

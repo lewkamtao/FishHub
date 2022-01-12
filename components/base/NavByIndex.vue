@@ -23,6 +23,16 @@
     color: var(--white) !important;
   }
 }
+@media (max-width: 992px) {
+  .nav-list {
+    padding: 5px;
+    a {
+      padding: 2px 6px;
+      margin: 3px;
+      font-size: 14px;
+    }
+  }
+}
 </style>
 
 <template>

@@ -50,6 +50,34 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 992px) {
+  .comment-box {
+    padding:20px 10px;
+    .content {
+      width: calc(100% - 110px);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      .author {
+        color: var(--primary);
+      }
+
+      .metadata {
+        margin-left:5px;
+        color: var(--muted-light-10);
+        font-size: 12px;
+      }
+    }
+  
+    .reply-btn {
+      opacity: 1;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+  }
+}
 </style>
 
 <template>

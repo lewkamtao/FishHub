@@ -56,6 +56,14 @@
     }
   }
 }
+@media (max-width: 992px) {
+  .moreLoading-more {
+    .more-btn {
+      width: 100px;
+      height: 35px;
+    }
+  }
+}
 </style>
 
 <template>

@@ -16,6 +16,7 @@ header {
     justify-content: space-between;
     align-items: flex-end;
     padding: 10px 20px;
+    white-space: nowrap;
   }
 
   .moyu-title {
@@ -30,6 +31,8 @@ header {
       margin-right: 5px;
     }
     img {
+      width: 35px;
+      margin-right: 15px;
       transform: rotate(-35deg);
       margin-bottom: 3px;
     }
@@ -64,6 +67,32 @@ header {
     }
   }
 }
+
+@media (max-width: 992px) {
+  header {
+    .wrapper {
+      padding: 5px;
+      align-items: center;
+    }
+    .moyu-title {
+      font-size: 20px;
+      margin-bottom: 0px;
+      img {
+        width: 25px;
+        margin-right: 5px;
+      }
+    }
+    menu {
+      a {
+        margin-right: 20px;
+        font-size: 14px;
+      }
+      .post-btn {
+        padding: 4px 8px;
+      }
+    }
+  }
+}
 </style>
 
 <template>
@@ -72,7 +101,6 @@ header {
       <nuxt-link to="/">
         <h4 class="moyu-title margin-none">
           <img
-            style="width: 35px; margin-right: 10px"
             class="icon no-responsive no-border"
             src="@sicons/ionicons5/FishOutline.svg"
           />

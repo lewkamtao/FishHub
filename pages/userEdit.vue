@@ -1,6 +1,9 @@
 <style lang="scss" scoped>
+.user-edit {
+  padding: 30px 120px;
+}
 .user-info {
-  width: 400px;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -8,10 +11,15 @@ input,
 textarea {
   width: 100%;
 }
+@media (max-width: 992px) {
+  .user-edit {
+    padding: 30px;
+  }
+}
 </style>
 
 <template>
-  <div class="paper">
+  <div class="paper user-edit">
     <div class="user-info">
       <label for="upAvatar"
         ><div popover-bottom="点击上传头像">

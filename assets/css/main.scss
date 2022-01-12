@@ -328,3 +328,18 @@ textarea {
         background-color: #fff;
     }
 }
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+    .geek {
+        .col {
+            padding: 0px;
+        }
+        .paper {
+            border-left: none;
+            border-right: none;
+        }
+    }
+}
