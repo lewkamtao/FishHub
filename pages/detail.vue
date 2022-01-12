@@ -24,6 +24,7 @@ a {
   }
 }
 .picList-box {
+  width: 100%;
   .pic-list {
     width: 100%;
     height: auto;
@@ -34,7 +35,8 @@ a {
   }
   .content {
     white-space: pre-line;
-    line-height: 34px; margin-top: 30px;
+    line-height: 34px;
+    margin-top: 30px;
   }
 }
 </style>
