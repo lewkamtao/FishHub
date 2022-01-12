@@ -85,7 +85,10 @@ import { ref, onMounted } from "vue";
 const route: any = useRoute();
 const { $api } = useNuxtApp();
 const article: any = await $api.GET("/article/" + route.query.id, {});
-
+article.data.picList.forEach((e) => {
+  e.url = e.url.replace(/http:/, "https:");
+});
+ 
 onMounted(() => {
   try {
     setTimeout(async () => {
