@@ -155,7 +155,10 @@ label {
       <label for="tab2">关于</label>
 
       <div class="content padding-top-none" id="content1">
-        <base-article-list :user_id="user._id"></base-article-list>
+        <base-article-list
+          :key="articleKey"
+          :user_id="user._id"
+        ></base-article-list>
       </div>
 
       <div class="content" id="content2">
@@ -194,13 +197,15 @@ label {
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 const { $api } = useNuxtApp();
 import util from "~~/util";
 const route: any = useRoute();
 const router: any = useRouter();
 const user = ref({} as any);
 const user_id = useCookie("user_id", { maxAge: 2419200 });
+const articleKey = ref(1);
+
 if (user_id.value == route.query.id) {
   router.push("/userHome");
 }
@@ -209,4 +214,15 @@ if (route.query.id) {
 } else {
   user.value = (await $api.GET("/user", {})).data;
 }
+watch(
+  () => route.query,
+  async () => {
+    if (route.query.id) {
+      user.value = (await $api.GET("/user/" + route.query.id, {})).data;
+    } else {
+      user.value = (await $api.GET("/user", {})).data;
+    }
+    articleKey.value += 1;
+  }
+);
 </script>

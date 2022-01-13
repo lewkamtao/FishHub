@@ -60,9 +60,9 @@
     .comment-num {
       display: flex;
       align-items: center;
-      font-size: 12px;
       text-align: left;
       border-radius: 50px;
+      font-size: 14px;
       padding: 5px 10px;
       font-weight: normal;
       color: #fff;
@@ -82,15 +82,15 @@
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
-        height: 35px;
-        min-width: 35px;
-        max-width: 35px;
+        height: 30px;
+        min-width: 30px;
+        max-width: 30px;
         background: var(--warning-light);
         border-radius: 50%;
-        border: 4px rgba($color: #000000, $alpha: 0.08) solid;
+        border: 2px rgba($color: #000000, $alpha: 0.08) solid;
         img {
           width: 35px;
-          transition: width 0.15s;
+          transition: width 0.25s;
         }
       }
       .num {
@@ -99,7 +99,7 @@
         text-align: left;
       }
       .icon:hover {
-        border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
+        border: 2px rgba($color: #0071de, $alpha: 0.4) solid;
       }
       .icon:active img {
         width: 5px;
@@ -276,12 +276,11 @@
         {{ util.numFormat(article.comment_num) }}
       </nuxt-link>
     </div>
-    <div class="avatar-box">
-      <base-geek-avatar
-        :isShowInfo="true"
-        :user="article.user"
-      ></base-geek-avatar>
-    </div>
+    <base-geek-avatar
+      class="avatar-box"
+      :isShowInfo="true"
+      :user="article.user"
+    ></base-geek-avatar>
     <div
       class="article-card padding margin-none padding-left-none"
       :class="{ isRead: article.isRead }"
