@@ -14,7 +14,7 @@
       width: 100%;
       height: 100%;
       opacity: 0.35;
-      background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/userBg.svg);
+      background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/userHomeBg.svg);
       background-size: cover;
       background-position: center;
       filter: invert(70%);
