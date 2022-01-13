@@ -48,7 +48,7 @@ const articleList: any = ref({} as any);
 
 const PageOptions = ref({
   pageNum: 1,
-  pageSize: 10,
+  pageSize: 20, 
 });
 const moreLoading = ref(false);
 

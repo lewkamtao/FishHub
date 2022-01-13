@@ -9,6 +9,7 @@
     display: flex;
 
     .left {
+      cursor: pointer;
       margin-right: 10px;
       img {
         border: 1px rgba(0, 0, 0, 0.2) solid !important;
@@ -108,10 +109,9 @@
       <!-- <div @click="gz" class="badge secondary">关 注</div>
       <div @click="sx" class="badge danger">私 信</div> -->
       <nuxt-link
-        v-if="route.path != '/userHome'"
         class="badge secondary"
         style="width: 100%; color: #fff"
-        :to="`/userHome?id=${user._id}`"
+        :to="`/user/${user._id}`"
       >
         进入主页</nuxt-link
       >
@@ -151,11 +151,7 @@ const sx = () => {
 };
 
 const toDetail = () => {
-  if (user_id.value == props.user._id) {
-    router.push(`/userHome`);
-  } else {
-    router.push(`/userHome?id=${props.user._id}`);
-  }
+  router.push(`/user/${props.user._id}`);
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

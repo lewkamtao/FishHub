@@ -29,7 +29,7 @@
         />
       </Head>
     </Html>
-    <div id="geek-message-box"></div>
+    <div id="geek-message-box"></div> 
 
     <the-header></the-header>
     <base-geek-handle></base-geek-handle>
@@ -42,14 +42,14 @@
     </div>
   </div>
   <base-geek-avatar-edit
-    v-if="route.path == '/userEdit'"
+    v-if="route.path == '/user/edit'"
   ></base-geek-avatar-edit>
   <base-modal></base-modal>
 </template>
 
 <script setup>
 // your setup script
-import { watch, onMounted } from "vue";
+import { watch, onMounted, ref } from "vue";
 import util from "~~/util";
 const route = useRoute();
 watch(
@@ -58,6 +58,7 @@ watch(
     window.scrollTo(0, 0);
   }
 );
+
 onMounted(() => {
   util.initDomStyle();
   window.onresize = function () {

@@ -11,9 +11,20 @@
     opacity: 0.8;
   }
 }
+
+.comment {
+  .news {
+    padding: 10px 0px;
+    font-size: 14px;
+    .reply-btn {
+      display: none;
+    }
+  }
+}
+
 .comment-box {
   position: relative;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   .content {
@@ -53,7 +64,7 @@
 
 @media (max-width: 992px) {
   .comment-box {
-    padding:20px 10px;
+    padding: 20px 10px;
     .content {
       width: calc(100% - 110px);
     }
@@ -65,12 +76,12 @@
       }
 
       .metadata {
-        margin-left:5px;
+        margin-left: 5px;
         color: var(--muted-light-10);
         font-size: 12px;
       }
     }
-  
+
     .reply-btn {
       opacity: 1;
       margin-left: 10px;
@@ -83,7 +94,7 @@
 <template>
   <div class="comment-wrapper">
     <div class="comment">
-      <div class="comment-box comment-parent">
+      <div class="comment-box comment-parent" :class="layout">
         <base-geek-avatar
           style="width: 45px; height: 45px"
           :user="comment.user"
@@ -169,6 +180,10 @@ const props = defineProps({
   comment: {
     type: Object,
     default: {} as any,
+  },
+  layout: {
+    type: String,
+    default: "",
   },
   curId: {
     type: String,

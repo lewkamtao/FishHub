@@ -77,7 +77,7 @@
       <span class="donut"></span>
       {{ moreLoading ? "" : "加载更多" }}
     </div>
-    <div v-if="total == dataLength" class="not-more">没有更多了</div>
+    <div v-if="total == dataLength" class="not-more">暂无更多</div>
   </div>
 </template>
 <script setup lang="ts">

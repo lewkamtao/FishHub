@@ -144,7 +144,7 @@ const clearShow = () => {
 };
 
 const toDetail = () => {
-  router.push(`/userHome?id=${props.user._id}`);
+  router.push(`/user/${props.user._id}`);
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

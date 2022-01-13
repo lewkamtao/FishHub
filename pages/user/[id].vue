@@ -14,7 +14,7 @@
       width: 100%;
       height: 100%;
       opacity: 0.35;
-      background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/userHomeBg.svg);
+      background: url(https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/public/images/fish/userBg.svg);
       background-size: cover;
       background-position: center;
       filter: invert(70%);
@@ -130,7 +130,7 @@ label {
         </div>
         <div class="right">
           <div class="nickname">
-            <nuxt-link :to="`/userHome?id=${user._id}`">
+            <nuxt-link :to="`/user/${user._id}`">
               <span class="margin-right-small">
                 {{ user.nickname }}</span
               ></nuxt-link
@@ -141,8 +141,8 @@ label {
         </div>
       </div>
       <nuxt-link
-        v-if="!route.query.id"
-        to="/userEdit"
+        v-if="route.params.id == user_id"
+        to="/user/edit"
         class="badge secondary edit-user"
         >编辑个人信息</nuxt-link
       >
@@ -155,10 +155,7 @@ label {
       <label for="tab2">关于</label>
 
       <div class="content padding-top-none" id="content1">
-        <base-article-list
-          :key="articleKey"
-          :user_id="user._id"
-        ></base-article-list>
+        <base-article-list :user_id="user._id"></base-article-list>
       </div>
 
       <div class="content" id="content2">
@@ -197,32 +194,12 @@ label {
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 const { $api } = useNuxtApp();
 import util from "~~/util";
 const route: any = useRoute();
-const router: any = useRouter();
 const user = ref({} as any);
 const user_id = useCookie("user_id", { maxAge: 2419200 });
-const articleKey = ref(1);
 
-if (user_id.value == route.query.id) {
-  router.push("/userHome");
-}
-if (route.query.id) {
-  user.value = (await $api.GET("/user/" + route.query.id, {})).data;
-} else {
-  user.value = (await $api.GET("/user", {})).data;
-}
-watch(
-  () => route.query,
-  async () => {
-    if (route.query.id) {
-      user.value = (await $api.GET("/user/" + route.query.id, {})).data;
-    } else {
-      user.value = (await $api.GET("/user", {})).data;
-    }
-    articleKey.value += 1;
-  }
-);
+user.value = (await $api.GET("/user/" + route.params.id, {})).data;
 </script>

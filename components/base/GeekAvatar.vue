@@ -103,15 +103,12 @@ const clearShow = () => {
   }
 };
 
-const toDetail = () => { 
+const toDetail = () => {
   if (props.isEdit) {
     return;
   }
-  if (user_id.value == props.user._id) {
-    router.push(`/userHome`);
-  } else {
-    router.push(`/userHome?id=${props.user._id}`);
-  }
+
+  router.push(`/user/${props.user._id}`);
 };
 
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(

@@ -31,6 +31,7 @@ a {
       <nuxt-link
         :to="''"
         v-for="(item, index) in tagsList.data"
+        v-show="index < 21"
         :key="`tags${index}`"
         class="badge secondary"
       >

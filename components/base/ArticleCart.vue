@@ -26,7 +26,7 @@
       width: calc(100% - 70px);
       .top {
         .title {
-          font-size: 18px;
+          font-size: 16px;
         }
         .title:hover {
           text-decoration: underline;
@@ -90,12 +90,12 @@
         border: 2px rgba($color: #000000, $alpha: 0.08) solid;
         img {
           width: 35px;
-          transition: width 0.25s;
+          transition: width 0.12s;
         }
       }
       .num {
         margin-left: 8px;
-        width: 40px;
+        width: 60px;
         text-align: left;
       }
       .icon:hover {
@@ -265,8 +265,8 @@
         </span>
       </div>
       <nuxt-link
-        :to="`/detail?id=${article._id}`"
-        class="badge comment-num secondary"
+        :to="`/article/${article._id}`"
+        class="badge comment-num secondary" 
       >
         <img
           style="height: 18px; width: auto; margin-right: 5px"
@@ -286,7 +286,7 @@
       :class="{ isRead: article.isRead }"
     >
       <div class="article-body">
-        <nuxt-link :to="`/detail?id=${article._id}`" class="top">
+        <nuxt-link :to="`/article/${article._id}`" class="top">
           <div class="title" v-text="article.title"></div>
         </nuxt-link>
         <div class="bottom margin-top-small">
@@ -321,7 +321,7 @@ import confetti from "canvas-confetti";
 const router: any = useRouter();
 
 const toDetail = (id) => {
-  router.push(`/detail?id=${id}`);
+  router.push(`/article/${id}`);
 };
 
 const push = (e, article_id) => {

@@ -230,15 +230,15 @@
         <label class="btn-close" for="alert-1">X</label>
       </div>
       <div class="group">
-        <nuxt-link to="/userHome" class="likes">
+        <nuxt-link :to="`/user/${user_id}`" class="likes">
           <div class="value">{{ util.numFormat(user.data.like_num) }}</div>
           <div class="key">获赞</div>
         </nuxt-link>
-        <nuxt-link to="/userHome" class="comments">
+        <nuxt-link :to="`/user/${user_id}`" class="comments">
           <div class="value">{{ util.numFormat(user.data.comment_num) }}</div>
           <div class="key">评论</div>
         </nuxt-link>
-        <nuxt-link to="/userHome" class="article">
+        <nuxt-link :to="`/user/${user_id}`" class="article">
           <div class="value">{{ util.numFormat(user.data.article_num) }}</div>
           <div class="key">文章</div>
         </nuxt-link>
