@@ -70,6 +70,7 @@ header {
 
 @media (max-width: 992px) {
   header {
+    height: 50px;
     .wrapper {
       padding: 5px;
       align-items: center;

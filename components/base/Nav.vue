@@ -8,6 +8,11 @@
   margin-bottom: 0px;
   box-shadow: none;
 }
+@media (max-width: 992px) {
+  .nav {
+    top: 49px;
+  }
+}
 </style>
 
 <template>
