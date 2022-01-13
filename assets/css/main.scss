@@ -329,6 +329,10 @@ textarea {
     }
 }
 
+select {
+    height: auto;
+}
+
 @media (max-width: 992px) {
     html {
         font-size: 14px;
