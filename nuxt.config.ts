@@ -28,6 +28,6 @@ export default defineNuxtConfig({
     "@/assets/css/paper.css",
     "@/assets/css/main.scss",
     "@/assets/css/fancybox.css",
-    "@/assets/css/fancybox-theme.css",
+    "@/assets/css/fancybox-theme.scss",
   ],
 });
