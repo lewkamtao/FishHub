@@ -24,7 +24,7 @@
 <template>
   <div class="sm-12 md-4 col sidebar hid-scrollbar" id="geekSidebar">
     <plate-user></plate-user>
-    <!-- <plate-fish></plate-fish> -->
+    <plate-fish></plate-fish>
     <plate-today-news></plate-today-news>
     <!-- <plate-tags></plate-tags> -->
     <plate-setting></plate-setting>
