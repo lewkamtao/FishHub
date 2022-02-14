@@ -34,6 +34,8 @@
   .header {
     display: flex;
     align-items: center;
+    white-space: nowrap;
+
     .author {
       color: var(--primary);
     }
@@ -71,6 +73,7 @@
     .header {
       display: flex;
       align-items: center;
+
       .author {
         color: var(--primary);
       }

@@ -16,6 +16,10 @@
   }
   .name {
     margin-right: 5px;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .gender {
     margin-top: -4px;
