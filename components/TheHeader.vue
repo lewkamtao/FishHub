@@ -32,7 +32,7 @@ header {
       height: 40px;
       background: var(--secondary);
       border-radius: 3px;
-      color: #000;
+      color: #fff;
       margin-left: 4px;
       font-size: 26px;
       padding: 3px 6px;
@@ -92,6 +92,7 @@ header {
       }
     }
   }
+  
 }
 </style>
 

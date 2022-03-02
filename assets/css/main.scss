@@ -48,6 +48,11 @@ img {
 
 html.dark body {
     background: #222;
+    .moyu-title {
+        span {
+            color: #000 !important;
+        }
+    }
     a:link {
         color: #fff;
         text-decoration: none;
@@ -289,11 +294,12 @@ textarea {
     padding: 6px 15px;
     font-weight: normal;
     font-size: 16px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
     transition: all 0.25s;
     img {
         width: 20px;
+        filter: invert(100%);
         margin-right: 5px;
     }
 }

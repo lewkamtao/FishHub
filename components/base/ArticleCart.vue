@@ -66,6 +66,7 @@
       padding: 5px 10px;
       font-weight: normal;
       color: #000;
+      background: var(--muted-light);
     }
     .push {
       display: flex;
@@ -126,7 +127,7 @@
   }
   .more-btn {
     position: relative;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
@@ -138,7 +139,7 @@
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;
-    color: #000;
+    color: #fff;
     .donut {
       position: absolute;
       top: 50%;

@@ -20,7 +20,7 @@
   }
   .active {
     background: var(--secondary) !important;
-    color: #000;
+    color: var(--white) !important;
   }
 }
 @media (max-width: 992px) {
