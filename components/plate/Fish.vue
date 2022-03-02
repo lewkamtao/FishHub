@@ -5,19 +5,19 @@
 }
 .matter {
   margin-top: 15px;
-  line-height: 36px;
+  line-height: 30px;
   .item {
     display: flex;
-    font-size: 16px;
+    font-size: 14px;
     .tag {
       background: #eee;
-      margin: 0px 10px;
-      padding: 1px 10px;
-      font-size: 15px;
+      margin: 0px 5px;
+      padding: 2px 6px;
+      font-size: 12px;
       color: var(--primary);
       border-radius: 30px;
       background: var(--muted-light);
-    } 
+    }
   }
 }
 </style>
@@ -27,9 +27,6 @@
     <h5 class="title margin-none">摸鱼办</h5>
     <div class="date"></div>
     <div class="fish-day margin-top">
-      <div class="content">
-        {{ deleteNum(fish.now_time_format) }}好，摸鱼人！<br />
-      </div>
       <div class="matter">
         <div v-for="(item, i) in fish.list" :key="`fish${i}`" class="item">
           <div class="label">{{ item.name }}还有</div>

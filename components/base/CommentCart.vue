@@ -50,6 +50,7 @@
     margin-top: 5px;
     color: #888;
     white-space: pre-line;
+    font-size: 14px;
   }
   .reply-btn {
     padding: 2px;
