@@ -114,18 +114,18 @@ const toDetail = () => {
 let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
   225,
   285
-)}px ${util.randomInRange(225, 285)}px;
-    border-color: var(--primary);
+)}px ${util.randomInRange(225, 285)}px !important;
+    border-color: var(--primary) !important;
     border-bottom-right-radius:  ${util.randomInRange(
       225,
       285
-    )}px ${util.randomInRange(225, 285)}px;
+    )}px ${util.randomInRange(225, 285)}px !important;
     border-top-left-radius:  ${util.randomInRange(
       225,
       285
-    )}px ${util.randomInRange(225, 285)}px;
+    )}px ${util.randomInRange(225, 285)}px !important;
     border-top-right-radius: ${util.randomInRange(
       225,
       285
-    )}px  ${util.randomInRange(225, 285)}px;`);
+    )}px  ${util.randomInRange(225, 285)}px !important;`);
 </script>

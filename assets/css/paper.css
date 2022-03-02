@@ -102,7 +102,7 @@ html.dark {
     --warning-text: #cab925;
     --danger-text: #ff5c53;
     --muted-text: #6c757d;
-    --primary-inverse: #41403e;
+    --primary-inverse: #000;
 }
 
 .text-primary {

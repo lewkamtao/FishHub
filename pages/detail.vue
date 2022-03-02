@@ -18,9 +18,10 @@ a {
     margin-bottom: 10px;
     font-weight: normal;
     color: #fff;
-  }
+  } 
   .badge:first-child {
     margin-left: 0px;
+  
   }
 }
 .pic-list {

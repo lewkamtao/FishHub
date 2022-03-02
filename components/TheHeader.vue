@@ -113,14 +113,13 @@ header {
         <nuxt-link to="/">首页</nuxt-link>
         <nuxt-link to="/about">关于</nuxt-link>
         <div style="margin-bottom: 5px" class="post-btn badge" @click="post">
-          <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="" />
           创建主题
         </div>
       </menu>
     </div>
   </header>
 </template>
-
+ 
 <script setup lang="ts">
 const router: any = useRouter();
 const { $api } = useNuxtApp();

@@ -1,6 +1,5 @@
 <style lang="scss" scoped>
 .nav {
-  position: sticky;
   top: 69px;
   border-bottom: 1px solid var(--muted-light);
   background: var(--main-background);
@@ -13,7 +12,7 @@
     top: 49px;
   }
 }
-</style>
+</style> 
 
 <template>
   <div id="geekNav" class="nav paper padding-none margin-top">

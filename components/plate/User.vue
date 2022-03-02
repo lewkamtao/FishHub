@@ -245,8 +245,7 @@
       </div>
     </div>
     <div class="login-box">
-      <!-- <a
-        v-if="!token"
+      <a v-if="false"
         href="https://api.tngeek.com/mall/github/login"
         class="login-btn github"
       >
@@ -255,7 +254,7 @@
           src="@sicons/ionicons5/LogoGithub.svg"
         />
         使用 Github 登录
-      </a> -->
+      </a>
       <div
         v-if="!token"
         class="login-btn wechat"

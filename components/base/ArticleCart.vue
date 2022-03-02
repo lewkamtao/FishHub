@@ -36,6 +36,7 @@
         display: flex;
         align-items: center;
         font-size: 14px;
+        margin-top: 5px;
         .tags {
           .tag {
             margin-right: 5px;
@@ -65,7 +66,7 @@
       font-size: 14px;
       padding: 5px 10px;
       font-weight: normal;
-      color: #000;
+      color: var(--primary);
       background: var(--muted-light);
     }
     .push {
@@ -176,8 +177,8 @@
 }
 .mobile_comment_num {
   display: none;
-  background: var(--secondary);
-  color: #fff;
+   background: var(--muted-light);
+  color: #000;
   padding: 2px 8px;
   border-radius: 20px;
 }
@@ -191,7 +192,7 @@
       width: 45px;
       height: 45px;
       margin-left: 10px;
-      margin-top: 17px;
+      margin-top: 12px;
     }
     .article-card {
       width: calc(100% - 45px);
@@ -249,7 +250,7 @@
       >
         <img
           style="height: 18px; width: auto; margin-right: 5px"
-          class="no-responsive no-border"
+          class="icon no-responsive no-border"
           src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
         />
         {{ util.numFormat(article.comment_num) }}
@@ -270,7 +271,7 @@
             {{ article.title }}
           </div>
         </nuxt-link>
-        <div class="bottom margin-top-small">
+        <div class="bottom">
           <span
             class="date margin-right"
             v-text="article.BeautifyUpdateTime || `刚刚`"
