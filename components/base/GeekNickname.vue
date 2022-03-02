@@ -16,7 +16,7 @@
   }
   .name {
     margin-right: 5px;
-    max-width: 130px;
+    max-width: 180px; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

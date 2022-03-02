@@ -13,7 +13,7 @@
       display: flex;
       align-items: center;
       font-weight: bold;
-      font-size: 22px;
+      font-size: 16px;
       margin-top: 10px;
       margin-right: 10px;
     }
