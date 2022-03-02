@@ -11,6 +11,8 @@
     box-sizing: border-box;
     overflow: hidden;
     transition: all 0.25s;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .avatar-img:hover {
     border: 1px rgba(0, 0, 0, 0.6) solid !important;
@@ -53,7 +55,6 @@
     <img
       @click.stop="toDetail"
       :src="user.avatar"
-      :style="imgStyle"
       alt=""
       srcset=""
       class="avatar-img"
@@ -111,21 +112,5 @@ const toDetail = () => {
   router.push(`/user/${props.user._id}`);
 };
 
-let imgStyle = ref(`border-bottom-left-radius: ${util.randomInRange(
-  225,
-  285
-)}px ${util.randomInRange(225, 285)}px !important;
-    border-color: var(--primary) !important;
-    border-bottom-right-radius:  ${util.randomInRange(
-      225,
-      285
-    )}px ${util.randomInRange(225, 285)}px !important;
-    border-top-left-radius:  ${util.randomInRange(
-      225,
-      285
-    )}px ${util.randomInRange(225, 285)}px !important;
-    border-top-right-radius: ${util.randomInRange(
-      225,
-      285
-    )}px  ${util.randomInRange(225, 285)}px !important;`);
+
 </script>

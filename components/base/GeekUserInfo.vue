@@ -15,6 +15,8 @@
         border: 1px rgba(0, 0, 0, 0.2) solid !important;
         width: 60px;
         height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
       }
     }
     .right {
@@ -72,7 +74,7 @@
     <div class="top">
       <div class="left">
         <div @click="toDetail">
-          <img :src="user.avatar" :style="imgStyle" alt="" srcset="" />
+          <img :src="user.avatar" alt="" srcset="" />
         </div>
       </div>
       <div class="right">
