@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 const { $api } = useNuxtApp();
 
 const typeList = await $api.GET("/articleType", {
@@ -70,4 +70,8 @@ watch(
     articleType.value = route.query.articleType || "";
   }
 );
+
+onMounted(() => {
+  articleType.value = route.query.articleType;
+});
 </script>

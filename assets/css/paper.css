@@ -2121,7 +2121,6 @@ textarea[disabled] {
 .form-group .paper-switch-2 input:checked+.paper-switch-slider,
 .form-group .paper-switch input:checked+.paper-switch-slider {
     background-color: #41403e;
-    background-color: var(--success-light);
 }
 
 .form-group .paper-switch-2 input:checked+.paper-switch-slider:before,
