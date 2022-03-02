@@ -72,6 +72,8 @@ watch(
 );
 
 onMounted(() => {
-  articleType.value = route.query.articleType || "全部";
+  articleType.value = route.query.articleType
+    ? route.query.articleType
+    : "";
 });
 </script>
