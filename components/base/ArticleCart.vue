@@ -65,10 +65,7 @@
       font-size: 14px;
       padding: 5px 10px;
       font-weight: normal;
-      color: #fff;
-      img {
-        filter: invert(100%);
-      }
+      color: #000;
     }
     .push {
       display: flex;
@@ -129,7 +126,7 @@
   }
   .more-btn {
     position: relative;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     white-space: nowrap;
@@ -141,7 +138,7 @@
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     .donut {
       position: absolute;
       top: 50%;
@@ -251,7 +248,7 @@
       >
         <img
           style="height: 18px; width: auto; margin-right: 5px"
-          class="icon no-responsive no-border"
+          class="no-responsive no-border"
           src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
         />
         {{ util.numFormat(article.comment_num) }}

@@ -25,19 +25,17 @@ header {
     align-items: flex-end;
     font-size: 30px;
     margin-bottom: 5px;
+    margin-left: -5px;
+    font-weight: bolder;
 
-    .logo {
-      margin-right: 5px;
-    }
-    img {
-      width: 35px;
-      margin-right: 15px;
-      transform: rotate(-35deg);
-      margin-bottom: 3px;
-    }
-    .badge {
-      margin-bottom: 3px;
-      font-weight: normal;
+    span {
+      height: 40px;
+      background: var(--secondary);
+      border-radius: 3px;
+      color: #000;
+      margin-left: 4px;
+      font-size: 26px;
+      padding: 3px 6px;
     }
   }
 
@@ -75,11 +73,13 @@ header {
       align-items: center;
     }
     .moyu-title {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 0px;
-      img {
-        width: 25px;
-        margin-right: 5px;
+      span {
+        height: 30px;
+        font-size: 18px;
+        padding: 3px 10px;
+        border-radius: 3px;
       }
     }
     menu {
@@ -100,11 +100,7 @@ header {
     <div class="wrapper">
       <nuxt-link to="/">
         <h4 class="moyu-title margin-none">
-          <img
-            class="icon no-responsive no-border"
-            src="@sicons/ionicons5/FishOutline.svg"
-          />
-          <div class="logo">摸鱼办</div>
+          Fish <span>Hub</span>
           <!-- <span class="badge secondary">广东分办</span> -->
         </h4></nuxt-link
       >

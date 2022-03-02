@@ -196,7 +196,7 @@ textarea {
 .sidebar {
     .title {
         font-weight: bold;
-        color: var(--secondary);
+        color: var(--primary);
     }
 }
 
@@ -287,15 +287,14 @@ textarea {
     align-items: center;
     background: var(--secondary);
     padding: 6px 15px;
-    color: var(--white);
     font-weight: normal;
     font-size: 16px;
+    color: #000;
     cursor: pointer;
     transition: all 0.25s;
     img {
         width: 20px;
         margin-right: 5px;
-        filter: invert(100%);
     }
 }
 

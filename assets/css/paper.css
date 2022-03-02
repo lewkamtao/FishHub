@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC");
 html {
     --primary: #41403e;
-    --secondary: #91aec7;
+    --secondary: #e0e0e0;
     --success: #86a361;
     --warning: #ddcd45;
     --danger: #a7342d;
@@ -58,7 +58,7 @@ html.dark {
 
 html.dark {
     --primary: #fff;
-    --secondary: #2185e2;
+    --secondary: #f90;
     --success: #189418;
     --warning: #ddcd45;
     --danger: #ff8c86;
@@ -93,7 +93,7 @@ html.dark {
     --white-dark-light-80: hsla(0, 0%, 100%, 0.03);
     --light-dark: hsla(0, 0%, 100%, 0.7);
     --white: #fff;
-    --main-background: #41403e;
+    --main-background: #000;
     --secondary-background: rgba(0, 0, 0, 0.8);
     --main-background-light: #c1c0bd;
     --primary-text: #41403e;
