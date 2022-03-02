@@ -13,12 +13,14 @@
       display: flex;
       align-items: center;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
       margin-top: 10px;
       margin-right: 10px;
     }
     .description {
       color: #999;
+      font-size: 14px;
+      margin-top: 5px;
     }
     .group {
       margin-top: 20px;
@@ -245,7 +247,8 @@
       </div>
     </div>
     <div class="login-box">
-      <a v-if="false"
+      <a
+        v-if="false"
         href="https://api.tngeek.com/mall/github/login"
         class="login-btn github"
       >
