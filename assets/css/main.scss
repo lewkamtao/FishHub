@@ -1,11 +1,4 @@
 @font-face {
-    font-family: HarmonyOS_Sans_SC_Medium;
-    font-style: normal;
-    font-display: swap;
-    src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"), url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/HarmonyOS_Sans_SC_Medium.woff") format("woff");
-}
-
-@font-face {
     font-family: "XiaolaiMonoSC";
     src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/XiaolaiMonoSC-Regular-mini.ttf");
 }
@@ -20,29 +13,26 @@ body {
     min-height: 100vh;
 }
 
-a,
-button,
-html,
-input,
-option,
-p,
-select,
-table,
-tbody,
-td,
-textarea,
-th,
-thead,
-tr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: HarmonyOS_Sans_SC_Medium, sans-serif
-}
-
+// a,
+// button,
+// html,
+// input,
+// option,
+// p,
+// select,
+// table,
+// tbody,
+// td,
+// textarea,
+// th,
+// thead,
+// tr,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {}
 a {
     background-image: none;
 }
