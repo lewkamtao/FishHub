@@ -13,7 +13,7 @@
 
 <template>
   <div class="paper" style="margin-top: 1rem">
-    <h3 class="margin-top-none">创建你的文章</h3>
+    <h3 class="margin-top-none">创建你的主题</h3>
     <div class="post">
       <div class="form-group">
         <label for="paperInputs1">标题</label>

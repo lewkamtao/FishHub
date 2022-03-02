@@ -92,7 +92,7 @@ article.data.picList.forEach((e) => {
 onMounted(() => {
   try {
     setTimeout(async () => {
-      // 处理文章图片fancybox
+      // 处理主题图片fancybox
       let imgdom: any = "";
       let imgs: any = document
         .getElementById("article-editor")
@@ -110,7 +110,7 @@ onMounted(() => {
         elem.appendChild(imgdom);
         imgs[i].parentNode.replaceChild(elem, imgs[i]);
       }
-      // 处理文章a标签跳转到新窗口
+      // 处理主题a标签跳转到新窗口
       Array.from(
         document.getElementById("article-editor").getElementsByTagName("a")
       ).forEach(function (aTag) {

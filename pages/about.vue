@@ -2,11 +2,6 @@
 .about {
   padding: 30px;
 }
-h2,
-h3,
-p {
-  font-family: XiaolaiMonoSC;
-}
 
 p {
   text-indent: 2em;

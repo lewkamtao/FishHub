@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "XiaolaiMonoSC";
-    src: url("https://tngeek-mall-1255310647.cos.ap-guangzhou.myqcloud.com/font/XiaolaiMonoSC-Regular-mini.ttf");
-}
-
 html {
     overflow-y: scroll;
 }
@@ -13,26 +8,30 @@ body {
     min-height: 100vh;
 }
 
-// a,
-// button,
-// html,
-// input,
-// option,
-// p,
-// select,
-// table,
-// tbody,
-// td,
-// textarea,
-// th,
-// thead,
-// tr,
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {}
+a,
+button,
+html,
+input,
+option,
+p,
+select,
+table,
+tbody,
+td,
+textarea,
+th,
+thead,
+tr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    font-family: sans-serif;
+}
+
 a {
     background-image: none;
 }

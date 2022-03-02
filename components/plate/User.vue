@@ -240,7 +240,7 @@
         </nuxt-link>
         <nuxt-link :to="`/user/${user_id}`" class="article">
           <div class="value">{{ util.numFormat(user.data.article_num) }}</div>
-          <div class="key">文章</div>
+          <div class="key">主题</div>
         </nuxt-link>
       </div>
     </div>

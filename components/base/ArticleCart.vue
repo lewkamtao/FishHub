@@ -137,7 +137,7 @@
     height: 40px;
     margin: 15px;
     user-select: none;
-    background: #0071de;
+    background: var(--secondary);
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;
@@ -176,7 +176,13 @@
 .article-card-box:hover {
   background: var(--primary-shaded-70);
 }
-
+.mobile_comment_num {
+  display: none;
+  background: var(--secondary);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
 @media (max-width: 992px) {
   .article-card-box {
     position: relative;
@@ -191,7 +197,7 @@
     }
     .article-card {
       width: calc(100% - 45px);
-      padding-bottom: 50px;
+      padding-bottom: 12px;
       margin-left: 10px;
       .article-body {
         width: 100%;
@@ -201,7 +207,10 @@
           }
         }
         .bottom {
+          white-space: nowrap;
           font-size: 12px;
+          display: flex;
+          flex-wrap: wrap;
           .tags {
             .tag {
               font-size: 12px;
@@ -212,39 +221,11 @@
       }
     }
     .handle-box {
-      position: absolute;
-      bottom: -12px;
-      top: auto;
-      left: 60px;
+      display: none;
+    }
+    .mobile_comment_num {
       display: flex;
       align-items: center;
-      user-select: none;
-      .comment-num {
-        padding: 3px 6px;
-      }
-      .push {
-        display: flex;
-        align-items: center;
-        width: 40px;
-        padding: 3px;
-        margin-right: 40px;
-        box-sizing: content-box;
-
-        .icon {
-          height: 22px;
-          min-width: 22px;
-          max-width: 22px;
-        }
-        .num {
-          font-size: 12px;
-        }
-        .icon:hover {
-          border: 4px rgba($color: #0071de, $alpha: 0.4) solid;
-        }
-        .icon:active img {
-          width: 5px;
-        }
-      }
     }
   }
 }
@@ -266,7 +247,7 @@
       </div>
       <nuxt-link
         :to="`/article/${article._id}`"
-        class="badge comment-num secondary" 
+        class="badge comment-num secondary"
       >
         <img
           style="height: 18px; width: auto; margin-right: 5px"
@@ -287,20 +268,23 @@
     >
       <div class="article-body">
         <nuxt-link :to="`/article/${article._id}`" class="top">
-          <div class="title" v-text="article.title"></div>
+          <div class="title">
+            {{ article.title }}
+          </div>
         </nuxt-link>
         <div class="bottom margin-top-small">
-          <div class="tags margin-right-small">
-            <span class="badge tag" v-text="article.type"></span>
-          </div>
+          <span
+            class="date margin-right"
+            v-text="article.BeautifyUpdateTime || `刚刚`"
+          ></span>
           <base-geek-nickname
             :isShowInfo="true"
             :user="article.user"
           ></base-geek-nickname>
-          <span
-            class="margin-left date"
-            v-text="article.BeautifyUpdateTime || `刚刚`"
-          ></span>
+
+          <div class="mobile_comment_num margin-left">
+            {{ util.numFormat(article.comment_num) }}
+          </div>
         </div>
       </div>
     </div>

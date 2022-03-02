@@ -40,7 +40,7 @@
   <div class="paper padding-none comment-list">
     <div class="comment-nav">
       <div class="comment-num">{{ commentList.total }} 条回复</div>
-      <div class="post-btn badge" @click="reply">我要发言</div>
+      <div class="post-btn badge" @click="reply">我要评论</div>
     </div>
 
     <div

@@ -20,7 +20,7 @@
     height: 40px;
     margin: 15px;
     user-select: none;
-    background: #0071de;
+    background: var(--secondary);
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;

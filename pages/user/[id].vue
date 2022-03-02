@@ -149,7 +149,7 @@ label {
     </div>
     <div class="row flex-spaces tabs">
       <input id="tab1" type="radio" name="tabs" checked />
-      <label for="tab1">文章</label>
+      <label for="tab1">主题</label>
 
       <input id="tab2" type="radio" name="tabs" />
       <label for="tab2">关于</label>

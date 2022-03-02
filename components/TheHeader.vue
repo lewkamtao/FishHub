@@ -25,7 +25,6 @@ header {
     align-items: flex-end;
     font-size: 30px;
     margin-bottom: 5px;
-    font-family: XiaolaiMonoSC;
 
     .logo {
       margin-right: 5px;
@@ -118,7 +117,7 @@ header {
         <nuxt-link to="/about">关于</nuxt-link>
         <div style="margin-bottom: 5px" class="post-btn badge" @click="post">
           <img src="@sicons/ionicons5/AddCircleOutline.svg" alt="" />
-          创建文章
+          创建主题
         </div>
       </menu>
     </div>
