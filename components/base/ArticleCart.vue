@@ -85,7 +85,7 @@
         height: 30px;
         min-width: 30px;
         max-width: 30px;
-        background: var(--warning-light);
+        background: #fdecec;
         border-radius: 50%;
         border: 2px rgba($color: #000000, $alpha: 0.08) solid;
         img {
@@ -235,6 +235,17 @@
 <template>
   <div class="article-card-box" @click="toDetail(article._id)">
     <div class="handle-box">
+      <nuxt-link
+        :to="`/article/${article._id}`"
+        class="badge comment-num secondary"
+      >
+        <img
+          style="height: 18px; width: auto; margin-right: 5px"
+          class="icon no-responsive no-border"
+          src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
+        />
+        {{ util.numFormat(article.comment_num) }}
+      </nuxt-link>
       <div class="push">
         <span @click.stop="push($event, article._id)" class="icon like">
           <img
@@ -247,17 +258,6 @@
           {{ util.numFormat(article.like) }}
         </span>
       </div>
-      <nuxt-link
-        :to="`/article/${article._id}`"
-        class="badge comment-num secondary"
-      >
-        <img
-          style="height: 18px; width: auto; margin-right: 5px"
-          class="icon no-responsive no-border"
-          src="@sicons/ionicons5/ChatbubbleEllipsesOutline.svg"
-        />
-        {{ util.numFormat(article.comment_num) }}
-      </nuxt-link>
     </div>
     <base-geek-avatar
       class="avatar-box"

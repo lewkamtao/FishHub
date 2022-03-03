@@ -26,7 +26,7 @@
 }
 .comment-box {
   position: relative;
-  padding: 15px;
+  padding: 10px 20px;
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   .content {
@@ -49,21 +49,21 @@
     }
   }
   .text {
-    margin-top: 5px;
+    margin-top: 10px;
     color: var(--primary);
     white-space: pre-line;
     font-size: 14px;
   }
   .reply-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
     padding: 2px;
     height: 24px;
     transition: all 0.25s;
     white-space: nowrap;
     display: none;
     font-size: 13px;
-  }
-  .reply-btn:active {
-    opacity: 1;
   }
 }
 
