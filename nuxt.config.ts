@@ -17,11 +17,7 @@ export default defineNuxtConfig({
     ],
 
     link: [],
-    // please note that this is an area that is likely to change
-    style: [
-      // <style type="text/css">:root { color: red }</style>
-      // { children: ":root { color: red }", type: "text/css" },
-    ],
+    style: [],
   },
 
   css: [

@@ -29,7 +29,7 @@
         />
       </Head>
     </Html>
-    <div id="geek-message-box"></div> 
+    <div id="geek-message-box"></div>
 
     <the-header></the-header>
     <base-geek-handle></base-geek-handle>
@@ -49,15 +49,9 @@
 
 <script setup>
 // your setup script
-import { watch, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 import util from "~~/util";
 const route = useRoute();
-watch(
-  () => route.path,
-  () => {
-    window.scrollTo(0, 0);
-  }
-);
 
 onMounted(() => {
   util.initDomStyle();
@@ -65,36 +59,34 @@ onMounted(() => {
     util.initDomStyle();
   };
 
-
-
   Fancybox.bind('[data-fancybox="gallery"]', {
-  dragToClose: false,
+    dragToClose: false,
 
-  Toolbar: false,
-  closeButton: "top",
+    Toolbar: false,
+    closeButton: "top",
 
-  Image: {
-    zoom: false,
-  },
-
-  on: {
-    initCarousel: (fancybox) => {
-      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
-
-      fancybox.$container.style.setProperty(
-        "--bg-image",
-        `url("${slide.$thumb.src}")`
-      );
+    Image: {
+      zoom: false,
     },
-    "Carousel.change": (fancybox, carousel, to, from) => {
-      const slide = carousel.slides[to];
 
-      fancybox.$container.style.setProperty(
-        "--bg-image",
-        `url("${slide.$thumb.src}")`
-      );
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
     },
-  },
-});
+  });
 });
 </script>

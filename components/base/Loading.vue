@@ -2,7 +2,6 @@
 
 <script setup lang="ts">
 const start = () => {
-  console.log(1);
   if (process.browser) {
     var geek_main = document.getElementById("geek_main");
     if (geek_main) {
@@ -13,6 +12,7 @@ const start = () => {
 const finish = () => {
   if (process.browser) {
     setTimeout(function () {
+      window.scrollTo(0, 0);
       var geek_main = document.getElementById("geek_main");
       if (geek_main) {
         geek_main.classList.remove("isGeekMainLoading");

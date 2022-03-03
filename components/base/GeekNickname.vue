@@ -16,10 +16,13 @@
   }
   .name {
     margin-right: 5px;
-    max-width: 180px; 
+    max-width: 180px;
     white-space: nowrap;
+    font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--primary);
+    opacity: 0.8;
   }
   .gender {
     margin-top: -4px;

@@ -48,7 +48,7 @@
   }
   .text {
     margin-top: 5px;
-    color: #888;
+    color: var(--primary);
     white-space: pre-line;
     font-size: 14px;
   }
