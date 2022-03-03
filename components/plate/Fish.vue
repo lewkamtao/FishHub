@@ -5,15 +5,15 @@
 }
 .matter {
   margin-top: 15px;
-  line-height: 30px;
+  line-height: 34px;
   .item {
     display: flex;
     font-size: 14px;
     .tag {
       background: #eee;
-      margin: 0px 5px;
-      padding: 2px 6px;
-      font-size: 12px;
+      margin: 0px 8px;
+      padding: 2px 8px;
+      font-size: 14px;
       color: var(--primary);
       border-radius: 30px;
       background: var(--muted-light);

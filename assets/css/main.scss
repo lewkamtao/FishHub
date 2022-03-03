@@ -104,7 +104,7 @@ html.dark body {
     .comment-nav {
         border-bottom: 1px #333 solid;
     }
-    .nav {
+    .nav-list {
         border-bottom: 1px #333 solid;
     }
 }
@@ -185,6 +185,8 @@ textarea {
 .paper {
     box-sizing: border-box;
     box-shadow: none;
+    border-radius: 4px;
+    border: none;
 }
 
 #he-plugin-standard {

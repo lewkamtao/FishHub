@@ -43,39 +43,30 @@ a {
 </style>
 
 <template>
-  <div class="detail margin-top">
-    <base-nav type="detail" :articleData="article.data"> </base-nav>
-    <div class="article paper margin-none" id="article-editor">
-      <div v-if="article.data.layout == 'markdown'">
-        <v-md-preview :text="article.data.content"></v-md-preview>
+  <div class="detail">
+    <div class="paper padding-none">
+      <base-nav-by-detail
+        :articleData="article.data"
+        class="title"
+      ></base-nav-by-detail>
+      <div class="article margin-none" id="article-editor">
+        <div v-if="article.data.layout == 'markdown'">
+          <v-md-preview :text="article.data.content"></v-md-preview>
+        </div>
+        <div class="pic-list">
+          <img
+            v-for="(item, index) in article.data.picList"
+            :key="`pic${index}`"
+            :src="item.url"
+            alt=""
+            srcset=""
+          /> 
+        </div>
+        <div v-if="article.data.layout == 'picList'" class="picList-content">
+          <div class="content">{{ article.data.content }}</div>
+        </div>
       </div>
-      <div class="pic-list">
-        <img
-          v-for="(item, index) in article.data.picList"
-          :key="`pic${index}`"
-          :src="item.url"
-          alt=""
-          srcset=""
-        />
-      </div>
-      <div v-if="article.data.layout == 'picList'" class="picList-content">
-        <div class="content">{{ article.data.content }}</div>
-      </div>
-      <!-- <div
-        class="tags-box margin-top padding-top"
-        v-if="article.data.tags.length > 0"
-      >
-        <nuxt-link
-          :to="'/'"
-          v-for="(item, index) in article.data.tags"
-          :key="`tags${index}`"
-          class="badge danger"
-        >
-          <span v-text="item.key"></span>
-        </nuxt-link>
-      </div> -->
     </div>
-
     <base-comment-list :article_id="article.data._id"></base-comment-list>
   </div>
 </template>

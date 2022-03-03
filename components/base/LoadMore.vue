@@ -24,7 +24,7 @@
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;
-    color: #fff; 
+     color: var(--primary-inverse);
     .donut {
       position: absolute;
       top: 50%;

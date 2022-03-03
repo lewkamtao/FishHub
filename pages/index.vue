@@ -8,9 +8,9 @@
 </style>
 
 <template>
-  <div class="index">
-    <base-nav type="index"> </base-nav>
-    <div class="article-list paper padding-none">
+  <div class="index paper padding-none">
+    <base-nav-by-index> </base-nav-by-index>
+    <div class="article-list">
       <base-article-list></base-article-list>
     </div>
   </div>

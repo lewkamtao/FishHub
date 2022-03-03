@@ -1471,10 +1471,7 @@ article p {
 }
 
 .badge {
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
+    border-radius: 3px;
     color: #41403e;
     color: var(--white);
     background-color: #41403e;

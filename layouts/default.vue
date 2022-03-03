@@ -3,11 +3,20 @@
   padding-top: 70px;
   opacity: 0;
   transition: opacity 0.5s;
+
+  .main {
+    width: 70%;
+    padding: 0px 0.5rem;
+  }
 }
 
 @media (max-width: 992px) {
   .wrapper {
     padding-top: 50px;
+    .main {
+      width: 100%;
+      padding: 1rem 0px;
+    }
   }
 }
 </style>
@@ -34,7 +43,7 @@
     <the-header></the-header>
     <base-geek-handle></base-geek-handle>
     <div class="wrapper row margin-none" id="geekWrapper">
-      <div class="sm-12 md-8 col padding-bottom-none">
+      <div class="main padding-bottom-none">
         <slot />
         <the-footer></the-footer>
       </div>

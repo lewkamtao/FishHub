@@ -202,26 +202,6 @@
         <base-geek-nickname :user="user.data"></base-geek-nickname>
       </div>
       <div class="description">{{ user.data.description || "暂无介绍" }}</div>
-      <div class="info-box">
-        <div class="item">
-          <img src="@sicons/ionicons5/BusinessOutline.svg" alt="" srcset="" />{{
-            user.data.company || "-"
-          }}
-        </div>
-        <div class="item">
-          <img src="@sicons/ionicons5/LocationOutline.svg" alt="" srcset="" />{{
-            user.data.location || "-"
-          }}
-        </div>
-        <div class="item">
-          <img src="@sicons/ionicons5/MailOutline.svg" alt="" srcset="" />
-          {{ user.data.email || "-" }}
-        </div>
-        <div class="item">
-          <img src="@sicons/ionicons5/HomeOutline.svg" alt="" srcset="" />
-          {{ user.data.blog || "-" }}
-        </div>
-      </div>
 
       <input class="alert-state" id="alert-1" type="checkbox" />
       <div

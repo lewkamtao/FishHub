@@ -26,6 +26,7 @@
       width: calc(100% - 70px);
       .top {
         .title {
+          max-width: calc(100% - 130px);
           font-size: 16px;
         }
         .title:hover {
@@ -140,7 +141,7 @@
     transition: all 0.1s;
     border-radius: 50px;
     cursor: pointer;
-    color: #fff;
+    color: var(--primary-inverse);
     .donut {
       position: absolute;
       top: 50%;
@@ -177,7 +178,7 @@
 }
 .mobile_comment_num {
   display: none;
-   background: var(--muted-light);
+  background: var(--muted-light);
   color: #000;
   padding: 2px 8px;
   border-radius: 20px;
@@ -201,7 +202,9 @@
       .article-body {
         width: 100%;
         .top {
+          max-width: 100%;
           .title {
+            max-width: 100%;
             font-size: 14px;
           }
         }

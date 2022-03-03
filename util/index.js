@@ -80,8 +80,8 @@ function initDomStyle() {
   }
   if (domgeekSidebar) {
     domgeekSidebar.style.cssText = `opacity:1;left:${
-      domGeekWrapper.offsetLeft + domGeekWrapper.clientWidth * 0.6666666
-    }px; width:${domGeekWrapper.clientWidth * 0.33333333}px`;
+      domGeekWrapper.offsetLeft + domGeekWrapper.clientWidth * 0.7
+    }px; width:${domGeekWrapper.clientWidth * 0.30}px`;
     domGeekWrapper.style.cssText = `opacity:1;`;
   }
 }

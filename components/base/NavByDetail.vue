@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
 .nav-by-detail {
   padding: 20px;
+  border-bottom: 1px solid var(--muted-light);
   .title {
     font-size: 20px;
   }
@@ -47,7 +48,9 @@
         :isShowInfo="true"
         :user="articleData.user"
       ></base-geek-nickname>
-      <div class="updateTime">{{ articleData.BeautifyUpdateTime }}</div>
+      <div class="updateTime">
+        最近回复时间在 {{ articleData.BeautifyUpdateTime }}
+      </div>
     </div>
   </div>
 </template>

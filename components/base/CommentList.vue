@@ -1,7 +1,5 @@
 <style lang="scss" scoped>
-.comment-list {
-  margin-top: 30px;
-}
+
 .comment-nav {
   display: flex;
   align-items: center;

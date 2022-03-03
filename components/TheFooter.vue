@@ -2,7 +2,6 @@
 footer {
   position: relative;
 
-  margin-top: 30px;
   .wrapper {
     color: #999;
     padding: 15px;

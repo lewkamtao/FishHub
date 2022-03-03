@@ -21,7 +21,9 @@
     }
   }
 }
-
+.comment-wrapper:last-child .comment-box {
+  border-bottom: none;
+}
 .comment-box {
   position: relative;
   padding: 15px;

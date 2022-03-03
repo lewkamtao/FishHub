@@ -1,17 +1,12 @@
 <style lang="scss" scoped>
-.paper {
-  margin-top: 2rem;
-}
-.paper:first-child {
-  margin-top: 1rem;
-}
-
 .sidebar {
   position: fixed;
   opacity: 0;
   height: calc(100vh - 70px);
   overflow-y: scroll;
   transition: opacity 0.5s;
+  width: 30%;
+  padding: 0px 0.5rem;
 }
 
 @media (max-width: 992px) {
@@ -22,7 +17,7 @@
 </style>
 
 <template>
-  <div class="sm-12 md-4 col sidebar hid-scrollbar" id="geekSidebar">
+  <div class="sidebar hid-scrollbar" id="geekSidebar">
     <plate-user></plate-user>
     <plate-fish></plate-fish>
     <!-- <plate-today-news></plate-today-news> -->

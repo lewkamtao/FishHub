@@ -11,11 +11,13 @@ header {
   border-left: none;
   border-right: none;
   border-top: none;
+  border-radius: 0px;
+  margin-top: 0px;
   .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 10px 20px;
+    padding: 0.7rem;
     white-space: nowrap;
   }
 
