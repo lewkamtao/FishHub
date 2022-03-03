@@ -31,6 +31,8 @@ header {
     font-weight: bolder;
 
     span {
+      display: flex;
+      align-items: center;
       height: 40px;
       background: var(--secondary);
       border-radius: 3px;

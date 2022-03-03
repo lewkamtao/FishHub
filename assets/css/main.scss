@@ -45,13 +45,6 @@
             border: none;
         }
         
-        .nav-list {
-            .active {
-                background: var(--secondary) !important;
-                color: var(--primary-inverse) !important;
-            }
-        }
-        
         html.dark body {
             background: #222;
             .moyu-title {

@@ -32,6 +32,10 @@
       margin: 3px;
       font-size: 14px;
     }
+    a:hover {
+      background: var(--secondary) !important;
+      color: var(--primary-inverse) !important;
+    }
   }
 }
 </style>
@@ -48,7 +52,7 @@
       class="badge"
       :class="{ active: articleType == item.value }"
     >
-      <span v-text="item.value"></span> 
+      <span v-text="item.value"></span>
     </nuxt-link>
   </div>
 </template>
