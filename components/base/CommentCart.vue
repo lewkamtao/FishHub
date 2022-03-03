@@ -8,7 +8,7 @@
 .comment-box:hover {
   .reply-btn {
     cursor: pointer;
-    opacity: 0.8;
+    display: block;
   }
 }
 
@@ -59,7 +59,7 @@
     height: 24px;
     transition: all 0.25s;
     white-space: nowrap;
-    opacity: 0;
+    display: none;
     font-size: 13px;
   }
   .reply-btn:active {
