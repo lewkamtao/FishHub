@@ -20,7 +20,7 @@
   }
   .active {
     background: var(--secondary) !important;
-    color: var(--white) !important;
+    color: var(--primary-inverse) !important;
   }
 }
 @media (max-width: 992px) {
@@ -72,8 +72,6 @@ watch(
 );
 
 onMounted(() => {
-  articleType.value = route.query.articleType
-    ? route.query.articleType
-    : "";
+  articleType.value = route.query.articleType ? route.query.articleType : "";
 });
 </script>
