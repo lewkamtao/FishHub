@@ -1,342 +1,343 @@
-html {
-    overflow-y: scroll;
-}
-
-html,
-body {
-    min-height: 100vh;
-}
-
-a,
-button,
-html,
-input,
-option,
-p,
-select,
-table,
-tbody,
-td,
-textarea,
-th,
-thead,
-tr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span {
-    font-family: sans-serif;
-}
-
-a {
-    background-image: none;
-}
-
-html {
-    background: #e9ecef;
-    font-size: 16px;
-    line-height: 1.35;
-}
-
-img {
-    border: none;
-}
-
-html.dark body {
-    background: #222;
-    .moyu-title {
+        html {
+            overflow-y: scroll;
+        }
+        
+        html,
+        body {
+            min-height: 100vh;
+        }
+        
+        a,
+        button,
+        html,
+        input,
+        option,
+        p,
+        select,
+        table,
+        tbody,
+        td,
+        textarea,
+        th,
+        thead,
+        tr,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
         span {
-            color: #000 !important;
+            font-family: sans-serif;
         }
-    }
-    a:link {
-        color: #fff;
-        text-decoration: none;
-    }
-    a:visited {
-        color: #eee;
-    }
-    .gender {
-        filter: invert(100%);
-    }
-    .icon {
-        filter: invert(100%);
-    }
-    .loginOut-btn {
+        
+        a {
+            background-image: none;
+        }
+        
+        html {
+            background: #e9ecef;
+            font-size: 16px;
+            line-height: 1.35;
+        }
+        
         img {
-            filter: invert(100%);
-        }
-    }
-    .alert {
-        background: #333 !important;
-        .icon {
-            filter: invert(0%);
-        }
-    }
-    .geek-gender {
-        .icon {
-            filter: invert(0%);
-        }
-    }
-    .info-box {
-        img {
-            filter: invert(100%);
-        }
-    }
-    .push .like {
-        filter: invert(0%);
-    }
-    .sofa {
-        filter: none;
-    }
-    .paper {
-        border: 1px #333 solid;
-    }
-    .article-card-box {
-        .article-card {
-            border-bottom: 1px #333 solid;
-        }
-    }
-    .comment-box,
-    .comment-nav {
-        border-bottom: 1px #333 solid;
-    }
-    .nav-list {
-        border-bottom: 1px #333 solid;
-    }
-}
-
-a:link {
-    color: #000;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #999;
-}
-
-textarea {
-    border-bottom-left-radius: 5px 255px;
-    border-bottom-right-radius: 225px 5px;
-    border-top-left-radius: 255px 5px;
-    border-top-right-radius: 5px 225px;
-}
-
-.content-form {
-    border: 2px solid #41403e;
-    border-color: var(--primary);
-    display: block;
-    overflow: hidden;
-    ul li {
-        text-indent: 0px;
-    }
-    ul li:before {
-        left: auto;
-    }
-    .v-md-editor__main {
-        flex-direction: column;
-        .v-md-editor__editor-wrapper {
-            border-bottom: 2px #eee solid;
-        }
-    }
-}
-
-.pic-list {
-    img {
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-}
-
-.github-markdown-body {
-    padding: 0px !important;
-    img {
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-    ul li {
-        text-indent: 0px;
-    }
-    ul li::before {
-        content: "";
-        left: 0px;
-    }
-    hr::after {
-        content: "";
-    }
-}
-
-.geek-avatar-edit {
-    img {
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-}
-
-.paper {
-    box-sizing: border-box;
-    box-shadow: none;
-    border-radius: 4px;
-    border: none;
-}
-
-#he-plugin-standard {
-    width: 100% !important;
-}
-
-.wrapper {
-    max-width: 1080px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.sidebar {
-    .title {
-        font-weight: bold;
-        color: var(--secondary);
-    }
-}
-
-
-/* 使用伪类选择器 ::-webkit-scrollbar ,兼容chrome和safari浏览器 */
-
-.hid-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-
-/*兼容火狐*/
-
-.hid-scrollbar {
-    scrollbar-width: none;
-}
-
-
-/* 兼容IE10+ */
-
-.hid-scrollbar {
-    -ms-overflow-style: none;
-}
-
-// message
-#geek-message-box {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 99;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 80px;
-    transition: all 0.1s;
-    .alert {
-        width: auto;
-        display: flex;
-        flex-shrink: 0;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        line-height: 40px;
-        padding: 15px 25px;
-        transition: all 0.2s;
-        opacity: 0;
-        margin-top: 0px;
-        transform: translateY(-5px);
-        white-space: nowrap;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
-        font-size: 14px;
-    }
-    .alert-danger {
-        background-color: #fdf7f7;
-        border-color: #a7342d;
-    }
-    .alert-success {
-        background-color: rgb(248, 255, 250);
-        border-color: #86a361;
-    }
-    .alert-warning {
-        background-color: rgb(255, 253, 246);
-        border-color: #ddcd45;
-    }
-    .icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
-    .alert-show {
-        opacity: 1;
-        transform: translateY(0px);
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    .alert-hidden {
-        opacity: 0;
-        margin-top: -60px;
-    }
-}
-
-.filter {
-    filter: invert(100%);
-}
-
-.post-btn {
-    display: flex;
-    align-items: center;
-    background: var(--secondary);
-    padding: 6px 15px;
-    font-weight: normal;
-    font-size: 16px;
-    color: var(--primary-inverse);
-    cursor: pointer;
-    transition: all 0.25s;
-    .icon {
-        width: 20px;
-        margin-right: 5px;
-    }
-}
-
-.badge:hover {
-    opacity: 0.8;
-}
-
-.badge:active {
-    opacity: 1;
-}
-
-// cropper 样式
-.geek-avatar-edit {
-    .cropper-view-box {
-        outline-color: #fff;
-        border-radius: 50%;
-    }
-    .cropper-point {
-        background-color: #fff;
-    }
-}
-
-select {
-    height: auto;
-}
-
-@media (max-width: 992px) {
-    html {
-        font-size: 14px;
-    }
-    .geek {
-        .col {
-            padding: 0px;
-        }
-        .paper {
             border: none;
         }
-    }
-}
+        
+        .nav-list {
+            .active {
+                background: var(--secondary) !important;
+                color: var(--primary-inverse) !important;
+            }
+        }
+        
+        html.dark body {
+            background: #222;
+            .moyu-title {
+                span {
+                    color: #000 !important;
+                }
+            }
+            a:link {
+                color: #fff;
+                text-decoration: none;
+            }
+            a:visited {
+                color: #eee;
+            }
+            .gender {
+                filter: invert(100%);
+            }
+            .icon {
+                filter: invert(100%);
+            }
+            .loginOut-btn {
+                img {
+                    filter: invert(100%);
+                }
+            }
+            .alert {
+                background: #333 !important;
+                .icon {
+                    filter: invert(0%);
+                }
+            }
+            .geek-gender {
+                .icon {
+                    filter: invert(0%);
+                }
+            }
+            .info-box {
+                img {
+                    filter: invert(100%);
+                }
+            }
+            .push .like {
+                filter: invert(0%);
+            }
+            .sofa {
+                filter: none;
+            }
+            .paper {
+                border: 1px #333 solid;
+            }
+            .article-card-box {
+                .article-card {
+                    border-bottom: 1px #333 solid;
+                }
+            }
+            .comment-box,
+            .comment-nav {
+                border-bottom: 1px #333 solid;
+            }
+            .nav-list {
+                border-bottom: 1px #333 solid;
+            }
+        }
+        
+        a:link {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #999;
+        }
+        
+        textarea {
+            border-bottom-left-radius: 5px 255px;
+            border-bottom-right-radius: 225px 5px;
+            border-top-left-radius: 255px 5px;
+            border-top-right-radius: 5px 225px;
+        }
+        
+        .content-form {
+            border: 2px solid #41403e;
+            border-color: var(--primary);
+            display: block;
+            overflow: hidden;
+            ul li {
+                text-indent: 0px;
+            }
+            ul li:before {
+                left: auto;
+            }
+            .v-md-editor__main {
+                flex-direction: column;
+                .v-md-editor__editor-wrapper {
+                    border-bottom: 2px #eee solid;
+                }
+            }
+        }
+        
+        .pic-list {
+            img {
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+        }
+        
+        .github-markdown-body {
+            padding: 0px !important;
+            img {
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+            ul li {
+                text-indent: 0px;
+            }
+            ul li::before {
+                content: "";
+                left: 0px;
+            }
+            hr::after {
+                content: "";
+            }
+        }
+        
+        .geek-avatar-edit {
+            img {
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+        }
+        
+        .paper {
+            box-sizing: border-box;
+            box-shadow: none;
+            border-radius: 4px;
+            border: none;
+        }
+        
+        #he-plugin-standard {
+            width: 100% !important;
+        }
+        
+        .wrapper {
+            max-width: 1080px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .sidebar {
+            .title {
+                font-weight: bold;
+                color: var(--secondary);
+            }
+        }
+        /* 使用伪类选择器 ::-webkit-scrollbar ,兼容chrome和safari浏览器 */
+        
+        .hid-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /*兼容火狐*/
+        
+        .hid-scrollbar {
+            scrollbar-width: none;
+        }
+        /* 兼容IE10+ */
+        
+        .hid-scrollbar {
+            -ms-overflow-style: none;
+        }
+        
+        // message
+        #geek-message-box {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 99;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 80px;
+            transition: all 0.1s;
+            .alert {
+                width: auto;
+                display: flex;
+                flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                line-height: 40px;
+                padding: 15px 25px;
+                transition: all 0.2s;
+                opacity: 0;
+                margin-top: 0px;
+                transform: translateY(-5px);
+                white-space: nowrap;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+                font-size: 14px;
+            }
+            .alert-danger {
+                background-color: #fdf7f7;
+                border-color: #a7342d;
+            }
+            .alert-success {
+                background-color: rgb(248, 255, 250);
+                border-color: #86a361;
+            }
+            .alert-warning {
+                background-color: rgb(255, 253, 246);
+                border-color: #ddcd45;
+            }
+            .icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            .alert-show {
+                opacity: 1;
+                transform: translateY(0px);
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            .alert-hidden {
+                opacity: 0;
+                margin-top: -60px;
+            }
+        }
+        
+        .filter {
+            filter: invert(100%);
+        }
+        
+        .post-btn {
+            display: flex;
+            align-items: center;
+            background: var(--secondary);
+            padding: 6px 15px;
+            font-weight: normal;
+            font-size: 16px;
+            color: var(--primary-inverse);
+            cursor: pointer;
+            transition: all 0.25s;
+            .icon {
+                width: 20px;
+                margin-right: 5px;
+            }
+        }
+        
+        .badge:hover {
+            opacity: 0.8;
+        }
+        
+        .badge:active {
+            opacity: 1;
+        }
+        
+        // cropper 样式
+        .geek-avatar-edit {
+            .cropper-view-box {
+                outline-color: #fff;
+                border-radius: 50%;
+            }
+            .cropper-point {
+                background-color: #fff;
+            }
+        }
+        
+        select {
+            height: auto;
+        }
+        
+        @media (max-width: 992px) {
+            html {
+                font-size: 14px;
+            }
+            .geek {
+                .col {
+                    padding: 0px;
+                }
+                .paper {
+                    border: none;
+                }
+            }
+        }
