@@ -33,8 +33,8 @@
       font-size: 14px;
     }
     a:hover {
-      background: var(--secondary) !important;
-      color: var(--primary-inverse) !important;
+      background: var(--secondary);
+      color: var(--primary-inverse);
     }
   }
 }

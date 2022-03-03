@@ -24,7 +24,7 @@ header {
   .moyu-title {
     display: flex;
     color: var(--primary);
-    align-items: flex-end;
+    align-items: center;
     font-size: 30px;
     margin-bottom: 5px;
     margin-left: -5px;
@@ -33,13 +33,13 @@ header {
     span {
       display: flex;
       align-items: center;
-      height: 40px;
+      height: 38px;
       background: var(--secondary);
       border-radius: 3px;
       color: #fff;
       margin-left: 4px;
       font-size: 26px;
-      padding: 3px 6px;
+      padding: 0px 5px;
     }
   }
 
@@ -80,11 +80,10 @@ header {
       font-size: 22px;
       margin-bottom: 0px;
       span {
-        height: 30px;
+        height: 28px;
         font-size: 20px;
-        padding: 0px 5px;
+        padding: 0px 3px;
         border-radius: 2px;
-        line-height: 30px;
       }
     }
     menu {
