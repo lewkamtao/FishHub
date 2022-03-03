@@ -31,11 +31,7 @@
       padding: 2px 6px;
       margin: 3px;
       font-size: 14px;
-    }
-    a:hover {
-      background: var(--secondary);
-      color: var(--primary-inverse);
-    }
+    } 
   }
 }
 </style>
