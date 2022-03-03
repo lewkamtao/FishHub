@@ -46,9 +46,10 @@
       v-for="(item, index) in typeList.data"
       :key="`tags${index}`"
       class="badge"
+      @click="articleType = item.value"
       :class="{ active: articleType == item.value }"
     >
-      <span v-text="item.value"></span>
+      <span v-text="item.value"></span> 
     </nuxt-link>
   </div>
 </template>

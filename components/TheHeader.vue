@@ -79,9 +79,10 @@ header {
       margin-bottom: 0px;
       span {
         height: 30px;
-        font-size: 18px;
-        padding: 3px 10px;
-        border-radius: 3px;
+        font-size: 20px;
+        padding: 0px 5px;
+        border-radius: 2px;
+        line-height: 30px;
       }
     }
     menu {
@@ -94,7 +95,6 @@ header {
       }
     }
   }
-  
 }
 </style>
 
@@ -121,7 +121,7 @@ header {
     </div>
   </header>
 </template>
- 
+
 <script setup lang="ts">
 const router: any = useRouter();
 const { $api } = useNuxtApp();
