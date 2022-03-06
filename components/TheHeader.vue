@@ -27,7 +27,7 @@ header {
     align-items: center;
     font-size: 30px;
     margin-bottom: 5px;
-    margin-left: -5px;
+    margin-left: -4px;
     font-weight: bolder;
 
     span {

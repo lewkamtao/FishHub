@@ -16,7 +16,7 @@ p {
 </style>
 
 <template>
-  <div class="paper about" style="margin-top: 1rem">
+  <div class="paper about">
     <div class="about padding">
       <h4>摸鱼办</h4>
       <p>这个世界最擅长的事情，就是给你不断的制造焦虑。</p>

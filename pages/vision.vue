@@ -5,8 +5,8 @@
 </style>
 
 <template>
-  <div class="paper padding-none" style="margin-top: 1rem">
-    <h4 class="text-center">页面装修中</h4>
+  <div class="paper padding-none">
+    
     <base-geek-not-found></base-geek-not-found>
   </div>
 </template>
