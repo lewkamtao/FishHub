@@ -1,26 +1,26 @@
-# Nuxt 3 Minimal Starter
+# 是一个摸鱼论坛
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+有点简单，但很有意思。
+这是演示站点 [documentation](https://fish.tngeek.com).
 
-## Setup
 
-Make sure to install the dependencies
+## 起步
+
+安装依赖
 
 ```bash
 yarn install
 ```
 
-## Development
+## 运行
 
-Start the development server on http://localhost:3000
+运行在本地
 
 ```bash
 yarn dev
 ```
 
-## Production
-
-Build the application for production:
+你需要运行下面命令进行打包编译
 
 ```bash
 yarn build
