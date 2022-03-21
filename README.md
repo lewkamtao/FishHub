@@ -1,4 +1,4 @@
-# 这是一个摸鱼论坛
+# FishHub
 
 有点简单，但很有意思。
 这是演示站点 [摸鱼办](https://fish.tngeek.com).
