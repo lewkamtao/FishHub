@@ -3,7 +3,14 @@
 有点简单，但很有意思。
 这是演示站点 [摸鱼办](https://fish.tngeek.com).
 
-> 服务端请移步：https://github.com/lewkamtao/FishHub_Server
+## 技术栈
+### 前端
+  - Vue3 + Nuxt3 + TypeScript
+  - 项目地址：https://github.com/lewkamtao/FishHub
+
+### 后端
+  - Go + gin + gorm + mysql
+  - 项目地址：https://github.com/lewkamtao/FishHub_Server
 
 ## 起步
 
